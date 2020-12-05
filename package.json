@@ -1,0 +1,23 @@
+{
+  "name": "ashlyn",
+  "version": "1.0.0",
+  "description": "A multi-purpose Discord Bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spencer-0003/Ashlyn.git"
+  },
+  "author": "Spencer-0003",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spencer-0003/Ashlyn/issues"
+  },
+  "homepage": "https://github.com/Spencer-0003/Ashlyn#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "discord.js-commando": "github:discordjs/Commando"
+  }
+}
