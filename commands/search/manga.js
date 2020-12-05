@@ -1,7 +1,7 @@
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
-const Kitsu = require("kitsu.js");
+const Kitsu = require("kitsu");
 const kitsu = new Kitsu();
 
 module.exports = class MangaCommand extends Command {
