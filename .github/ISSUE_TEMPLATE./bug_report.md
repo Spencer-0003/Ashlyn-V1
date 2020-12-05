@@ -1,3 +1,10 @@
+---
+name: Bug report
+about: Create a report to help me fix bugs.
+title: "[BUG] <bug here>"
+labels: "bug"
+---
+
 **Description**
 A clear and concise description of what the bug is.
 
