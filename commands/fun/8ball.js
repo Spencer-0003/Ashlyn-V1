@@ -1,4 +1,3 @@
-const { MessageAttachment } = require("discord.js");
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -28,16 +27,11 @@ module.exports = class MagicBallCommand extends Command {
     run(message, { question }) {
         if (question.slice(-1) !== "?") question = question + "?";
 
-        let attachment = new MessageAttachment("../../assets/images/Magic8Ball.png", "ball.png");
         let embed = createEmbed({
             title: question,
             description: generateResponse(),
-            thumbnail: false
+            thumbnail: "https://magic-8ball.com/assets/images/Our_magic_8_ball.png"
         });
-
-        embed
-            .attachFiles(attachment)
-            .setThumnail("attachment//ball.png");
 
         return message.embed(embed);
     };
