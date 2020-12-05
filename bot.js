@@ -49,7 +49,7 @@ client.registry
 
 // Add Events
 
-fs.readdir("@events", (err, files) => {
+fs.readdir("./events", (err, files) => {
     if (err) return console.error;
     files.forEach(file => {
         if (!file.endsWith(".js")) return;

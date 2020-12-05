@@ -1,6 +1,5 @@
 const { CommandoClient } = require("discord.js-commando");
 const NekosLife = require("nekos.life");
-const Kitsu = require("kitsu");
 
 module.exports = class AshlynClient extends CommandoClient {
     constructor(options) {
@@ -8,6 +7,5 @@ module.exports = class AshlynClient extends CommandoClient {
 
         this.queue = new Map();
         this.neko = new NekosLife();
-        this.kitsu = new Kitsu();
     };
 };
