@@ -16,13 +16,11 @@ module.exports = class KickCommand extends Command {
                     key: "user",
                     prompt: "Who would you like to kick?",
                     type: "user",
-                    default: ""
                 },
                 {
                     key: "kickReason",
                     prompt: "Why do you want to kick them?",
                     type: "string",
-                    default: ""
                 },
             ],
         });
