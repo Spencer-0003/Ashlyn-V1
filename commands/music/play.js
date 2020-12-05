@@ -1,9 +1,11 @@
 const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
 
+const { google_api_key } = process.env;
+
 const ytdl = require("ytdl-core");
 const YouTube = require("simple-youtube-api");
-const youtube = new YouTube(process.env.google_api_key);
+const youtube = new YouTube(google_api_key);
 
 const simpleYt = require("simpleyt");
 
