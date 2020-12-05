@@ -1,9 +1,6 @@
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
-const Kitsu = require("kitsu");
-const kitsu = new Kitsu();
-
 module.exports = class MangaCommand extends Command {
     constructor(client) {
         super(client, {
@@ -26,7 +23,7 @@ module.exports = class MangaCommand extends Command {
             return message.embed(embed);
         };
 
-        kitsu.searchManga(search).then(result => {
+        this.client.kitsu.searchManga(search).then(result => {
             if (result.length === 0) {
                 let embed = createEmbed({
                     title: "Ashlyn: Manga",
