@@ -10,7 +10,7 @@
 <a href="https://discord.gg/j5e9p8w">
     <img src="https://img.shields.io/discord/782275109376360529.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge" alt="Support">
   </a>
-  <a href="https://www.python.org/downloads/">
+  <a href="https://nodejs.org/en/download/">
     <img src="https://img.shields.io/badge/Made%20With-Node%20JS-green.svg?style=for-the-badge&logo=Javascript" alt="Made with Node JS">
   </a>
   
