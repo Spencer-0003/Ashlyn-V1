@@ -28,7 +28,7 @@ In your bug report please include:
 - If you think you know why this happens, please include it!
 
 Please check if the bug has already been reported bugs using [Github Issues](https://github.com/Spencer-0003/Ashlyn/issues)
-To report a bug by [open a new Issue](https://github.com/kyb3r/modmail/issues/new)
+To report a bug by [open a new Issue](https://github.com/Spencer/Ashlyn/issues/new)
 
 ## License
 By contributing, you agree that your contributions will be licensed under its GPLV3 License.
