@@ -13,6 +13,10 @@ console.log = (...args) => oldLog("[Ashlyn]", ...args);
 require("dotenv").config();
 const { token } = process.env;
 
+if (!token) {
+    throw new Error("[Ashlyn] Missing token.");
+};
+
 // Create Shards
 
 const { ShardingManager } = require("discord.js");
