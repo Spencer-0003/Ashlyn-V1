@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="https://i.imgur.com/5NEHv0x.jpg" align="center">
   <br>
+  <strong><i>Ashlyn</i></strong>
   <strong><i>A multi-purpose Discord Bot.</i></strong>
   <br>
 <a href="https://github.com/Spencer-0003/Ashlyn/blob/master/LICENSE">
