@@ -34,13 +34,13 @@ module.exports = class ClearCommand extends Command {
             return message.embed(embed);
         };
 
-        return message.channel.bulkDelete(amount).then(() => {
+        message.channel.bulkDelete(amount).then(() => {
             let embed = createEmbed({
                 title: "Ashlyn: Moderation",
                 description: `Successfully deleted  ${(amount - 1).toString()} messages.`
             });
 
-            message.embed(embed);
+            return message.embed(embed);
         });
     };
 };
