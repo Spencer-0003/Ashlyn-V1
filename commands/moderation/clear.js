@@ -1,4 +1,4 @@
-const { Command } = require("@structures/Command");
+const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
 module.exports = class ClearCommand extends Command {
