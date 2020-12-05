@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="https://i.imgur.com/5NEHv0x.jpg" align="center">
   <br>
   <strong><i>A multi-purpose Discord Bot.</i></strong>
   <br>
