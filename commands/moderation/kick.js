@@ -50,8 +50,16 @@ module.exports = class KickCommand extends Command {
             message.say("Failed to DM this user.");
         };
 
-        return message.guild.member(user).kick({
+        let kickEmbed = createEmbed({
+            title: "Ashlyn: Moderation",
+            description: `I have kicked ${user} for "${kickReason}"`,
+            message: [{ name: "Moderator", value: `<@${message.author.id}>` }]
+        });
+
+        message.guild.member(user).kick({
             reason: kickReason
         });
+
+        return message.embed(kickEmbed);
     };
 };
