@@ -8,7 +8,7 @@ I love listening to your input! I want to make contributing to this project as e
 - Submitting a fix.
 - Proposing new features.
 
-If you are proposing new features, please discuss them with me in the [Discord server](https://discord.gg/FhGVhR28pJ) before you start working on them!
+If you are proposing new features, please discuss them with me in the [Discord server](https://discord.gg/wfyhsxZ6CV) before you start working on them!
 
 To submit feature requests or contribute code, please subject a pull request.
 
