@@ -21,6 +21,7 @@
     "discord.js-commando": "github:discordjs/Commando",
     "dotenv": "^8.2.0",
     "module-alias": "^2.2.2",
+    "moment": "^2.29.1",
     "opusscript": "0.0.7"
   },
   "_moduleAliases": {
