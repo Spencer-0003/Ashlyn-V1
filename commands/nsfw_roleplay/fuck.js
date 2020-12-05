@@ -2,7 +2,7 @@ const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
 const getRoleplayImage = require("@utils/Roleplay/GetNSFWRoleplayImage");
 
-let getFuckText = (author, user) => {
+function getFuckText(author, user) {
     let fucks = [
         `${author} wants to fuck ${user}`,
         `${author} wants to bang ${user}`,

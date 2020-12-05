@@ -2,7 +2,7 @@ const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
 const getRoleplayImage = require("@utils/Roleplay/GetNSFWRoleplayImage");
 
-let getBlowJobText = (author, user) => {
+function getBlowJobText(author, user) {
     let blowjobs = [
         `${author} wants to swallow ${user}`,
         `${author} swallowed ${user}'s hot load`,

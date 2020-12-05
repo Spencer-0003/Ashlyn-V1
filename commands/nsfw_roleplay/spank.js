@@ -2,7 +2,7 @@ const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
 const getRoleplayImage = require("@utils/Roleplay/GetNSFWRoleplayImage");
 
-let getSpankText = (author, user) => {
+function getSpankText(author, user) {
     let spanks = [
         `${author} wants to be spanked by ${user}`,
         `${author} wants ${user} to spank them`,
