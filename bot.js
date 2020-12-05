@@ -32,8 +32,7 @@ client.registry
         ["roleplay", "🤗 Roleplay"],
         ["nsfw_roleplay", "🥵 Roleplay (NSFW)"],
         ["search", "🔍 Search"],
-        ["utility", "🔦 Utility"],
-        ["other", "📋 Other"]
+        ["utility", "🔦 Utility"]
         // ["owner", "👑 Owner"]
     ])
     .registerDefaultGroups()
