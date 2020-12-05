@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports = (options) => {
+module.exports = options => {
     let embed = new MessageEmbed()
         .setTitle(options.title || "")
         .setColor(0x00B0FF || options.colour)
