@@ -8,9 +8,12 @@ console.log = (...args) => oldLog("[Ashlyn]", ...args);
 require("module-alias/register");
 require("dotenv").config();
 
-const { token } = process.env;
+const { token, mongo_url, mongo_db } = process.env;
 const fs = require("fs");
 const path = require("path");
+
+const { MongoClient } = require("mongodb");
+const MongoDBProvider = require("commando-provider-mongo");
 
 // Create Client
 
@@ -45,6 +48,15 @@ client.registry
         unknownCommand: false
     })
     .registerCommandsIn(path.join(__dirname, "commands"));
+
+// Set Provider
+
+client.setProvider(MongoClient.connect(mongo_url, { useNewUrlParser: true, useUnifiedTopology: true }).then(mongoClient => {
+    console.log("Connected to database.");
+    return new MongoDBProvider(mongoClient, mongo_db);
+}).catch(err => {
+    throw new Error(err);
+}));
 
 // Add Events
 
