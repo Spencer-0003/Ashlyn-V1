@@ -1,5 +1,7 @@
 <div align="center">
   <br>
+  <strong><i>Ashlyn</i></strong>
+  <br>
   <strong><i>A multi-purpose Discord Bot.</i></strong>
   <br>
 <a href="https://github.com/Spencer-0003/Ashlyn/blob/master/LICENSE">
@@ -10,6 +12,11 @@
   </a>
   <a href="https://www.python.org/downloads/">
     <img src="https://img.shields.io/badge/Made%20With-Node%20JS-green.svg?style=for-the-badge&logo=Javascript" alt="Made with Node JS">
+  </a>
+  
+  <br>
+    <a href="https://heroku.com/deploy?template=https://github.com/kyb3r/modmail">
+    <img src="https://img.shields.io/badge/deploy_to-heroku-997FBC.svg?style=for-the-badge&logo=Heroku">
   </a>
 </div>
 
