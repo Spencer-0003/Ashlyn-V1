@@ -22,7 +22,6 @@ module.exports = class NicknameCommand extends Command {
                     key: "nickname",
                     prompt: "What do you want to change this user's nickname to?",
                     type: "string",
-                    default: ""
                 }
             ],
         });
