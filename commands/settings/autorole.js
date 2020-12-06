@@ -1,5 +1,5 @@
 const Command = require("@structures/Command");
-const createEmbed = require("@utils/Embed");
+const createEmbed = require("@utils/CreateEmbed");
 
 module.exports = class AutoRoleCommand extends Command {
     constructor(client) {
