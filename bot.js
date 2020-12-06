@@ -43,7 +43,6 @@ client.registry
         eval: false,
         help: false,
         ping: false,
-        prefix: false,
         commandState: false,
         unknownCommand: false
     })
