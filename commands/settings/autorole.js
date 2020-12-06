@@ -31,6 +31,6 @@ module.exports = class AutoRoleCommand extends Command {
             description: `The auto role has been set to <@${role.id}>`
         });
 
-        return message.channel.say(embed);
+        return message.say(embed);
     };
 };
