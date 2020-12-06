@@ -5,7 +5,7 @@ const { mongo_url } = process.env;
 const Levels = require("discord-xp");
 Levels.setURL(mongo_url);
 
-module.exports = class ServerCommand extends Command {
+module.exports = class RankCommand extends Command {
     constructor(client) {
         super(client, {
             name: "rank",
