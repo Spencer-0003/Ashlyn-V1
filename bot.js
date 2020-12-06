@@ -35,6 +35,7 @@ client.registry
         ["roleplay", "🤗 Roleplay"],
         ["nsfw_roleplay", "🥵 Roleplay (NSFW)"],
         ["search", "🔍 Search"],
+        ["settings", "⚙️ settings"]
         ["utility", "🔦 Utility"]
         // ["owner", "👑 Owner"]
     ])
@@ -43,6 +44,7 @@ client.registry
         eval: false,
         help: false,
         ping: false,
+        prefix: false,
         commandState: false,
         unknownCommand: false
     })
