@@ -29,7 +29,7 @@ module.exports = class PrefixCommand extends Command {
                 }
             ]
         });
-    }
+    };
 
     async run(message, args) {
         // Just output the prefix
