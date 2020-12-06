@@ -35,7 +35,7 @@ client.registry
         ["roleplay", "🤗 Roleplay"],
         ["nsfw_roleplay", "🥵 Roleplay (NSFW)"],
         ["search", "🔍 Search"],
-        ["settings", "⚙️ settings"]
+        ["settings", "⚙️ settings"],
         ["utility", "🔦 Utility"]
         // ["owner", "👑 Owner"]
     ])
