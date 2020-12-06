@@ -22,7 +22,7 @@ if (!token) {
 const { ShardingManager } = require("discord.js");
 
 const manager = new ShardingManager("./bot.js", {
-    token: token,
+    token,
     totalShards: "auto"
 });
 
