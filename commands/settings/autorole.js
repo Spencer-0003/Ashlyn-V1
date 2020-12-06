@@ -41,7 +41,7 @@ module.exports = class AutoRoleCommand extends Command {
 
         let embed = createEmbed({
             title: "Ashlyn: Auto Role",
-            description: `The auto role has been set to <@${role.id}>`
+            description: `The auto role has been set to ${role}`
         });
 
         return message.say(embed);
