@@ -23,7 +23,7 @@ module.exports = class HelpCommand extends Command {
     async run(message, { command }) {
         if (!command) {
             let embeds = [];
-            for (let i = 0; i < Math.ceil(this.client.registry.groups.size / 10); i++) {
+            for (let i = 0; i < Math.ceil(this.client.registry.groups.size / 10 - 1); i++) {
                 let embed = createEmbed({
                     title: `Ashlyn: Commands`,
                     description: `Page ${i + 1} of commands.`
