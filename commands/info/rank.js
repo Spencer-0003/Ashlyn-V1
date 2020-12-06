@@ -37,7 +37,7 @@ module.exports = class ServerCommand extends Command {
         } else {
             let embed = createEmbed({
                 title: "Ashlyn: Rank",
-                description: `<@${user.id}> is rank ${user.level}`
+                description: `<@${user.id}> is rank ${resolvedUser.level}`
             });
 
             return message.embed(embed);
