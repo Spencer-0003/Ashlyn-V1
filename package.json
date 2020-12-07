@@ -41,5 +41,8 @@
     "@utils": "utils",
     "@structures": "structures",
     "@events": "events"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0"
   }
 }
