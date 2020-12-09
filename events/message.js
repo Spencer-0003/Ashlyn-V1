@@ -4,6 +4,8 @@ const createEmbed = require("@utils/CreateEmbed");
 const getCollection = require("@utils/GetCollection");
 Levels.setURL(mongo_url);
 
+const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.com\/invite|discord\.com\/invite)\/.+[a-z]/gi;
+
 function isAdvertisement(guild, invite) {
     guild.fetchInvites().then(invites => {
         for (let v of invites) {
@@ -20,7 +22,7 @@ module.exports = async (client, message) => {
     if (!message.guild || message.author.bot) return;
     if (message.partial) await message.fetch();
 
-    if (message.content.includes("discord.gg/")) {
+    if (regex.exec(message.content)) {
         getCollection(mongo_db, "Auto Moderation", async function(collection, _client) {
             let guildData = await collection.findOne({ GuildID: message.guild.id });
 
