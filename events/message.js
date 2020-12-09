@@ -25,7 +25,12 @@ module.exports = async (client, message) => {
 
             if (guildData && guildData.NoInvites) {
                 if (isAdvertisement(message.guild, message.content.split("discord.gg/")[1])) {
-                    message.delete();
+                    try {
+                        message.delete();
+                    } catch {
+                        message.say("Failed to delete message.");
+                    };
+
                     let embed = createEmbed({
                         title: "Ashlyn: Moderation",
                         description: "No outside invites!"
