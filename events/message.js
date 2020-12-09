@@ -18,9 +18,9 @@ function isAdvertisement(guild, invite) {
 
 module.exports = async (client, message) => {
     if (!message.guild || message.author.bot) return;
+    if (message.partial) await message.fetch();
 
     if (message.content.contains("discord.gg/")) {
-
         getCollection(mongo_db, "Auto Moderation", async function(collection, _client) {
             let guildData = await collection.findOne({ GuildID: message.guild.id });
 
