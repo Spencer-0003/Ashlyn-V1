@@ -6,6 +6,7 @@ module.exports = class DeafenCommand extends Command {
         super(client, {
             name: "deafen",
             group: "moderation",
+            memberName: "deafen",
             description: "Deafens the chosen user",
             userPermissions: ["DEAFEN_MEMBERS"],
             clientPermissions: ["DEAFEN_MEMBERS"],
