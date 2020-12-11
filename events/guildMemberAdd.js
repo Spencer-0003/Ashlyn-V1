@@ -17,13 +17,11 @@ module.exports = (client, member) => {
 
                 try {
                     await member.send(embed);
-                } catch {
-                    console.log(`Failed to notify ${member.tag} that they have been flagged as an alt.`);
+                } finally {
+                    member.ban({
+                        reason: "Suspected alt."
+                    });
                 };
-
-                member.ban({
-                    reason: "Suspected alt."
-                });
             };
         };
 
