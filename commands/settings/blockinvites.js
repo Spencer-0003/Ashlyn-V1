@@ -14,7 +14,7 @@ module.exports = class BlockInvitesCommand extends Command {
                 {
                     key: "value",
                     prompt: "True or false?",
-                    type: "boolean",
+                    type: "string",
                     oneOf: ["true", "false"],
                 }
             ]
@@ -30,9 +30,9 @@ module.exports = class BlockInvitesCommand extends Command {
             let guildData = await collection.findOne({ GuildID: message.guild.id });
 
             if (!guildData) {
-                await collection.insertOne({ GuildID: message.guild.id, Blocked: value });
+                await collection.insertOne({ GuildID: message.guild.id, NoInvites: value });
             } else {
-                await collection.updateOne(guildData, { $set: { GuildID: message.guild.id, Blocked: value.id } });
+                await collection.updateOne(guildData, { $set: { GuildID: message.guild.id, NoInvites: value.id } });
             };
 
             return client.close();

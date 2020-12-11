@@ -27,7 +27,7 @@ module.exports = async (client, message) => {
         getCollection(mongo_db, "Auto Moderation", async function(collection, _client) {
             let guildData = await collection.findOne({ GuildID: message.guild.id });
 
-            if (guildData && guildData.NoInvites) {
+            if (guildData && guildData.NoInvites == "true") {
                 if (isAdvertisement(message.guild, message.content.split("discord.gg/")[1])) {
                     try {
                         message.delete();
