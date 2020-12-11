@@ -7,15 +7,17 @@ Levels.setURL(mongo_url);
 const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.com\/invite|discord\.com\/invite)\/.+[a-z]/gi;
 
 function isAdvertisement(guild, invite) {
+    let res = true;
+
     guild.fetchInvites().then(invites => {
         for (let v of invites) {
             if (invite === v[0]) {
-                return false;
+                res = false;
             };
         };
-
-        return true;
     });
+
+    return res;
 };
 
 module.exports = async (client, message) => {
@@ -24,11 +26,12 @@ module.exports = async (client, message) => {
 
     if (regex.exec(message.content)) {
         console.log("Invite found!");
+        console.log(message.content.split("discord.gg/")[1]);
         getCollection(mongo_db, "Auto Moderation", async function(collection, _client) {
             let guildData = await collection.findOne({ GuildID: message.guild.id });
 
             if (guildData && guildData.NoInvites == "true") {
-                if (isAdvertisement(message.guild, message.content.split("discord.gg/")[1])) {
+                if (await isAdvertisement(message.guild, message.content.split("discord.gg/")[1])) {
                     try {
                         message.delete();
                     } catch {
