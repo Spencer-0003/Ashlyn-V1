@@ -16,7 +16,7 @@ module.exports = (client, member) => {
                 });
 
                 try {
-                    await member.send.try(embed);
+                    await member.send(embed);
                 } catch {
                     console.log(`Failed to notify ${member.tag} that they have been flagged as an alt.`);
                 };
