@@ -36,7 +36,6 @@ client.registry
         ["nsfw_roleplay", "🥵 Roleplay (NSFW)"],
         ["search", "🔍 Search"],
         ["settings", "⚙️ Settings"],
-        ["utility", "🔦 Utility"]
         // ["owner", "👑 Owner"]
     ])
     .registerDefaultGroups()
@@ -49,6 +48,8 @@ client.registry
         unknownCommand: false
     })
     .registerCommandsIn(path.join(__dirname, "commands"));
+
+client.registry.findGroups("util")[0].name = "🔦 Utility";
 
 // Set Provider
 
