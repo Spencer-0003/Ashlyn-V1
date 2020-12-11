@@ -2,14 +2,14 @@ const { mongo_db } = process.env;
 const Command = require("@structures/Command");
 const getCollection = require("@utils/GetCollection");
 
-module.exports = class BlockInvitesCommand extends Command {
+module.exports = class BlockAltsCommand extends Command {
     constructor(client) {
         super(client, {
-            name: "blockinvites",
+            name: "blockalts",
             group: "settings",
-            memberName: "blockinvites",
+            memberName: "blockalts",
             guildOnly: true,
-            description: "Allows you to block advertising of servers.",
+            description: "Allows you to block alt accounts from this server.",
             args: [
                 {
                     key: "value",
@@ -30,9 +30,9 @@ module.exports = class BlockInvitesCommand extends Command {
             let guildData = await collection.findOne({ GuildID: message.guild.id });
 
             if (!guildData) {
-                await collection.insertOne({ GuildID: message.guild.id, NoInvites: value });
+                await collection.insertOne({ GuildID: message.guild.id, NoInvites: "false", NoAlts: value });
             } else {
-                await collection.updateOne(guildData, { $set: { GuildID: message.guild.id, NoInvites: value } });
+                await collection.updateOne(guildData, { $set: { GuildID: message.guild.id, NoInvites: guildData.NoInvites.Value, NoAlts: value } });
             };
 
             return client.close();
