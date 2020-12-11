@@ -12,7 +12,7 @@ module.exports = (client, member) => {
             if (member.user.createdAt < "259200000") {
                 let embed = createEmbed({
                     title: "Ashlyn: Moderation",
-                    description: `You have been flagged as an alt and have been auto banned. DM ${member.guild.owner.tag} to appeal`
+                    description: `You have been flagged as an alt and have been auto banned. DM ${member.guild.owner.tag} to appeal.`
                 });
 
                 try {
