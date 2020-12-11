@@ -25,8 +25,6 @@ module.exports = async (client, message) => {
     if (message.partial) await message.fetch();
 
     if (regex.exec(message.content)) {
-        console.log("Invite found!");
-        console.log(message.content.split("discord.gg/")[1]);
         getCollection(mongo_db, "Auto Moderation", async function(collection, _client) {
             let guildData = await collection.findOne({ GuildID: message.guild.id });
 
