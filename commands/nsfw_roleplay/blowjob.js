@@ -33,9 +33,11 @@ module.exports = class BlowJobComamnd extends Command {
     };
 
     run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.NSFW_ROLEPLAY;
+
         if (user == message.author) {
             let embed = createEmbed({
-                description: `${user.username} is craving a blowjob`,
+                description: translations.SOLO_BLOWJOB.format(user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });

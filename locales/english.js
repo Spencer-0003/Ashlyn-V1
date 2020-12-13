@@ -112,5 +112,9 @@ module.exports = {
             STOPPED: "I have stopped the music.",
             SET_VOLUME: "I have set the volume to"
         },
+
+        NSFW_ROLEPLAY: {
+            SOLO_BLOWJOB: "{user} is craving a blowjob"
+        },
     }
 };
