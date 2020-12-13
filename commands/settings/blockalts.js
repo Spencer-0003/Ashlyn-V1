@@ -22,8 +22,10 @@ module.exports = class BlockAltsCommand extends Command {
     };
 
     async run(message, { value }) {
+        let translations = this.client.getServerLocale(message.guild.id);
+
         if(!message.member.hasPermission("ADMINISTRATOR") && !this.client.isOwner(message.author)) {
-            return message.reply("Only administrators may change the bot's settings.");
+            return message.reply(translations.GLOBAL.ADMIN_ONLY);
         };
 
         getCollection(mongo_db, "Auto Moderation", async function(collection, client) {

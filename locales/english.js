@@ -2,10 +2,13 @@ module.exports = {
     GLOBAL: {
         YES: "Yes",
         NO: "No",
-        ADMIN_ONLY: "Only administrators may change the command prefix."
+        ADMIN_ONLY: "Only administrators may change the command prefix.",
+        OWNER_ONLY: "Only the bot owner, Spencer#0003, may perform this action."
     },
 
     COMMANDS: {
+        PREFIX: "Set the command prefix to {0}. To run commands, use, {1}",
+
         MAGIC_8_BALL: {
             YES: "Yes.",
             NO: "No.",
