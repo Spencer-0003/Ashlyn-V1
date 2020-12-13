@@ -1,6 +1,5 @@
 const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
-const getServerLocale = require("@utils/GetServerLocale");
 
 const { google_api_key } = process.env;
 
@@ -44,7 +43,7 @@ module.exports = class PlayCommand extends Command {
     };
 
     async run(message) {
-        let translations = getServerLocale(message.guild).COMMANDS.MUSIC;
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.MUSIC;
         let embedTitle = `Ashlyn: ${translations.TITLE}`;
 
         let queue = this.client.queue;

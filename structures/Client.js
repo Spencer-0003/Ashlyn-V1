@@ -1,4 +1,5 @@
 const { CommandoClient } = require("discord.js-commando");
+const getServerLocale = require("@utils/GetServerLocale");
 
 module.exports = class AshlynClient extends CommandoClient {
     constructor(options) {
@@ -6,5 +7,6 @@ module.exports = class AshlynClient extends CommandoClient {
 
         this.queue = new Map();
         this.games = new Map();
+        this.getServerLocale = getServerLocale;
     };
 };
