@@ -23,12 +23,14 @@ module.exports = class ClearCommand extends Command {
     };
 
     run(message, { amount }) {
-        amount++;
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
 
+        amount++;
         if (amount <= 1 || amount > 100) {
             let embed = createEmbed({
-                title: "Ashlyn: Moderation",
-                description: `Invalid amount of messages`
+                title: embedTitle,
+                description: translations.INVALID_AMOUNT
             });
 
             return message.embed(embed);
@@ -36,8 +38,8 @@ module.exports = class ClearCommand extends Command {
 
         message.channel.bulkDelete(amount).then(() => {
             let embed = createEmbed({
-                title: "Ashlyn: Moderation",
-                description: `Successfully deleted  ${(amount - 1).toString()} messages.`
+                title: embedTitle,
+                description: translations.CLEARED_MESSAGES.format((amount - 1).toString())
             });
 
             return message.embed(embed);

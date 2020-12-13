@@ -27,16 +27,19 @@ module.exports = class BanCommand extends Command {
     };
 
     async run(message, { user, banReason }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let embed = createEmbed({
-            title: "Ashlyn: Moderation",
-            description: `You have been banned from ${message.guild.name} for "${banReason}"`,
-            message: [{ name: "Moderator", value: `<@${message.author.id}>` }]
+            title: embedTitle,
+            description: translations.DM_BAN_MESSAGE.format(user, banReason),
+            message: [{ name: translations.MODERATOR, value: `<@${message.author.id}>` }]
         });
 
         if (user === message.author) {
             let errorEmbed = createEmbed({
-                title: "Ashlyn: Moderation",
-                description: `You can't ban yourself.`,
+                title: embedTitle,
+                description: translations.SELF_BAN,
             });
 
             return message.say(errorEmbed);
@@ -45,7 +48,7 @@ module.exports = class BanCommand extends Command {
         try {
             await user.send(embed);
         } catch {
-            message.say("Failed to DM this user.");
+            message.say(translations.DM_FAIL);
         };
 
         message.guild.member(user).ban({
@@ -53,8 +56,8 @@ module.exports = class BanCommand extends Command {
         });
 
         let banEmbed = createEmbed({
-            title: "Ashlyn: Moderation",
-            description: `I have banned ${user} for "${banReason}"`,
+            title: embedTitle,
+            description: translations.BAN_MESSAGE.format(user, banReason),
             message: [{ name: "Moderator", value: `<@${message.author.id}>` }]
         });
 

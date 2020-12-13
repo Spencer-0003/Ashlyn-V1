@@ -63,6 +63,23 @@ module.exports = {
             NONE: "None"
         },
 
+        MODERATION: {
+            TITLE: "Moderation",
+            MODERATOR: "Moderator",
+            SELF_BAN: "You can't ban yourself.",
+            SELF_DEAFEN: "You can't deafen yourself.",
+            SELF_KICK: "You can't kick yourself.",
+            DM_FAIL: "Failed to DM this user.",
+            DM_BAN_MESSAGE: "You have been banned from {server} for {reason}",
+            DM_KICK_MESSAGE: "You have been kicked from {server} for {reason}",
+            BAN_MESSAGE: "I have banned {user} for {reason}",
+            KICK_MESSAGE: "I have kicked {user} for {reason}",
+            INVALID_AMOUNT: "Invalid amount of messages",
+            CLEARED_MESSAGES: "Successfully deleted {amount} messages.",
+            ALREADY_DEAFENED: "This user is already deafened.",
+            SUCCESSFULLY_DEAFENED: "I have deafened <@{user}>."
+        },
+
         MUSIC: {
             TITLE: "Music",
             NO_SONG: "No song specified.",

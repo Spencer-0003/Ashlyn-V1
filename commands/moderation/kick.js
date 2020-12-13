@@ -27,16 +27,19 @@ module.exports = class KickCommand extends Command {
     };
 
     async run(message, { user, kickReason }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let embed = createEmbed({
-            title: "Ashlyn: Moderation",
-            description: `You have been kicked from ${message.guild.name} for "${kickReason}"`,
-            message: [{ name: "Moderator", value: `<@${message.author.id}>` }]
+            title: embedTitle,
+            description: translations.DM_BAN_MESSAGE.format(user, kickReason),
+            message: [{ name: translations.MODERATOR, value: `<@${message.author.id}>` }]
         });
 
         if (user === message.author) {
             let errorEmbed = createEmbed({
-                title: "Ashlyn: Moderation",
-                description: `You can't kick yourself.`,
+                title: embedTitle,
+                description: translations.SELF_KICK,
             });
 
             return message.say(errorEmbed);
@@ -45,13 +48,13 @@ module.exports = class KickCommand extends Command {
         try {
             await user.send(embed);
         } catch {
-            message.say("Failed to DM this user.");
+            message.say(translations.DM_FAIL);
         };
 
         let kickEmbed = createEmbed({
-            title: "Ashlyn: Moderation",
-            description: `I have kicked ${user} for "${kickReason}"`,
-            message: [{ name: "Moderator", value: `<@${message.author.id}>` }]
+            title: embedTitle,
+            description: translations.KICK_MESSAGE.format(user, kickReason),
+            message: [{ name: translations.MODERATOR, value: `<@${message.author.id}>` }]
         });
 
         message.guild.member(user).kick({
