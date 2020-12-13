@@ -1,7 +1,8 @@
 module.exports = {
     GLOBAL: {
         YES: "Yes",
-        NO: "No"
+        NO: "No",
+        ADMIN_ONLY: "Only administrators may change the command prefix."
     },
 
     COMMANDS: {

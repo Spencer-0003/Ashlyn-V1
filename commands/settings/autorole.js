@@ -23,8 +23,10 @@ module.exports = class AutoRoleCommand extends Command {
     };
 
     async run(message, { role }) {
+        let translations = this.client.getServerLocale(message.guild.id).GLOBAL;
+
         if(!message.member.hasPermission("ADMINISTRATOR") && !this.client.isOwner(message.author)) {
-            return message.reply("Only administrators may change the command prefix.");
+            return message.reply(translations.ADMIN_ONLY);
         };
 
         getCollection(mongo_db, "Auto Roles", async function(collection, client) {
