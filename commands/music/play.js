@@ -1,5 +1,6 @@
 const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
+const getServerLocale = require("@utils/GetServerLocale");
 
 const { google_api_key } = process.env;
 
@@ -43,6 +44,8 @@ module.exports = class PlayCommand extends Command {
     };
 
     async run(message) {
+        let embedTitle = `Ashlyn: ${getServerLocale().COMMANDS.MUSIC}`;
+
         let queue = this.client.queue;
         let voiceChannel = message.member.voice.channel;
         let searchString = message.content.split(/\s+/g).slice(1).join(" ");
@@ -56,7 +59,7 @@ module.exports = class PlayCommand extends Command {
 
         if (searchString == "") {
             let embed = createEmbed({
-                title: "Ashlyn: Music",
+                title: embedTitle,
                 description: "No song specified."
             });
 
@@ -79,7 +82,7 @@ module.exports = class PlayCommand extends Command {
                     video = videos[0];
                 } catch {
                     let embed = createEmbed({
-                        title: "Ashlyn: Music",
+                        title: embedTitle,
                         description: "Video not found."
                     });
 
@@ -90,7 +93,7 @@ module.exports = class PlayCommand extends Command {
 
         if (!voiceChannel || this.client.queue.get(message.guild.id) && this.client.queue.get(message.guild.id).voiceChannel !== voiceChannel) {
             let embed = createEmbed({
-                title: "Ashlyn: Music",
+                title: embedTitle,
                 description: "You are not in the voice channel."
             });
 
@@ -101,7 +104,7 @@ module.exports = class PlayCommand extends Command {
 
         if (!permissions.has("CONNECT")) {
             let embed = createEmbed({
-                title: "Ashlyn: Music",
+                title: embedTitle,
                 description: "I don't have permission to join the voice channel."
             });
 
@@ -110,7 +113,7 @@ module.exports = class PlayCommand extends Command {
 
         if (!permissions.has("SPEAK")) {
             let embed = createEmbed({
-                title: "Ashlyn: Music",
+                title: embedTitle,
                 description: "I don't have permission to speak in the voice channel."
             });
 

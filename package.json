@@ -41,7 +41,8 @@
   "_moduleAliases": {
     "@utils": "utils",
     "@structures": "structures",
-    "@events": "events"
+    "@events": "events",
+    "@locales": "locales"
   },
   "devDependencies": {
     "eslint": "^7.15.0"
