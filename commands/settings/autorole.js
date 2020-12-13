@@ -23,10 +23,10 @@ module.exports = class AutoRoleCommand extends Command {
     };
 
     async run(message, { role }) {
-        let translations = this.client.getServerLocale(message.guild.id).GLOBAL;
+        let translations = this.client.getServerLocale(message.guild.id);
 
         if(!message.member.hasPermission("ADMINISTRATOR") && !this.client.isOwner(message.author)) {
-            return message.reply(translations.ADMIN_ONLY);
+            return message.reply(translations.GLOBAL.ADMIN_ONLY);
         };
 
         getCollection(mongo_db, "Auto Roles", async function(collection, client) {
@@ -42,8 +42,8 @@ module.exports = class AutoRoleCommand extends Command {
         });
 
         let embed = createEmbed({
-            title: "Ashlyn: Auto Role",
-            description: `The auto role has been set to ${role}`
+            title: `Ashlyn: ${translations.COMMANDS.AUTO_ROLE.TITLE}`,
+            description: translations.COMMANDS.AUTO_ROLE.CONFIRMATION_MESSAGE
         });
 
         return message.say(embed);

@@ -49,6 +49,11 @@ module.exports = {
             MEMBERS: "Members"
         },
 
+        AUTO_ROLE: {
+            TITLE: "Auto Role",
+            CONFIRMATION_MESSAGE: "The auto role has been set to {0}"
+        },
+
         UPTIME: {
             TITLE: "Uptime",
             CURRENT_UPTIME: "My uptime is"
