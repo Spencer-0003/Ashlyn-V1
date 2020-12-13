@@ -2,10 +2,10 @@ const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
 const getRoleplayImage = require("@utils/Roleplay/GetNSFWRoleplayImage");
 
-function getBlowJobText(author, user) {
+function getBlowJobText(translations, author, user) {
     let blowjobs = [
-        `${author} wants to swallow ${user}`,
-        `${author} swallowed ${user}'s hot load`,
+        translations.MESSAGE_ONE.format(author, user),
+        translations.MESSAGE_TWO.format(author, user),
     ];
 
     return blowjobs[Math.floor(Math.random() * blowjobs.length)];
@@ -33,11 +33,11 @@ module.exports = class BlowJobComamnd extends Command {
     };
 
     run(message, { user }) {
-        let translations = this.client.getServerLocale(message.guild).COMMANDS.NSFW_ROLEPLAY;
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.NSFW_ROLEPLAY.BLOWJOB_MESSAGES;
 
         if (user == message.author) {
             let embed = createEmbed({
-                description: translations.SOLO_BLOWJOB.format(user.username),
+                description: translations.SOLO.format(user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });
@@ -45,7 +45,7 @@ module.exports = class BlowJobComamnd extends Command {
             return message.embed(embed);
         } else {
             let embed = createEmbed({
-                description: getBlowJobText(message.author.username, user.username),
+                description: getBlowJobText(translations, message.author.username, user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });

@@ -114,7 +114,11 @@ module.exports = {
         },
 
         NSFW_ROLEPLAY: {
-            SOLO_BLOWJOB: "{0} is craving a blowjob"
+            BLOWJOB: {
+                SOLO: "{0} is craving a blowjob",
+                MESSAGE_ONE: "{0} wants to swallow {1}",
+                MESSAGE_TWO: "{0} swallowed {1}'s hot load"
+            },
         },
-    }
+    },
 };
