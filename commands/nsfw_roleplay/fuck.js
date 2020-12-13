@@ -37,7 +37,7 @@ module.exports = class FuckCommand extends Command {
 
         if (user == message.author) {
             let embed = createEmbed({
-                description: `${user.username} wants to fuck`,
+                description: translations.SOLO.format(user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });

@@ -125,6 +125,13 @@ module.exports = {
                 MESSAGE_ONE: "{0} wants to fuck {1}",
                 MESSAGE_TWO: "{0} wants to bang {1}"
             },
+
+            SPANK: {
+                SOLO: "{0} wants to get spanked",
+                MESSAGE_ONE: "{0} wants {1} to be spanked by {0}",
+                MESSAGE_TWO: "{0} wants {1} to spank them",
+                MESSAGE_THREE: "{0} has been naughty and needs {1} to teach them a lesson"
+            }
         },
     },
 };

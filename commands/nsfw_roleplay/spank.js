@@ -2,11 +2,11 @@ const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
 const getRoleplayImage = require("@utils/Roleplay/GetNSFWRoleplayImage");
 
-function getSpankText(author, user) {
+function getSpankText(translations, author, user) {
     let spanks = [
-        `${author} wants to be spanked by ${user}`,
-        `${author} wants ${user} to spank them`,
-        `${author} has been naughty and ${user} needs to teach them a lesson`
+        translations.MESSAGE_ONE.format(author, user),
+        translations.MESSAGE_TWO.format(author, user),
+        translations.MESSAGE_THREE.format(author, user)
     ];
 
     return spanks[Math.floor(Math.random() * spanks.length)];
@@ -33,9 +33,11 @@ module.exports = class SpankComamnd extends Command {
     };
 
     run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.NSFW_ROLEPLAY.BLOWJOB;
+
         if (user == message.author) {
             let embed = createEmbed({
-                description: `${user.username} wants to get spanked`,
+                description: translations.SOLO.format(user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });
@@ -43,7 +45,7 @@ module.exports = class SpankComamnd extends Command {
             return message.embed(embed);
         } else {
             let embed = createEmbed({
-                description: getSpankText(message.author.username, user.username),
+                description: getSpankText(translations, message.author.username, user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });
