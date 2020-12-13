@@ -2,10 +2,10 @@ const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
 const getRoleplayImage = require("@utils/Roleplay/GetRoleplayImage");
 
-let getCuddleText = (author, user) => {
+let getCuddleText = (translations, author, user) => {
     let cuddles = [
-        `${author} is embracing ${user} for cuddles`,
-        `${author} is cuddling ${user}`
+        translations.MESSAGE_ONE.format(author, user),
+        translations.MESSAGE_TWO.format(author, user),
     ];
 
     return cuddles[Math.floor(Math.random() * cuddles.length)];
@@ -31,9 +31,11 @@ module.exports = class CuddleCommand extends Command {
     };
 
     run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.ROLEPLAY.CUDDLE;
+
         if (user == message.author) {
             let embed = createEmbed({
-                description: `${user.username} wants to cuddle`,
+                description: translations.SOLO.format(user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });
@@ -41,7 +43,7 @@ module.exports = class CuddleCommand extends Command {
             return message.embed(embed);
         } else {
             let embed = createEmbed({
-                description: getCuddleText(message.author.username, user.username),
+                description: getCuddleText(translations, message.author.username, user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });

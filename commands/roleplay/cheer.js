@@ -2,10 +2,10 @@ const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
 const getRoleplayImage = require("@utils/Roleplay/GetRoleplayImage");
 
-let getCheerText = (author, user) => {
+let getCheerText = (translations, author, user) => {
     let cheers = [
-        `${author} is cheering for ${user}`,
-        `${author} is cheering ${user} on`
+        translations.MESSAGE_ONE.format(author, user),
+        translations.MESSAGE_TWO.format(author, user),
     ];
 
     return cheers[Math.floor(Math.random() * cheers.length)];
@@ -31,9 +31,11 @@ module.exports = class CheerCommand extends Command {
     };
 
     run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.ROLEPLAY.CHEER;
+
         if (user == message.author) {
             let embed = createEmbed({
-                description: `${user.username} is cheering`,
+                description: translations.SOLO.format(user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });
@@ -41,7 +43,7 @@ module.exports = class CheerCommand extends Command {
             return message.embed(embed);
         } else {
             let embed = createEmbed({
-                description: getCheerText(message.author.username, user.username),
+                description: getCheerText(translations, message.author.username, user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });

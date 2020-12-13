@@ -130,15 +130,20 @@ module.exports = {
             },
 
             CHEER: {
-                SOLO: "",
+                SOLO: "{0} is cheering",
+                MESSAGE_ONE: "{0} is cheering for {1}",
+                MESSAGE_TWO: "{0} is cheering {1} on"
             },
 
             CUDDLE: {
-                SOLO: "",
+                SOLO: "{0} wants to cuddle",
+                MESSAGE_ONE: "{0} is embracing {1} for cuddles",
+                MESSAGE_TWO: "{0} is cuddling {1}"
             },
 
             DANCE: {
-                SOLO: "",
+                SOLO: "{0} is dancing",
+                TOGETHER: "{0} wants to dance with {1}",
             }
         },
 

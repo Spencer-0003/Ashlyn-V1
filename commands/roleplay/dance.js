@@ -22,9 +22,11 @@ module.exports = class DanceComamnd extends Command {
     };
 
     run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.ROLEPLAY.DANCE;
+
         if (user == message.author) {
             let embed = createEmbed({
-                description: `${user.username} is dancing`,
+                description: translations.SOLO.format(user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });
@@ -32,7 +34,7 @@ module.exports = class DanceComamnd extends Command {
             return message.embed(embed);
         } else {
             let embed = createEmbed({
-                description: `${message.author.username} wants to dance with ${user.username}`,
+                description: translations.TOGETHER.format(message.author.username, user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });
