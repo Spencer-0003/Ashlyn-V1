@@ -1,5 +1,5 @@
 module.exports = {
-    COMAMNDS: {
+    COMMANDS: {
         MUSIC: {
             TITLE: "Music",
             NO_SONG: "No song specified.",
