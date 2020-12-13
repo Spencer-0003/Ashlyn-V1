@@ -51,7 +51,7 @@ module.exports = class PrefixCommand extends Command {
         let prefix = args.prefix;
         if(message.guild) message.guild.commandPrefix = prefix; else this.client.commandPrefix = prefix;
 
-        await message.reply(translations.COMMANDS.PREFIX.format(`\`\`${prefix} COMMAND\`\``));
+        await message.reply(translations.COMMANDS.PREFIX.format(prefix, message.anyUsage("command")));
         return null;
     };
 };
