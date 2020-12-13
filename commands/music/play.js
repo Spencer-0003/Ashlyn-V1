@@ -84,7 +84,7 @@ module.exports = class PlayCommand extends Command {
                 } catch {
                     let embed = createEmbed({
                         title: embedTitle,
-                        description: "Video not found."
+                        description: translations.VIDEO_NOT_FOUND
                     });
 
                     return message.embed(embed);

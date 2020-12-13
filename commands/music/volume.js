@@ -1,5 +1,6 @@
 const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
+const getServerLocale = require("@utils/GetServerLocale");
 
 module.exports = class VolumeCommand extends Command {
     constructor(client) {
@@ -20,14 +21,17 @@ module.exports = class VolumeCommand extends Command {
     };
 
     run(message, { vol }) {
+        let translations = getServerLocale(message.guild).COMMANDS.MUSIC;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
         let voiceChannel = message.member.voice.channel;
 
         if (!serverQueue) {
             let embed = createEmbed({
-                title: "Ashlyn: Music",
-                description: "No music is currently playing."
+                title: embedTitle,
+                description: translations.NO_SONG
             });
 
             return message.embed(embed);
@@ -35,8 +39,8 @@ module.exports = class VolumeCommand extends Command {
 
         if (voiceChannel !== serverQueue.voiceChannel) {
             let embed = createEmbed({
-                title: "Ashlyn: Music",
-                description: "You are not in the voice channel."
+                title: embedTitle,
+                description: translations.NOT_IN_VOICE
             });
 
             return message.embed(embed);
@@ -47,7 +51,7 @@ module.exports = class VolumeCommand extends Command {
 
         let embed = createEmbed({
             title: "Ashlyn: Music",
-            description: `I have set the volume ${vol}.`
+            description: `${translations.SET_VOLUME} ${vol}.`
         });
 
         return message.embed(embed);

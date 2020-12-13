@@ -1,5 +1,6 @@
 const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
+const getServerLocale = require("@utils/GetServerLocale");
 
 module.exports = class PlayingCommand extends Command {
     constructor(client) {
@@ -13,20 +14,23 @@ module.exports = class PlayingCommand extends Command {
     };
 
     run(message) {
+        let translations = getServerLocale(message.guild).COMMANDS.MUSIC;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
 
         if (!serverQueue) {
             let embed = createEmbed({
-                title: "Ashlyn: Music",
-                description: "No song is currently playing."
+                title: embedTitle,
+                description: translations.NO_SONG
             });
 
             return message.embed(embed);
         };
 
         let embed = createEmbed({
-            title: "Ashlyn: Music",
+            title: embedTitle,
             description: `[${serverQueue.songs[0].title}](${serverQueue.songs[0].url})`
         });
 
