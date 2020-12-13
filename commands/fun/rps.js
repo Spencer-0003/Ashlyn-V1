@@ -21,13 +21,16 @@ module.exports = class RockPaperScissorsCommand extends Command {
     };
 
     run(message, { choice }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.ROCK_PAPER_SCISSORS;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let options = ["rock", "paper", "scissors"];
         let result = options[Math.floor((Math.random() * options.length))];
 
         if (result === choice) {
             let embed = createEmbed({
                 title: "Ashlyn: Rock, Paper, Scissors",
-                description: "It's a tie!"
+                description: translations.TIE
             });
 
             return message.embed(embed);
@@ -37,15 +40,15 @@ module.exports = class RockPaperScissorsCommand extends Command {
         case "rock": {
             if (result === "paper") {
                 let embed = createEmbed({
-                    title: "Ashlyn: Rock, Paper, Scissors",
-                    description: "I won!"
+                    title: embedTitle,
+                    description: translations.LOSS
                 });
 
                 return message.embed(embed);
             } else {
                 let embed = createEmbed({
-                    title: "Ashlyn: Rock, Paper, Scissors",
-                    description: "You won!"
+                    title: embedTitle,
+                    description: translations.WIN
                 });
 
                 return message.embed(embed);
@@ -54,15 +57,15 @@ module.exports = class RockPaperScissorsCommand extends Command {
         case "paper": {
             if (result === "scissors") {
                 let embed = createEmbed({
-                    title: "Ashlyn: Rock, Paper, Scissors",
-                    description: "I won!"
+                    title: embedTitle,
+                    description: translations.LOSS
                 });
 
                 return message.embed(embed);
             } else {
                 let embed = createEmbed({
-                    title: "Ashlyn: Rock, Paper, Scissors",
-                    description: "You won!"
+                    title: embedTitle,
+                    description: translations.WIN
                 });
 
                 return message.embed(embed);
@@ -71,15 +74,15 @@ module.exports = class RockPaperScissorsCommand extends Command {
         case "scissors": {
             if (result === "rock") {
                 let embed = createEmbed({
-                    title: "Ashlyn: Rock, Paper, Scissors",
-                    description: "I won!"
+                    title: embedTitle,
+                    description: translations.LOSS
                 });
 
                 return message.embed(embed);
             } else {
                 let embed = createEmbed({
-                    title: "Ashlyn: Rock, Paper, Scissors",
-                    description: "You won!"
+                    title: embedTitle,
+                    description: translations.WIN
                 });
 
                 return message.embed(embed);

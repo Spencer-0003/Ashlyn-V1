@@ -1,8 +1,9 @@
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
-function generateResponse() {
-    let responses = ["Yes.", "No.", "My sources seem to believe so.", "I don't think so.", "It is unlikely."];
+function generateResponse(client, guild) {
+    let translations = client.getServerLocale(guild).COMMANDS.MAGIC_8_BALL;
+    let responses = [translations.YES, translations.NO, translations.SOURCES, translations.DONT_THINK_SO, translations.UNLIKELY];
 
     return responses[Math.floor(Math.random() * responses.length)];
 };
@@ -29,7 +30,7 @@ module.exports = class MagicBallCommand extends Command {
 
         let embed = createEmbed({
             title: question,
-            description: generateResponse(),
+            description: generateResponse(this.client, message.guild),
             thumbnail: "https://magic-8ball.com/assets/images/Our_magic_8_ball.png"
         });
 

@@ -1,5 +1,20 @@
 module.exports = {
     COMMANDS: {
+        MAGIC_8_BALL: {
+            YES: "Yes.",
+            NO: "No.",
+            SOURCES: "My sources seem to believe so.",
+            DONT_THINK_SO: "I don't think so.",
+            UNLIKELY: "It is unlikely."
+        },
+
+        ROCK_PAPER_SCISSORS: {
+            TITLE: "Rock, Paper, Scissors",
+            TIE: "It's a tie!",
+            WIN: "You won!",
+            LOSS: "I won!"
+        },
+
         MUSIC: {
             TITLE: "Music",
             NO_SONG: "No song specified.",
