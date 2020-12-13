@@ -44,7 +44,7 @@ module.exports = class PlayCommand extends Command {
     };
 
     async run(message) {
-        let translations = getServerLocale().COMMANDS.MUSIC;
+        let translations = getServerLocale(message.guild).COMMANDS.MUSIC;
         let embedTitle = `Ashlyn: ${translations.TITLE}`;
 
         let queue = this.client.queue;
