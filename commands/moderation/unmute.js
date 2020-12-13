@@ -22,11 +22,14 @@ module.exports = class UnmuteCommand extends Command {
     };
 
     run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let muteRole = message.guild.roles.cache.find(role => role.name === "Muted");
 
         if (!message.guild.members.cache.get(user.id).roles.cache.has(muteRole.id)) {
             let errorEmbed = createEmbed({
-                title: "Ashlyn: Moderation",
+                title: embedTitle,
                 description: "This user is not muted.",
             });
 
@@ -34,9 +37,9 @@ module.exports = class UnmuteCommand extends Command {
         };
 
         let unmuteEmbed = createEmbed({
-            title: "Ashlyn: Moderation",
-            description: `You have been unmuted in ${message.guild.name}`,
-            message: [{ name: "Moderator", value: `<@${message.author.id}>` }]
+            title: embedTitle,
+            description: translations.DM_UNMUTE_MESSAGE.format(message.guild.name),
+            message: [{ name: translations.MODERATOR, value: `<@${message.author.id}>` }]
         });
 
         if (message.guild.member(user).roles.cache.has(muteRole.id)) {

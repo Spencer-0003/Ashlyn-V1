@@ -33,10 +33,13 @@ module.exports = class MuteCommand extends Command {
     };
 
     async run(message, { user, muteDuration, muteReason }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let embed = createEmbed({
-            title: "Ashlyn: Moderation",
-            description: `You have been muted in ${message.guild.name} for "${muteReason}"`,
-            message: [{ name: "Moderator", value: `<@${message.author.id}>` }]
+            title: embedTitle,
+            description: translations.DM_MUTE_MESSAGE.format(message.guild.name, muteReason),
+            message: [{ name: translations.MODERATOR, value: `<@${message.author.id}>` }]
         });
 
         let muteRole = message.guild.roles.cache.find(role => role.name === "Muted");
@@ -62,8 +65,8 @@ module.exports = class MuteCommand extends Command {
 
         if (user === message.author) {
             let errorEmbed = createEmbed({
-                title: "Ashlyn: Moderation",
-                description: `You can't mute yourself.`,
+                title: embedTitle,
+                description: translations.SELF_MUTE,
             });
 
             return message.say(errorEmbed);
@@ -71,8 +74,8 @@ module.exports = class MuteCommand extends Command {
 
         if (message.guild.member(user).roles.cache.has(muteRole)) {
             let errorEmbed = createEmbed({
-                title: "Ashlyn: Moderation",
-                description: "This user is already muted.",
+                title: embedTitle,
+                description: translations.ALREADY_MUTED,
             });
 
             return message.say(errorEmbed);
@@ -83,14 +86,14 @@ module.exports = class MuteCommand extends Command {
         try {
             await user.send(embed);
         } catch {
-            message.say("Failed to DM this user.");
+            message.say(translations.DM_FAIL);
         };
 
         setTimeout(() => {
             let unmuteEmbed = createEmbed({
-                title: "Ashlyn: Moderation",
-                description: `You have been unmuted in ${message.guild.name}`,
-                message: [{ name: "Moderator", value: `<@${message.author.id}>` }]
+                title: embedTitle,
+                description: translations.DM_UNMUTE_MESSAGE.format(message.guild.name),
+                message: [{ name: translations.MODERATOR, value: `<@${message.author.id}>` }]
             });
 
             if (message.guild.member(user).roles.has(muteRole)) {
@@ -98,7 +101,7 @@ module.exports = class MuteCommand extends Command {
                 try {
                     user.send(unmuteEmbed);
                 } catch {
-                    message.say("Failed to DM this user.");
+                    message.say(translations.DM_FAIL);
                 };
             };
         }, muteDuration * 1000);

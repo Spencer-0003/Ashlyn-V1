@@ -66,18 +66,29 @@ module.exports = {
         MODERATION: {
             TITLE: "Moderation",
             MODERATOR: "Moderator",
+            NICKNAME: "Nickname",
             SELF_BAN: "You can't ban yourself.",
             SELF_DEAFEN: "You can't deafen yourself.",
             SELF_KICK: "You can't kick yourself.",
+            SELF_MUTE: "You can't mute yourself.",
             DM_FAIL: "Failed to DM this user.",
             DM_BAN_MESSAGE: "You have been banned from {server} for {reason}",
             DM_KICK_MESSAGE: "You have been kicked from {server} for {reason}",
+            DM_MUTE_MESSAGE: "You have been muted in {server} for {reason}",
+            DM_UNMUTE_MESSAGE: "You have been unmuted in {server}",
             BAN_MESSAGE: "I have banned {user} for {reason}",
+            UNBAN_MESSAGE: "{user} has been unbanned.",
             KICK_MESSAGE: "I have kicked {user} for {reason}",
             INVALID_AMOUNT: "Invalid amount of messages",
+            NOT_BANNED: "This user is not banned.",
             CLEARED_MESSAGES: "Successfully deleted {amount} messages.",
+            NOT_DEAFENED: "This user is not deafened.",
             ALREADY_DEAFENED: "This user is already deafened.",
-            SUCCESSFULLY_DEAFENED: "I have deafened <@{user}>."
+            SUCCESSFULLY_DEAFENED: "I have deafened <@{user}>.",
+            SUCCESSFULLY_UNDEAFENED: "I have undeafened <@{user}>",
+            ALREADY_MUTED: "This user is already muted.",
+            SET_OWNER_NICKNAME: "I can't set the owner's nickname.",
+            NICKNAME_CHANGE: "<@{user}>'s nickname has been changed to {nickname}"
         },
 
         MUSIC: {

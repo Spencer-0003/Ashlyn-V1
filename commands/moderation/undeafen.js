@@ -22,10 +22,13 @@ module.exports = class UndeafenCommand extends Command {
     };
 
     run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         if (user === message.author) {
             let errorEmbed = createEmbed({
-                title: "Ashlyn: Moderation",
-                description: `You can't deafen yourself.`,
+                title: embedTitle,
+                description: translations.SELF_DEAFEN,
             });
 
             return message.say(errorEmbed);
@@ -33,8 +36,8 @@ module.exports = class UndeafenCommand extends Command {
 
         if (!message.guild.member(user).serverDeaf) {
             let errorEmbed = createEmbed({
-                title: "Ashlyn: Moderation",
-                description: `This user is not deafened.`,
+                title: embedTitle,
+                description: translations.NOT_DEAFENED,
             });
 
             return message.say(errorEmbed);
@@ -43,8 +46,8 @@ module.exports = class UndeafenCommand extends Command {
         user.setDeaf(false);
 
         let embed = createEmbed({
-            title: "Ashlyn: Moderation",
-            description: `I have undeafened <@${user.id}>.`,
+            title: embedTitle,
+            description: translations.SUCCESSFULLY_UNDEAFENED.format(user)
         });
 
         return message.say(embed);

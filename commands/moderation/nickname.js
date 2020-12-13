@@ -28,10 +28,13 @@ module.exports = class NicknameCommand extends Command {
     };
 
     run(message, { user, nickname }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
+        let embedTitle = `Ashlyn: ${translations.NICKNAME}`;
+
         if (user.id === message.guild.ownerID) {
             let embed = createEmbed({
-                title: "Ashlyn: Nickname",
-                description: "I can't the owner's nickname."
+                title: embedTitle,
+                description: translations.SET_OWNER_NICKNAME
             });
 
             return message.embed(embed);
@@ -39,8 +42,8 @@ module.exports = class NicknameCommand extends Command {
 
         message.guild.members.cache.get(user.id).setNickname(nickname).then(() => {
             let embed = createEmbed({
-                title: "Ashlyn: Nickname",
-                description: `<@${user.id}>'s nickname has been changed to ${nickname}`
+                title: embedTitle,
+                description: translations.NICKNAME_CHANGE.format(user.id, nickname)
             });
 
             return message.embed(embed);

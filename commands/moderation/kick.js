@@ -32,7 +32,7 @@ module.exports = class KickCommand extends Command {
 
         let embed = createEmbed({
             title: embedTitle,
-            description: translations.DM_BAN_MESSAGE.format(user, kickReason),
+            description: translations.DM_BAN_MESSAGE.format(message.guild.name, kickReason),
             message: [{ name: translations.MODERATOR, value: `<@${message.author.id}>` }]
         });
 

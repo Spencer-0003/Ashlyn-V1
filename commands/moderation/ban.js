@@ -32,7 +32,7 @@ module.exports = class BanCommand extends Command {
 
         let embed = createEmbed({
             title: embedTitle,
-            description: translations.DM_BAN_MESSAGE.format(user, banReason),
+            description: translations.DM_BAN_MESSAGE.format(message.guild.name, banReason),
             message: [{ name: translations.MODERATOR, value: `<@${message.author.id}>` }]
         });
 
@@ -58,7 +58,7 @@ module.exports = class BanCommand extends Command {
         let banEmbed = createEmbed({
             title: embedTitle,
             description: translations.BAN_MESSAGE.format(user, banReason),
-            message: [{ name: "Moderator", value: `<@${message.author.id}>` }]
+            message: [{ name: translations.MODERATOR, value: `<@${message.author.id}>` }]
         });
 
         return message.embed(banEmbed);
