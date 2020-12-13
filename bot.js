@@ -3,6 +3,15 @@
 const oldLog = console.log;
 console.log = (...args) => oldLog("[Ashlyn]", ...args);
 
+// Add string.format
+
+String.prototype.format = function() {
+    let args = arguments;
+    return this.replace(/{(\d+)}/g, function(match, number) {
+        return typeof args[number] != "undefined" ? args[number] : match;
+    });
+};
+
 // Load Modules
 
 require("module-alias/register");

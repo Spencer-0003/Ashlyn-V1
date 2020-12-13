@@ -72,23 +72,23 @@ module.exports = {
             SELF_KICK: "You can't kick yourself.",
             SELF_MUTE: "You can't mute yourself.",
             DM_FAIL: "Failed to DM this user.",
-            DM_BAN_MESSAGE: "You have been banned from {server} for {reason}",
-            DM_KICK_MESSAGE: "You have been kicked from {server} for {reason}",
-            DM_MUTE_MESSAGE: "You have been muted in {server} for {reason}",
-            DM_UNMUTE_MESSAGE: "You have been unmuted in {server}",
-            BAN_MESSAGE: "I have banned {user} for {reason}",
-            UNBAN_MESSAGE: "{user} has been unbanned.",
-            KICK_MESSAGE: "I have kicked {user} for {reason}",
+            DM_BAN_MESSAGE: "You have been banned from {0} for {1}",
+            DM_KICK_MESSAGE: "You have been kicked from {0} for {1}",
+            DM_MUTE_MESSAGE: "You have been muted in {0} for {1}",
+            DM_UNMUTE_MESSAGE: "You have been unmuted in {0}",
+            BAN_MESSAGE: "I have banned {0} for {1}",
+            UNBAN_MESSAGE: "{0} has been unbanned.",
+            KICK_MESSAGE: "I have kicked {0} for {1}",
             INVALID_AMOUNT: "Invalid amount of messages",
             NOT_BANNED: "This user is not banned.",
             CLEARED_MESSAGES: "Successfully deleted {amount} messages.",
             NOT_DEAFENED: "This user is not deafened.",
             ALREADY_DEAFENED: "This user is already deafened.",
-            SUCCESSFULLY_DEAFENED: "I have deafened <@{user}>.",
-            SUCCESSFULLY_UNDEAFENED: "I have undeafened <@{user}>",
+            SUCCESSFULLY_DEAFENED: "I have deafened <@{0}>.",
+            SUCCESSFULLY_UNDEAFENED: "I have undeafened <@{0}>",
             ALREADY_MUTED: "This user is already muted.",
             SET_OWNER_NICKNAME: "I can't set the owner's nickname.",
-            NICKNAME_CHANGE: "<@{user}>'s nickname has been changed to {nickname}"
+            NICKNAME_CHANGE: "<@{0}>'s nickname has been changed to {1}"
         },
 
         MUSIC: {
@@ -114,7 +114,7 @@ module.exports = {
         },
 
         NSFW_ROLEPLAY: {
-            SOLO_BLOWJOB: "{user} is craving a blowjob"
+            SOLO_BLOWJOB: "{0} is craving a blowjob"
         },
     }
 };
