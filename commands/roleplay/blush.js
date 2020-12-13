@@ -2,10 +2,10 @@ const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
 const getRoleplayImage = require("@utils/Roleplay/GetRoleplayImage");
 
-let getBlushText = (author, user) => {
+let getBlushText = (translations, author, user) => {
     let blushes = [
-        `${author} turned red because of ${user}`,
-        `${user} made ${author} turn red`
+        translations.MESSAGE_ONE.format(author, user),
+        translations.MESSAGE_TWO.format(user, author)
     ];
 
     return blushes[Math.floor(Math.random() * blushes.length)];
@@ -31,9 +31,11 @@ module.exports = class BlushCommand extends Command {
     };
 
     run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.ROLEPLAY.BLUSH;
+
         if (user == message.author) {
             let embed = createEmbed({
-                description: `${user.username} is blushing`,
+                description: translations.SOLO.format(user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });
@@ -41,7 +43,7 @@ module.exports = class BlushCommand extends Command {
             return message.embed(embed);
         } else {
             let embed = createEmbed({
-                description: getBlushText(message.author.username, user.username),
+                description: getBlushText(translations, message.author.username, user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });

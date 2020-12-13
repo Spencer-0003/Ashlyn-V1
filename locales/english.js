@@ -7,7 +7,7 @@ module.exports = {
     },
 
     COMMANDS: {
-        PREFIX: "Set the command prefix to {0}. To run commands, use, {1}",
+        PREFIX: "Set the command prefix to {0}. To run commands use, {1}",
 
         MAGIC_8_BALL: {
             YES: "Yes.",
@@ -120,6 +120,26 @@ module.exports = {
             SKIPPED: "Song skipped.",
             STOPPED: "I have stopped the music.",
             SET_VOLUME: "I have set the volume to"
+        },
+
+        ROLEPLAY: {
+            BLUSH: {
+                SOLO: "{0} is blushing",
+                MESSAGE_ONE: "{0} turned red because of {1}",
+                MESSAGE_TWO: "{1} made {0} turn red"
+            },
+
+            CHEER: {
+                SOLO: "",
+            },
+
+            CUDDLE: {
+                SOLO: "",
+            },
+
+            DANCE: {
+                SOLO: "",
+            }
         },
 
         NSFW_ROLEPLAY: {
