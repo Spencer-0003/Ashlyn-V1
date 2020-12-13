@@ -5,7 +5,7 @@
   <strong><i>A multi-purpose Discord Bot.</i></strong>
   <br>
 <a href="https://github.com/Spencer-0003/Ashlyn/blob/master/LICENSE">
-<img src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge" alt="MIT License">
+<img src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge" alt="GPLv3 License">
 </a>
 <a href="https://discord.gg/wfyhsxZ6CV">
     <img src="https://img.shields.io/discord/782275109376360529.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge" alt="Support">
@@ -17,6 +17,9 @@
   <br>
     <a href="https://heroku.com/deploy?template=https://github.com/Spencer-0003/Ashlyn">
     <img src="https://img.shields.io/badge/deploy_to-heroku-997FBC.svg?style=for-the-badge&logo=Heroku">
+  </a>
+  <a href="https://paypal.me/stringbyte">
+  <img  src="https://img.shields.io/badge/Donate-blue.svg?style=for-the-badge&logo=paypal"  alt="Donate">
   </a>
 </div>
 
