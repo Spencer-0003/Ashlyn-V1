@@ -2,10 +2,10 @@ const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
 const getRoleplayImage = require("@utils/Roleplay/GetNSFWRoleplayImage");
 
-function getFuckText(author, user) {
+function getFuckText(translations, author, user) {
     let fucks = [
-        `${author} wants to fuck ${user}`,
-        `${author} wants to bang ${user}`,
+        translations.MESSAGE_ONE.format(author, user),
+        translations.MESSAGE_TWO.format(author, user)
     ];
 
     return fucks[Math.floor(Math.random() * fucks.length)];
@@ -33,6 +33,8 @@ module.exports = class FuckCommand extends Command {
     };
 
     run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.NSFW_ROLEPLAY.FUCK;
+
         if (user == message.author) {
             let embed = createEmbed({
                 description: `${user.username} wants to fuck`,
@@ -43,7 +45,7 @@ module.exports = class FuckCommand extends Command {
             return message.embed(embed);
         } else {
             let embed = createEmbed({
-                description: getFuckText(message.author.username, user.username),
+                description: getFuckText(translations, message.author.username, user.username),
                 thumbnail: false,
                 image: getRoleplayImage(this.name)
             });

@@ -33,7 +33,7 @@ module.exports = class BlowJobComamnd extends Command {
     };
 
     run(message, { user }) {
-        let translations = this.client.getServerLocale(message.guild).COMMANDS.NSFW_ROLEPLAY.BLOWJOB_MESSAGES;
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.NSFW_ROLEPLAY.BLOWJOB;
 
         if (user == message.author) {
             let embed = createEmbed({

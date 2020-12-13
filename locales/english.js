@@ -119,6 +119,12 @@ module.exports = {
                 MESSAGE_ONE: "{0} wants to swallow {1}",
                 MESSAGE_TWO: "{0} swallowed {1}'s hot load"
             },
+
+            FUCK: {
+                SOLO: "{0} wants to fuck",
+                MESSAGE_ONE: "{0} wants to fuck {1}",
+                MESSAGE_TWO: "{0} wants to bang {1}"
+            },
         },
     },
 };
