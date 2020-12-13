@@ -21,10 +21,13 @@ module.exports = class UserCommand extends Command {
     };
 
     async run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.USER;
+        let globalTranslations = this.client.getServerLocale(message.guild).GLOBAL;
+
         let embed = createEmbed({
             author: user.tag,
             thumbnail: user.displayAvatarURL(),
-            message: [{ name: "Joined Discord", value: moment.utc(user.createdAt).format("MM/DD/YYYY h:mm A"), inline: true }, { name: "ID", value: user.id, inline: true }, { name: "Bot", value: user.bot ? "Yes" : "No", inline: true }]
+            message: [{ name: translations.JOINED_DISCORD, value: moment.utc(user.createdAt).format("MM/DD/YYYY h:mm A"), inline: true }, { name: "ID", value: user.id, inline: true }, { name: translations.BOT, value: user.bot ? globalTranslations.YES : globalTranslations.NO, inline: true }]
         });
 
         if (message.guild) {
@@ -39,10 +42,10 @@ module.exports = class UserCommand extends Command {
 
             let defaultRole = message.guild.roles.cache.get(message.guild.id);
             embed
-                .addField("Server Join Date", moment.utc(member.joinedAt).format("MM/DD/YYYY h:mm A"))
-                .addField("Highest Role", member.roles.highest.id === defaultRole.id ? "None" : member.roles.highest, true)
-                .addField("Hoist Role", member.roles.hoist ? member.roles.hoist : "None", true)
-                .addField(`Roles (${member.roles.cache.size - 1})`, member.roles.cache.size - 1 ? allRoles : "None");
+                .addField(translations.SERVER_JOIN_DATE, moment.utc(member.joinedAt).format("MM/DD/YYYY h:mm A"))
+                .addField(translations.HIGHEST_ROLE, member.roles.highest.id === defaultRole.id ? translations.NONE : member.roles.highest, true)
+                .addField(translations.HOIST_ROLE, member.roles.hoist ? member.roles.hoist : translations.NONE, true)
+                .addField(`${translations.ROLES} (${member.roles.cache.size - 1})`, member.roles.cache.size - 1 ? allRoles : translations.NONE);
         };
 
         return message.embed(embed);

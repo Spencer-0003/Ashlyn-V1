@@ -1,4 +1,9 @@
 module.exports = {
+    GLOBAL: {
+        YES: "Yes",
+        NO: "No"
+    },
+
     COMMANDS: {
         MAGIC_8_BALL: {
             YES: "Yes.",
@@ -13,6 +18,49 @@ module.exports = {
             TIE: "It's a tie!",
             WIN: "You won!",
             LOSS: "I won!"
+        },
+
+        LEADERBOARD: {
+            TITLE: "Leaderboard",
+            EMPTY_LEADERBORD: "Leaderboard is empty.",
+            TOP_1O_USERS: "Top 10 users in",
+        },
+
+        PING: {
+            TITLE: "Ping",
+            PING: "My ping is"
+        },
+
+        RANK: {
+            TITLE: "Rank",
+            NO_XP: "This user has not earned any XP yet.",
+            IS_RANK: "is rank"
+        },
+
+        SERVER: {
+            CREATED: "Created",
+            OWNER: "Owner",
+            BOOSTS: "Boosts",
+            BOOST_TIER: "Boost Tier",
+            REGION: "Region",
+            EXPLICIT_FILTER: "Explicit Filter",
+            VERIFICATION_LEVEL: "Verification Level",
+            MEMBERS: "Members"
+        },
+
+        UPTIME: {
+            TITLE: "Uptime",
+            CURRENT_UPTIME: "My uptime is"
+        },
+
+        USER: {
+            JOINED_DISCORD: "Joined Discord",
+            BOT: "Bot",
+            SERVER_JOIN_DATE: "Server Join Date",
+            HIGHEST_ROLE: "Highest Role",
+            HOIST_ROLE: "Hoist Role",
+            ROLES: "Roles",
+            NONE: "None"
         },
 
         MUSIC: {

@@ -25,19 +25,22 @@ module.exports = class RankCommand extends Command {
     };
 
     async run(message, { user }) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.RANK;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let resolvedUser = await Levels.fetch(user.id, message.guild.id);
 
         if (!resolvedUser) {
             let embed = createEmbed({
-                title: "Ashlyn: Rank",
-                description: "This user has not earned any XP yet."
+                title: embedTitle,
+                description: translations.NO_XP
             });
 
             return message.embed(embed);
         } else {
             let embed = createEmbed({
-                title: "Ashlyn: Rank",
-                description: `<@${user.id}> is rank ${resolvedUser.level}`
+                title: embedTitle,
+                description: `<@${user.id}> ${translations.IS_RANK} ${resolvedUser.level}`
             });
 
             return message.embed(embed);

@@ -16,10 +16,12 @@ module.exports = class UptimeCommand extends Command {
     };
 
     run(message) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.UPTIME;
+
         let uptime = moment.duration(this.client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
         let embed = createEmbed({
-            title: "Aslhyn: Uptime",
-            description: `My uptime is ${uptime}`
+            title: `Aslhyn: ${translations.TITLE}`,
+            description: `${translations.CURRENT_UPTIME} ${uptime}`
         });
 
         return message.say(embed);

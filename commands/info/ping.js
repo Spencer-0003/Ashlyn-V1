@@ -12,9 +12,12 @@ module.exports = class PingCommand extends Command {
     };
 
     run(message) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.PING;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let embed = createEmbed({
-            title: "Ashlyn: Ping",
-            description: `My ping is ${this.client.ws.ping}ms.`
+            title: embedTitle,
+            description: `${translations.PING} ${this.client.ws.ping}ms.`
         });
 
         return message.say(embed);

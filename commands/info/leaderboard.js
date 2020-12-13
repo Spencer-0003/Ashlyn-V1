@@ -15,12 +15,15 @@ module.exports = class LeaderboardCommand extends Command {
     };
 
     async run(message) {
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.LEADERBOARD;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let rawLeaderboard = await Levels.fetchLeaderboard(message.guild.id, 10);
 
         if (rawLeaderboard.length < 1) {
             let embed = createEmbed({
-                title: "Ashlyn: Leaderboard",
-                description: "Leaderboard is empty."
+                title: embedTitle,
+                description: translations.EMPTY_LEADERBOARD
             });
 
             return message.channel.embed(embed);
@@ -28,15 +31,14 @@ module.exports = class LeaderboardCommand extends Command {
 
         let leaderboard = await Levels.computeLeaderboard(this.client, rawLeaderboard, true);
         let embed = createEmbed({
-            title: "Ashlyn: Leaderboard",
-            description: `Top 10 users in ${message.guild.name}`
+            title: embedTitle,
+            description: `${translations.TOP_1O_USERS} ${message.guild.name}`
         });
 
         leaderboard.map(e => {
             embed.addField(`${e.position} - ${e.username}`, `Level: ${e.level}  XP: ${e.xp.toLocaleString()}`);
         });
 
-        // return message.channel.send(`**Leaderboard**:\n\n${lb.join("\n\n")}`);
         return message.say(embed);
     };
 };
