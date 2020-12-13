@@ -10,7 +10,9 @@ module.exports = {
             ERROR: "There was an unexpected error connecting to the voice channel, if Discord is not down, please alert Spencer#0003",
             SONG_NOT_PLAYING: "No song is currently playing.",
             ALREADY_PAUSED: "Music is already paused.",
-            SUCCESSFULLY_PAUSED: "Music has been paused."
+            SUCCESSFULLY_PAUSED: "Music has been paused.",
+            ENABLED_LOOPING: "I have enabled looping.",
+            DISABLED_LOOPING: "I have disabled looping."
         },
     }
 };

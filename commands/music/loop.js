@@ -1,5 +1,6 @@
 const { Command } = require("discord.js-commando");
 const createEmbed = require("@utils/CreateEmbed");
+const getServerLocale = require("@utils/GetServerLocale");
 
 module.exports = class LoopCommand extends Command {
     constructor(client) {
@@ -12,14 +13,17 @@ module.exports = class LoopCommand extends Command {
     };
 
     run(message) {
+        let translations = getServerLocale(message.guild).COMMANDS.MUSIC;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
         let voiceChannel = message.member.voice.channel;
 
         if (!serverQueue) {
             let embed = createEmbed({
-                title: "Ashlyn: Music",
-                description: "No music is currently playing."
+                title: embedTitle,
+                description: translations.SONG_NOT_PLAYING
             });
 
             return message.embed(embed);
@@ -27,8 +31,8 @@ module.exports = class LoopCommand extends Command {
 
         if (voiceChannel !== serverQueue.voiceChannel) {
             let embed = createEmbed({
-                title: "Ashlyn: Music",
-                description: "You are not in the voice channel."
+                title: embedTitle,
+                description: translations.NOT_IN_VOICE
             });
 
             return message.embed(embed);
@@ -37,8 +41,8 @@ module.exports = class LoopCommand extends Command {
         serverQueue.loop = !serverQueue.loop;
 
         let embed = createEmbed({
-            title: "Ashlyn: Music",
-            description: `I have ${serverQueue.loop ? "enabled" : "disabled"} looping.`
+            title: embedTitle,
+            description: serverQueue.loop ? translations.ENABLED_LOOPING : translations.DISABLED_LOOPING
         });
 
         return message.embed(embed);
