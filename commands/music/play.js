@@ -44,7 +44,8 @@ module.exports = class PlayCommand extends Command {
     };
 
     async run(message) {
-        let embedTitle = `Ashlyn: ${getServerLocale().COMMANDS.MUSIC}`;
+        let translations = getServerLocale().COMMANDS.MUSIC;
+        let embedTitle = `Ashlyn: ${translations.TITLE}`;
 
         let queue = this.client.queue;
         let voiceChannel = message.member.voice.channel;
@@ -60,7 +61,7 @@ module.exports = class PlayCommand extends Command {
         if (searchString == "") {
             let embed = createEmbed({
                 title: embedTitle,
-                description: "No song specified."
+                description: translations.NO_SONG
             });
 
             return message.embed(embed);
@@ -94,7 +95,7 @@ module.exports = class PlayCommand extends Command {
         if (!voiceChannel || this.client.queue.get(message.guild.id) && this.client.queue.get(message.guild.id).voiceChannel !== voiceChannel) {
             let embed = createEmbed({
                 title: embedTitle,
-                description: "You are not in the voice channel."
+                description: translations.NOT_IN_VOICE
             });
 
             return message.embed(embed);
@@ -105,7 +106,7 @@ module.exports = class PlayCommand extends Command {
         if (!permissions.has("CONNECT")) {
             let embed = createEmbed({
                 title: embedTitle,
-                description: "I don't have permission to join the voice channel."
+                description: translations.CANT_JOIN
             });
 
             return message.embed(embed);
@@ -114,7 +115,7 @@ module.exports = class PlayCommand extends Command {
         if (!permissions.has("SPEAK")) {
             let embed = createEmbed({
                 title: embedTitle,
-                description: "I don't have permission to speak in the voice channel."
+                description: translations.CANT_SPEAK
             });
 
             return message.embed(embed);
@@ -148,11 +149,11 @@ module.exports = class PlayCommand extends Command {
             } catch(err) {
                 console.log(`Failed to connect to voice channel with error: ${err}`);
                 queue.delete(message.guild.id);
-                return message.say("There was an unexpected error connecting to the voice channel, if Discord is not down, please alert Spencer#0003\n" + err);
+                return message.say(`${translations.ERROR}\n` + err);
             };
         } else {
             serverQueue.songs.push(toPlay);
-            return message.say(`${toPlay.title} has been added to the queue.`);
+            return message.say(`${toPlay.title} ${translations.ADDED_TO_QUEUE}`);
         };
     };
 };
