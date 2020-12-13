@@ -28,6 +28,7 @@ client.registry
     .registerDefaultTypes()
     .registerGroups([
         ["fun", "😀 Fun"],
+        ["games", "🎮 Games"],
         ["info", "📈 Info"],
         ["moderation", "📏 Moderation"],
         ["nsfw", "🥵 NSFW"],

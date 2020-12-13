@@ -5,5 +5,6 @@ module.exports = class AshlynClient extends CommandoClient {
         super(options);
 
         this.queue = new Map();
+        this.games = new Map();
     };
 };
