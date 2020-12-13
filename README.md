@@ -29,6 +29,10 @@ Ashlyn is a multi-purpose Discord bot.
 You can invite Ashlyn to your server [here](https://discord.bots.gg/bots/773305746695520298)
 You can join the Discord server [here](https://discord.gg/FhGVhR28pJ)
 
+## Disclaimer
+
+If you are self-hosting this bot, you are not allowed to upload this bot to any service such as discordbotlist or top.gg, you are only allowed to host this bot for your community. This bot is already on those sites and I will get them taken down if you try to upload them again as your own work. You also acknowledge that no support will be given to help you set up the bot.
+
 ## Contributing
 
 Contributions to Ashlyn are always welcome, please feel free to make changes. Check out our [contributing template](https://github.com/Spencer/Ashlyn/blob/master/.github/CONTRIBUTING.md) before you get started.
