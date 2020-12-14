@@ -72,7 +72,7 @@ client.setProvider(MongoClient.connect(mongo_url, { useNewUrlParser: true, useUn
 
 // Add Events
 
-fs.readdir("./events", (err, files) => {
+fs.readdir("src/events", (err, files) => {
     if (err) return console.error;
     files.forEach(file => {
         if (!file.endsWith(".js")) return;
