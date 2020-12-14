@@ -49,7 +49,7 @@ module.exports = class VolumeCommand extends Command {
         serverQueue.connection.dispatcher.setVolumeLogarithmic(vol / 5);
 
         let embed = createEmbed({
-            title: "Ashlyn: Music",
+            title: embedTitle,
             description: `${translations.SET_VOLUME} ${vol}.`
         });
 
