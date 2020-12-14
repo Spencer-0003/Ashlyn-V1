@@ -20,7 +20,7 @@ module.exports = class LanguageCommand extends Command {
         });
     };
 
-    async run(message, { language }) {
+    run(message, { language }) {
         let translations = this.client.getServerLocale(message.guild.id);
 
         if(!message.member.hasPermission("ADMINISTRATOR") && !this.client.isOwner(message.author)) {
