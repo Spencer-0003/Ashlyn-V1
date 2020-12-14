@@ -124,47 +124,47 @@ module.exports = {
 
         ROLEPLAY: {
             BLUSH: {
-                SOLO: "{0} is blushing",
-                MESSAGE_ONE: "{0} turned red because of {1}",
-                MESSAGE_TWO: "{1} made {0} turn red"
+                SOLO: "{0} se está sonrojando",
+                MESSAGE_ONE: "{0} se puso rojo debido a {1}",
+                MESSAGE_TWO: "{1} hizo {0} ponerse rojo"
             },
 
             CHEER: {
-                SOLO: "{0} is cheering",
-                MESSAGE_ONE: "{0} is cheering for {1}",
-                MESSAGE_TWO: "{0} is cheering {1} on"
+                SOLO: "{0} está animando",
+                MESSAGE_ONE: "{0} anima a {1}",
+                MESSAGE_TWO: "{0} está animando {1}"
             },
 
             CUDDLE: {
-                SOLO: "{0} wants to cuddle",
-                MESSAGE_ONE: "{0} is embracing {1} for cuddles",
-                MESSAGE_TWO: "{0} is cuddling {1}"
+                SOLO: "{0} quiere abrazar",
+                MESSAGE_ONE: "{0} está abrazando {1} por abrazos",
+                MESSAGE_TWO: "{0} está abrazando {1}"
             },
 
             DANCE: {
-                SOLO: "{0} is dancing",
-                TOGETHER: "{0} wants to dance with {1}",
+                SOLO: "{0} está bailando",
+                TOGETHER: "{0} quiere bailar con {1}",
             }
         },
 
         NSFW_ROLEPLAY: {
             BLOWJOB: {
-                SOLO: "{0} is craving a blowjob",
-                MESSAGE_ONE: "{0} wants to swallow {1}",
-                MESSAGE_TWO: "{0} swallowed {1}'s hot load"
+                SOLO: "{0} espera una mamada",
+                MESSAGE_ONE: "{0} quiere tragar {1}",
+                MESSAGE_TWO: "{0} se tragó la carga caliente de {1}"
             },
 
             FUCK: {
-                SOLO: "{0} wants to fuck",
-                MESSAGE_ONE: "{0} wants to fuck {1}",
-                MESSAGE_TWO: "{0} wants to bang {1}"
+                SOLO: "{0} quiere follar",
+                MESSAGE_ONE: "{0} quiere follar {1}",
+                MESSAGE_TWO: "{0} quiere golpear {1}"
             },
 
             SPANK: {
-                SOLO: "{0} wants to get spanked",
-                MESSAGE_ONE: "{0} wants {1} to be spanked by {0}",
-                MESSAGE_TWO: "{0} wants {1} to spank them",
-                MESSAGE_THREE: "{0} has been naughty and needs {1} to teach them a lesson"
+                SOLO: "{0} quiere ser azotado",
+                MESSAGE_ONE: "{0} quiere que {1} sea azotado por {0}",
+                MESSAGE_TWO: "{0} quiere {1} azotarlos",
+                MESSAGE_THREE: "{0} ha sido travieso y necesita {1} darles una lección."
             }
         },
     },
