@@ -24,6 +24,8 @@ const path = require("path");
 const { MongoClient } = require("mongodb");
 const MongoDBProvider = require("commando-provider-mongo");
 
+const log = require("@utils/Roleplay/LogError");
+
 // Create Client
 
 const Client = require("@structures/Client");
@@ -90,3 +92,9 @@ fs.readdir("src/events", (err, files) => {
 // Login
 
 client.login(token);
+
+if (client.shard.ids[0] === 0) {
+    process.on("unhandledRejection", err => log(client, "Error", err));
+    process.on("uncaughtExceptionMonitor", err => log(client, "Error", err));
+    process.on("warning", err => log(client, "Warning", err));
+};
