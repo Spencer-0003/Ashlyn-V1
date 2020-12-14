@@ -7,7 +7,7 @@
   "description": "A multi-purpose Discord Bot.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
     "run": "node src/index.js"
   },
   "repository": {
