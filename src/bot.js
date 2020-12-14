@@ -24,7 +24,7 @@ const path = require("path");
 const { MongoClient } = require("mongodb");
 const MongoDBProvider = require("commando-provider-mongo");
 
-const log = require("@utils/Roleplay/LogError");
+const log = require("@utils/LogError");
 
 // Create Client
 
