@@ -18,7 +18,7 @@ async function play(queue, guild, song) {
         return;
     };
 
-    let downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25 });
+    let downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0 });
     let dispatcher = serverQueue.connection.play(downloadedSong)
         .on("finish", () => {
             if (!serverQueue.loop) serverQueue.songs.shift();
