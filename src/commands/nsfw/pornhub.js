@@ -33,7 +33,7 @@ module.exports = class PornHubCommand extends Command {
             let data = res.data[0];
             let embed = createEmbed({
                 title: data.title,
-                message: [{ name: translations.TITLE, value: data.duration, inline: true }, { name: translations.HD_VIDEO, value: data.hd, inline: true }, { name: translations.PREMIUM_VIDEO, value: data.premium, inline: true }, { name: translations.VIDEO_URL, value: data.url }]
+                message: [{ name: translations.DURATION, value: data.duration, inline: true }, { name: translations.HD_VIDEO, value: data.hd, inline: true }, { name: translations.PREMIUM_VIDEO, value: data.premium, inline: true }, { name: translations.VIDEO_URL, value: data.url }]
             });
 
             return message.embed(embed);
