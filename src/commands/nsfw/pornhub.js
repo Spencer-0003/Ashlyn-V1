@@ -16,6 +16,8 @@ module.exports = class PornHubCommand extends Command {
     };
 
     run(message) {
+        let translations = this.client.getServerLocale(message.guild.id).COMMANDS.NSFW;
+
         let search = message.content.split(/\s+/g).slice(1).join(" ");
 
         if (!search) {
@@ -31,7 +33,7 @@ module.exports = class PornHubCommand extends Command {
             let data = res.data[0];
             let embed = createEmbed({
                 title: data.title,
-                message: [{ name: "Duration", value: data.duration, inline: true }, { name: "HD", value: data.hd, inline: true }, { name: "Premium", value: data.premium, inline: true }, { name: "URL", value: data.url }]
+                message: [{ name: translations.TITLE, value: data.duration, inline: true }, { name: translations.HD_VIDEO, value: data.hd, inline: true }, { name: translations.PREMIUM_VIDEO, value: data.premium, inline: true }, { name: translations.VIDEO_URL, value: data.url }]
             });
 
             return message.embed(embed);

@@ -122,6 +122,15 @@ module.exports = {
             SET_VOLUME: "He puesto el volumen a"
         },
 
+        NSFW: {
+            TITLE: "NSFW",
+            NO_VIDEO: "No se especificó ningún video.",
+            DURATION: "Duración",
+            HD_VIDEO: "HD",
+            PREMIUM_VIDEO: "Primo",
+            VIDEO_URL: "URL"
+        },
+
         ROLEPLAY: {
             BLUSH: {
                 SOLO: "{0} se está sonrojando",

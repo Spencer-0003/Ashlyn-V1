@@ -122,6 +122,15 @@ module.exports = {
             SET_VOLUME: "I have set the volume to"
         },
 
+        NSFW: {
+            TITLE: "NSFW",
+            NO_VIDEO: "No video specified.",
+            DURATION: "Duration",
+            HD_VIDEO: "HD",
+            PREMIUM_VIDEO: "Premium",
+            VIDEO_URL: "URL"
+        },
+
         ROLEPLAY: {
             BLUSH: {
                 SOLO: "{0} is blushing",
