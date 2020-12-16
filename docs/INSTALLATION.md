@@ -21,4 +21,4 @@ How to install Ashlyn.
 
 ##
 
-[Return to index](README.md)
+[Return to Project](https://github.com/Spencer-0003/Ashlyn)
