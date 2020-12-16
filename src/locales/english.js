@@ -104,6 +104,7 @@ module.exports = {
             TITLE: "Music",
             NO_SONG: "No song specified.",
             VIDEO_NOT_FOUND: "Video not found.",
+            INVALID_PROVIDER: "I currently do not support this provider.",
             NOT_IN_VOICE: "You are not in the voice channel.",
             CANT_JOIN: "I don't have permission to join the voice channel.",
             CANT_SPEAK: "I don't have permission to speak in the voice channel.",

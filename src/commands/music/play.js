@@ -55,6 +55,12 @@ module.exports = class PlayCommand extends Command {
             searchString = searchString.replace("https://www.youtube.com/watch?v=", "");
         } else if (searchString.substring(0, 17) === "https://youtu.be/") {
             searchString = searchString.replace("https://youtu.be/", "");
+        } else {
+            let embed = createEmbed({
+                title: embedTitle,
+                description: translations.INVALID_PROVIDER
+            });
+            return message.say(embed);
         };
 
         if (searchString == "") {
