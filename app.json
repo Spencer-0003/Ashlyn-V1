@@ -15,7 +15,7 @@
 
         "mongo_url": {
             "description": "The URL to the mongo datbase.",
-            "required": false
+            "required": true
         },
 
         "mongo_db": {
