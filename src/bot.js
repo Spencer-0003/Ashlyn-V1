@@ -95,8 +95,6 @@ client.login(token);
 
 // Error handling
 
-if (client.shard.ids[0] === 0) {
-    process.on("unhandledRejection", err => log(client, "Error", err));
-    process.on("uncaughtExceptionMonitor", err => log(client, "Error", err));
-    process.on("warning", err => log(client, "Warning", err));
-};
+process.on("unhandledRejection", err => log(client, "Error", err.stack || err));
+process.on("uncaughtExceptionMonitor", err => log(client, "Error", err.stack || err));
+process.on("warning", err => log(client, "Warning", err.stack || err));
