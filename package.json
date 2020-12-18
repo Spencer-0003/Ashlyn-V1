@@ -8,7 +8,8 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint . --fix",
-    "run": "node src/index.js"
+    "run": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -46,6 +47,7 @@
     "@locales": "src/locales"
   },
   "devDependencies": {
-    "eslint": "^7.15.0"
+    "eslint": "^7.15.0",
+    "nodemon": "^2.0.6"
   }
 }
