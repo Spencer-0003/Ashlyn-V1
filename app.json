@@ -1,0 +1,7 @@
+{
+    "name": "Ashlyn",
+    "description": "A multi-purpose Discord Bot.",
+    "repository": "https://github.com/Spencer-0003/Ashlyn",
+    "logo": "https://i.imgur.com/5NEHv0x.jpg",
+    "keywords": ["node", "discord", "discord-js"]
+}  
