@@ -93,6 +93,8 @@ fs.readdir("src/events", (err, files) => {
 
 client.login(token);
 
+// Error handling
+
 if (client.shard.ids[0] === 0) {
     process.on("unhandledRejection", err => log(client, "Error", err));
     process.on("uncaughtExceptionMonitor", err => log(client, "Error", err));
