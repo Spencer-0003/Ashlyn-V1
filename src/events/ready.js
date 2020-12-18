@@ -9,6 +9,12 @@ module.exports = async client => {
             type: "PLAYING"
         });
 
+        setInterval(async () => {
+            client.user.setActivity(`with ${await getServerCount(client)} servers and ${await getUserCount(client)} users`, {
+                type: "PLAYING"
+            });
+        }, 600000);
+
         console.log("Set status.");
     };
 };
