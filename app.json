@@ -2,6 +2,30 @@
     "name": "Ashlyn",
     "description": "A multi-purpose Discord Bot.",
     "repository": "https://github.com/Spencer-0003/Ashlyn",
-    "logo": "https://i.imgur.com/5NEHv0x.jpg",
-    "keywords": ["node", "discord", "discord-js"]
-}  
+    "env": {
+        "token": {
+            "description": "Your discord bot's token.",
+            "required": true
+        },
+
+        "google_api_key": {
+            "description": "The API key for the music bot.",
+            "required": true
+        },
+
+        "mongo_url": {
+            "description": "The URL to the mongo datbase.",
+            "required": false
+        },
+
+        "mongo_db": {
+            "description": "The name of the database of itself.",
+            "required": true
+        },
+
+        "error_log_channel": {
+            "description": "Channel for error logs.",
+            "required": true
+        }
+    }
+}
