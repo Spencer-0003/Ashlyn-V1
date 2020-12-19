@@ -36,12 +36,6 @@ async function play(queue, guild, song) {
         });
 
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-    let embed = createEmbed({
-        title: "Started Playing!",
-        description: song.title
-    });
-
-    queue.textChannel.embed(embed);
 };
 
 module.exports = class PlayCommand extends Command {
@@ -165,6 +159,11 @@ module.exports = class PlayCommand extends Command {
                 queueConstruct.connection = connection;
                 await queueConstruct.connection.voice.setSelfDeaf(true);
                 play(queue, message.guild, queueConstruct.songs[0]);
+                let embed = createEmbed({
+                title: embedTitle,
+                description: "Started Playing: " + song.title
+                });
+                serverQueue.textChannel.embed(embed);
             } catch(err) {
                 console.log(`Failed to connect to voice channel with error: ${err}`);
                 queue.delete(message.guild.id);
