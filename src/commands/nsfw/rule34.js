@@ -1,5 +1,5 @@
 const { bot_name } = process.env;
-const { Command } = require("@structures/Command");
+const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
 const { posts } = require("rule34js");
