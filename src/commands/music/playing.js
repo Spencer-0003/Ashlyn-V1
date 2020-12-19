@@ -20,7 +20,7 @@ module.exports = class PlayingCommand extends Command {
 
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
-        // const left = song.duration - seek;
+        let left = song.duration - seek;
 
         if (!serverQueue) {
             let embed = createEmbed({
@@ -34,12 +34,11 @@ module.exports = class PlayingCommand extends Command {
         let song = serverQueue.songs[0];
         let seek = (serverQueue.connection.dispatcher.streamTime - serverQueue.connection.dispatcher.pausedTime) / 1000;
 
-        message.channel.send("Duration: " + song.duration);
-
         let embed = createEmbed({
             title: embedTitle,
             description: `[${song.title}](${song.url})`,
-            message: [{ name: new Date(seek * 1000).toISOString().substr(11, 8) + "[" + createBar(song.duration == 0 ? seek : song.duration, seek, 20)[0] + "]" + (song.duration == 0 ? " ◉ LIVE" : new Date(song.duration * 1000).toISOString().substr(11, 8)), value: "\u200b", inline: false }]
+            message: [{ name: new Date(seek * 1000).toISOString().substr(11, 8) + "[" + createBar(song.duration == 0 ? seek : song.duration, seek, 20)[0] + "]" + (song.duration == 0 ? " ◉ LIVE" : new Date(song.duration * 1000).toISOString().substr(11, 8)), value: "\u200b", inline: false }],
+            footer: `Time remaining: ${left}`
         });
 
         return message.embed(embed);
