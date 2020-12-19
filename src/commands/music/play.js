@@ -138,7 +138,7 @@ module.exports = class PlayCommand extends Command {
             id: video.id,
             title: video.title,
             url: video.uri || video.url,
-            duration: Math.ceil(video.duration / 1000)
+            duration: Math.ceil((video.length_seconds || video.durationSeconds) / 1000)
         };
 
         if (!serverQueue || !serverQueue.connection || !serverQueue.voiceChannel) {
