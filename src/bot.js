@@ -35,7 +35,7 @@ const client = new Client({
     owner: "519790100956184586",
     invite: "https://discord.gg/wfyhsxZ6CV",
 });
-
+client.locales = new Array();
 client.registry
     .registerDefaultTypes()
     .registerGroups([
@@ -87,6 +87,23 @@ fs.readdir("src/events", (err, files) => {
         };
 
         client.on(eventName, event.bind(null, client));
+    });
+});
+
+// Add Locales
+
+fs.readdir("src/locale", (err, files) => {
+    if (err) return console.error;
+    files.forEach(file => {
+        if (!file.endsWith(".json")) return;
+        let locale = require(`./locale/${file}`);
+        let localeName = file.split(".")[0];
+
+        if (client.shard.ids[0] === 0) {
+            console.log(`Loaded locale "${localeName}"`);
+        };
+
+        client.locales.push(localeName);
     });
 });
 
