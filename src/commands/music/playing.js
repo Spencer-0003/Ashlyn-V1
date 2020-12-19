@@ -34,6 +34,8 @@ module.exports = class PlayingCommand extends Command {
         let song = serverQueue.songs[0];
         let seek = (serverQueue.connection.dispatcher.streamTime - serverQueue.connection.dispatcher.pausedTime) / 1000;
 
+        message.channel.send("Duration: " + song.duration);
+
         let embed = createEmbed({
             title: embedTitle,
             description: `[${song.title}](${song.url})`,
