@@ -9,13 +9,13 @@ const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.co
 async function isAdvertisement(guild, invite) {
     let res = true;
 
-    await guild.fetchInvites().then(invites => {
-        for (let v of invites) {
-            if (invite === v[0]) {
-                res = false;
-            };
+    let invites = await guild.fetchInvites();
+
+    for (let v of invites) {
+        if (invite === v[0]) {
+            res = false;
         };
-    });
+    };
 
     return res;
 };
