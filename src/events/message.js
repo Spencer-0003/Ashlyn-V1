@@ -9,7 +9,7 @@ module.exports = async (client, message) => {
     if (!message.guild || message.author.bot) return;
     if (message.partial) await message.fetch();
 
-    let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
+    let translations = client.getServerLocale(message.guild).COMMANDS.MODERATION;
 
     if (regex.exec(message.content) && client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
         message.delete();
