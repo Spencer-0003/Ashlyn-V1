@@ -1,4 +1,4 @@
-const { bot_name} = process.env;
+const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 

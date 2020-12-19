@@ -53,7 +53,7 @@ client.registry
     ])
     .registerDefaultGroups()
     .registerDefaultCommands({
-        eval: false,
+        // eval: false,
         help: false,
         ping: false,
         prefix: false,

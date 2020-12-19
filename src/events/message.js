@@ -1,7 +1,6 @@
-const { mongo_url, mongo_db, bot_name } = process.env;
+const { mongo_url, bot_name } = process.env;
 const Levels = require("discord-xp");
 const createEmbed = require("@utils/CreateEmbed");
-const getCollection = require("@utils/GetCollection");
 Levels.setURL(mongo_url);
 
 const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.com\/invite|discord\.com\/invite)\/.+[a-z]/gi;
@@ -12,27 +11,15 @@ module.exports = async (client, message) => {
 
     let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
 
-    if (regex.exec(message.content)) {
-        getCollection(mongo_db, "Auto Moderation", async function(collection, _client) {
-            let guildData = await collection.findOne({ GuildID: message.guild.id });
+    if (regex.exec(message.content) && this.client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
+        message.delete();
 
-            if (guildData && guildData.NoInvites == "true") {
-                try {
-                    message.delete();
-                } catch {
-                    message.say("Failed to delete message.");
-                };
-
-                let embed = createEmbed({
-                    title: `${bot_name}: ${translations.TITLE}`,
-                    description: "No invites!"
-                });
-
-                message.say(embed);
-            };
-
-            return _client.close();
+        let embed = createEmbed({
+            title: `${bot_name}: ${translations.TITLE}`,
+            description: "No invites!"
         });
+
+        return message.say(embed);
     };
 
     let randomXp = Math.floor(Math.random() * 9) + 1;

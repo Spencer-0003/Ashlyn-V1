@@ -41,6 +41,8 @@ module.exports = class BlockInvitesCommand extends Command {
             return client.close();
         });
 
+        this.client.serverSettings.set(message.guild.id, { invitesBlocked: value });
+
         let embed = createEmbed({
             title: `${bot_name}: ${translations.TITLE}`,
             description: `${translations.DESCRIPTION.format(value)}`
