@@ -163,7 +163,7 @@ module.exports = class PlayCommand extends Command {
                     title: embedTitle,
                     description: "Started Playing: " + video.title
                 });
-                queueConstruct.textChannel.say(embed);
+                queueConstruct.textChannel.send(embed);
             } catch(err) {
                 console.log(`Failed to connect to voice channel with error: ${err}`);
                 queue.delete(message.guild.id);
