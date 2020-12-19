@@ -3,6 +3,18 @@ const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 const createBar = require("string-progressbar");
 
+function secondsToHms(d) {
+    d = Number(d);
+    let h = Math.floor(d / 3600);
+    let m = Math.floor(d % 3600 / 60);
+    let s = Math.floor(d % 3600 % 60);
+
+    let hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
+    let mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
+    let sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+    return hDisplay + mDisplay + sDisplay;
+}
+
 module.exports = class PlayingCommand extends Command {
     constructor(client) {
         super(client, {
@@ -38,7 +50,7 @@ module.exports = class PlayingCommand extends Command {
             title: embedTitle,
             description: `[${song.title}](${song.url})`,
             message: [{ name: new Date(seek * 1000).toISOString().substr(11, 8) + "[" + createBar(song.duration == 0 ? seek : song.duration, seek, 20)[0] + "]" + (song.duration == 0 ? " ◉ LIVE" : new Date(song.duration * 1000).toISOString().substr(11, 8)), value: "\u200b", inline: false }],
-            footer: `Time remaining: ${left}`
+            footer: `Time remaining: ${secondsToHms(left)}`
         });
 
         return message.embed(embed);
