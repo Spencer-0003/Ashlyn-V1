@@ -13,16 +13,16 @@ async function play(queue, guild, song) {
     let serverQueue = queue.get(guild.id);
 
     if (!song) {
-      setTimeout(function() {
-      if (!song && !queue.connection.dispatcher && guild.me.voice.channel) {
-      queue.channel.leave();
-      queue.delete(guild.id);
-      let embed = createEmbed({
-                title: "Started Playing!",
-                description: "I left the channel because i was inactive for too long."
-            });
-      return queue.textChannel.embed(embed);
-      } else return }, 60000);
+        setTimeout(function() {
+            if (!song && !queue.connection.dispatcher && guild.me.voice.channel) {
+                queue.channel.leave();
+                queue.delete(guild.id);
+                let embed = createEmbed({
+                    title: "Started Playing!",
+                    description: "I left the channel because i was inactive for too long."
+                });
+                return queue.textChannel.embed(embed);
+            } else {return;} }, 60000);
     };
 
     let downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0 });
@@ -37,11 +37,11 @@ async function play(queue, guild, song) {
 
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
     let embed = createEmbed({
-                title: "Started Playing!",
-                description: song.title
-            });
+        title: "Started Playing!",
+        description: song.title
+    });
 
-            queue.textChannel.embed(embed);
+    queue.textChannel.embed(embed);
 };
 
 module.exports = class PlayCommand extends Command {
