@@ -37,6 +37,7 @@
     "rule34js": "^2.2.0",
     "simple-youtube-api": "^5.2.1",
     "simpleyt": "^1.0.7",
+    "string-progressbar": "^1.0.1",
     "superagent": "^6.1.0",
     "ytdl-core": "^4.2.1"
   },
