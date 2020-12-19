@@ -150,6 +150,7 @@ module.exports = class PlayCommand extends Command {
             try {
                 let connection = await voiceChannel.join();
                 queueConstruct.connection = connection;
+                await queueConstruct.connection.voice.setSelfDeaf(true);
                 play(queue, message.guild, queueConstruct.songs[0]);
             } catch(err) {
                 console.log(`Failed to connect to voice channel with error: ${err}`);
