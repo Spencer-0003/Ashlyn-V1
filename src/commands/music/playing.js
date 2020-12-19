@@ -22,7 +22,7 @@ module.exports = class PlayingCommand extends Command {
         let serverQueue = queue.get(message.guild.id);
         const song = queue.songs[0];
         const seek = (queue.connection.dispatcher.streamTime - queue.connection.dispatcher.pausedTime) / 1000;
-        const left = song.duration - seek;
+        // const left = song.duration - seek;
 
         if (!serverQueue) {
             let embed = createEmbed({
@@ -32,16 +32,11 @@ module.exports = class PlayingCommand extends Command {
 
             return message.embed(embed);
         };
-    
+
         let embed = createEmbed({
             title: embedTitle,
-            description: `[${song.title}](${song.url})`
-            message: [{ name: "\u200b",
-        new Date(seek * 1000).toISOString().substr(11, 8) +
-          "[" +
-          createBar(song.duration == 0 ? seek : song.duration, seek, 20)[0] +
-          "]" +
-          (song.duration == 0 ? " ◉ LIVE" : new Date(song.duration * 1000).toISOString().substr(11, 8), value: null, inline: false }]
+            description: `[${song.title}](${song.url})`,
+            message: [{ name: "\u200b" + new Date(seek * 1000).toISOString().substr(11, 8) + "[" + createBar(song.duration == 0 ? seek : song.duration, seek, 20)[0] + "]" + (song.duration == 0 ? " ◉ LIVE" : new Date(song.duration * 1000).toISOString().substr(11, 8)), value: null, inline: false }]
         });
 
         return message.embed(embed);
