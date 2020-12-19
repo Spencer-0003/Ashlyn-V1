@@ -1,4 +1,5 @@
-const { Command } = require("discord.js-commando");
+const { bot_name } = process.env;
+const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
 const PornHub = require("pornhub.js");
@@ -22,7 +23,7 @@ module.exports = class PornHubCommand extends Command {
 
         if (!search) {
             let embed = createEmbed({
-                title: "Ashlyn: NSFW",
+                title: `${bot_name}: NSFW`,
                 description: "No video specified."
             });
 

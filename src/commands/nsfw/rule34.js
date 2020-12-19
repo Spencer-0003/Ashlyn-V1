@@ -1,4 +1,5 @@
-const { Command } = require("discord.js-commando");
+const { bot_name } = process.env;
+const { Command } = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
 const { posts } = require("rule34js");
@@ -33,7 +34,7 @@ module.exports = class Rule34Command extends Command {
         posts({ tags: tagList }).then((value) => {
             if (!value || !value.posts) {
                 let embed = createEmbed({
-                    title: "Ashlyn: NSFW",
+                    title: `${bot_name}: NSFW`,
                     description: "No images found",
                     thumbnail: false
                 });
@@ -45,7 +46,7 @@ module.exports = class Rule34Command extends Command {
                 if (!value.posts[i]) return;
 
                 let embed = createEmbed({
-                    title: "Ashlyn: NSFW",
+                    title: `${bot_name}: NSFW`,
                     image: value.posts[i].file_url,
                     thumbnail: false
                 });

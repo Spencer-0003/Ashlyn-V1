@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -23,7 +24,7 @@ module.exports = class UnmuteCommand extends Command {
 
     run(message, { user }) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
-        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+        let embedTitle = `${bot_name}: ${translations.TITLE}`;
 
         let muteRole = message.guild.roles.cache.find(role => role.name === "Muted");
 

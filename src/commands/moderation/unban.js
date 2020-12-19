@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -23,7 +24,7 @@ module.exports = class UnbanCommand extends Command {
 
     async run(message, { userId }) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
-        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+        let embedTitle = `${bot_name}: ${translations.TITLE}`;
 
         let bans = await message.guild.fetchBans();
         let isBanned = bans.find(banned => banned.user.id === userId);

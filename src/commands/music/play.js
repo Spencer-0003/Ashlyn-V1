@@ -1,7 +1,7 @@
-const { Command } = require("discord.js-commando");
+const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
-const { google_api_key } = process.env;
+const { google_api_key, bot_name } = process.env;
 
 const ytdl = require("ytdl-core");
 const YouTube = require("simple-youtube-api");
@@ -44,7 +44,7 @@ module.exports = class PlayCommand extends Command {
 
     async run(message) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.MUSIC;
-        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+        let embedTitle = `${bot_name}: ${translations.TITLE}`;
 
         let queue = this.client.queue;
         let voiceChannel = message.member.voice.channel;

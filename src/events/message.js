@@ -1,4 +1,4 @@
-const { mongo_url, mongo_db } = process.env;
+const { mongo_url, mongo_db, bot_name } = process.env;
 const Levels = require("discord-xp");
 const createEmbed = require("@utils/CreateEmbed");
 const getCollection = require("@utils/GetCollection");
@@ -6,10 +6,10 @@ Levels.setURL(mongo_url);
 
 const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.com\/invite|discord\.com\/invite)\/.+[a-z]/gi;
 
-function isAdvertisement(guild, invite) {
+async function isAdvertisement(guild, invite) {
     let res = true;
 
-    guild.fetchInvites().then(invites => {
+    await guild.fetchInvites().then(invites => {
         for (let v of invites) {
             if (invite === v[0]) {
                 res = false;
@@ -37,7 +37,7 @@ module.exports = async (client, message) => {
                     };
 
                     let embed = createEmbed({
-                        title: "Ashlyn: Moderation",
+                        title: `${bot_name}: Moderation`,
                         description: "No outside invites!"
                     });
 

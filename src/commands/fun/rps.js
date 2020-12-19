@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -22,14 +23,14 @@ module.exports = class RockPaperScissorsCommand extends Command {
 
     run(message, { choice }) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.ROCK_PAPER_SCISSORS;
-        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+        let embedTitle = `${bot_name}: ${translations.TITLE}`;
 
         let options = ["rock", "paper", "scissors"];
         let result = options[Math.floor((Math.random() * options.length))];
 
         if (result === choice) {
             let embed = createEmbed({
-                title: "Ashlyn: Rock, Paper, Scissors",
+                title: `${bot_name}: Rock, Paper, Scissors`,
                 description: translations.TIE
             });
 

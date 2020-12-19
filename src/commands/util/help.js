@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const { util: { permissions } } = require("discord.js-commando");
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
@@ -25,7 +26,7 @@ module.exports = class HelpCommand extends Command {
             let embeds = [];
             for (let i = 0; i < Math.ceil(this.client.registry.groups.size / 10); i++) {
                 let embed = createEmbed({
-                    title: `Ashlyn: Commands`,
+                    title: `${bot_name}: Commands`,
                     description: `Page ${i + 1} of commands.`
                 });
 
@@ -70,7 +71,7 @@ module.exports = class HelpCommand extends Command {
         let clientPerms = command.clientPermissions ? command.clientPermissions.map(perm => permissions[perm]).join(", ") : "None";
 
         let embed = createEmbed({
-            title: "Ashlyn: Help",
+            title: `${bot_name}: Help`,
             description: `Command: ${command.name}`,
             message: [{ name: "**Aliases:**", value: command.aliases.join(", ") || "None" }, { name: "**Description:**", value: command.description }, { name: "**Group:**", value: command.group.name }, { name: "**NSFW:**", value: command.nsfw ? "Yes" : "No" }, { name: "**Permissions You Need:**", value: userPerms }, { name: "**Permissions I Need:**", value: clientPerms }]
         });
@@ -81,7 +82,7 @@ module.exports = class HelpCommand extends Command {
             if (message.channel.type !== "dm") message.say("Please check your DMs :slight_smile:");
         } catch {
             let errorEmbed = createEmbed({
-                title: "Ashlyn: Help",
+                title: `${bot_name}: Help`,
                 description: "Failed to send DM, do you have DMs disabled?"
             });
 

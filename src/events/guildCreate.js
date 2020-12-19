@@ -1,8 +1,9 @@
+const { bot_name } = process.env;
 const createEmbed = require("@utils/CreateEmbed");
 
 module.exports = (client, guild) => {
     let embed = createEmbed({
-        title: "Ashlyn: Welcome",
+        title: `${bot_name}: Welcome`,
         description: `Thanks for adding me to ${guild.name}! To get a list of my commands, use !help`
     });
 

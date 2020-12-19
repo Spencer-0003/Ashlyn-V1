@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -28,7 +29,7 @@ module.exports = class BanCommand extends Command {
 
     async run(message, { user, banReason }) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
-        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+        let embedTitle = `${bot_name}: ${translations.TITLE}`;
 
         let embed = createEmbed({
             title: embedTitle,

@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const { MessageEmbed } = require("discord.js");
 
 module.exports = options => {
@@ -6,7 +7,7 @@ module.exports = options => {
         .setColor(0x00B0FF || options.colour)
         .setDescription(options.description || "")
         .setImage(options.image || "")
-        .setFooter(options.footer || "[Ashlyn]")
+        .setFooter(options.footer || bot_name)
         .setAuthor(options.author || "")
         .setTimestamp();
 

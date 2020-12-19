@@ -1,4 +1,4 @@
-const { Command } = require("discord.js-commando");
+const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 const getRoleplayImage = require("@utils/Roleplay/GetNSFWRoleplayImage");
 

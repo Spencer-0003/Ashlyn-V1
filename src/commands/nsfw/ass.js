@@ -1,4 +1,5 @@
-const { Command } = require("discord.js-commando");
+const { bot_name } = process.env;
+const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
 const superagent = require("superagent");
@@ -17,7 +18,7 @@ module.exports = class AssCommand extends Command {
     async run(message) {
         superagent.get("https://nekobot.xyz/api/image?type=ass").end((err, response) => {
             let embed = createEmbed({
-                title: "Ashlyn: NSFW",
+                title: `${bot_name}: NSFW`,
                 image: (err || response.body.message),
                 thumbnail: false
             });

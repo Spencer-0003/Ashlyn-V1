@@ -3,18 +3,18 @@
     Development started 05/12/20 4:19am
 */
 
-// Setup Custom Log
-
-const oldLog = console.log;
-console.log = (...args) => oldLog("[Ashlyn]", ...args);
-
 // Load Env
 
 require("dotenv").config();
-const { token } = process.env;
+const { token, bot_name } = process.env;
+
+// Setup Custom Log
+
+const oldLog = console.log;
+console.log = (...args) => oldLog(`[${bot_name}]`, ...args);
 
 if (!token) {
-    throw new Error("[Ashlyn] Missing token.");
+    throw new Error(`[${bot_name}] Missing token.`);
 };
 
 // Create Shards

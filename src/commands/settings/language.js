@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -30,7 +31,7 @@ module.exports = class LanguageCommand extends Command {
         message.guild.locale = language;
 
         let embed = createEmbed({
-            title: `Ashlyn: Language`,
+            title: `${bot_name}: Language`,
             description: `Successfully set language to ${language}`
         });
 

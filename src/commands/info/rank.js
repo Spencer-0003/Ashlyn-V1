@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -26,7 +27,7 @@ module.exports = class RankCommand extends Command {
 
     async run(message, { user }) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.RANK;
-        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+        let embedTitle = `${bot_name}: ${translations.TITLE}`;
 
         let resolvedUser = await Levels.fetch(user.id, message.guild.id);
 

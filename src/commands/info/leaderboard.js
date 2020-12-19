@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -16,7 +17,7 @@ module.exports = class LeaderboardCommand extends Command {
 
     async run(message) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.LEADERBOARD;
-        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+        let embedTitle = `${bot_name}: ${translations.TITLE}`;
 
         let rawLeaderboard = await Levels.fetchLeaderboard(message.guild.id, 10);
 

@@ -1,7 +1,14 @@
+// Load Env
+
+require("module-alias/register");
+require("dotenv").config();
+
+const { token, mongo_url, mongo_db, bot_name } = process.env;
+
 // Setup Custom Log
 
 const oldLog = console.log;
-console.log = (...args) => oldLog("[Ashlyn]", ...args);
+console.log = (...args) => oldLog(`[${bot_name}]`, ...args);
 
 // Add string.format
 
@@ -12,12 +19,6 @@ String.prototype.format = function() {
     });
 };
 
-// Load Modules
-
-require("module-alias/register");
-require("dotenv").config();
-
-const { token, mongo_url, mongo_db } = process.env;
 const fs = require("fs");
 const path = require("path");
 

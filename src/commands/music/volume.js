@@ -1,4 +1,5 @@
-const { Command } = require("discord.js-commando");
+const { bot_name } = process.env;
+const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
 module.exports = class VolumeCommand extends Command {
@@ -21,7 +22,7 @@ module.exports = class VolumeCommand extends Command {
 
     run(message, { vol }) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.MUSIC;
-        let embedTitle = `Ashlyn: ${translations.TITLE}`;
+        let embedTitle = `${bot_name}: ${translations.TITLE}`;
 
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);

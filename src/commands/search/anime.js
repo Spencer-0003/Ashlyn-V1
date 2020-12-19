@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -18,7 +19,7 @@ module.exports = class AnimeCommand extends Command {
 
         if (!search) {
             let embed = createEmbed({
-                title: "Ashlyn: Anime",
+                title: `${bot_name}: Anime`,
                 description: "Anime not found."
             });
 

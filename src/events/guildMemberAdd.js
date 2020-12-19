@@ -1,4 +1,4 @@
-const { mongo_db } = process.env;
+const { mongo_db, bot_name } = process.env;
 const getCollection = require("@utils/GetCollection");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -11,7 +11,7 @@ module.exports = (client, member) => {
         if (guildData && guildData.NoAlts == "true") {
             if (member.user.createdAt < "259200000") {
                 let embed = createEmbed({
-                    title: "Ashlyn: Moderation",
+                    title: `${bot_name}: Moderation`,
                     description: `You have been flagged as an alt and have been auto banned. DM ${member.guild.owner.tag} to appeal.`
                 });
 

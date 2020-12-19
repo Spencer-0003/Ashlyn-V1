@@ -26,6 +26,11 @@
         "error_log_channel": {
             "description": "Channel for error logs.",
             "required": true
+        },
+
+        "bot_name": {
+            "description": "The name of the Discord bot.",
+            "required": true
         }
     }
 }
