@@ -20,7 +20,6 @@ module.exports = class PlayingCommand extends Command {
 
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
-        let left = song.duration - seek;
 
         if (!serverQueue) {
             let embed = createEmbed({
@@ -33,6 +32,7 @@ module.exports = class PlayingCommand extends Command {
 
         let song = serverQueue.songs[0];
         let seek = (serverQueue.connection.dispatcher.streamTime - serverQueue.connection.dispatcher.pausedTime) / 1000;
+        let left = song.duration - seek;
 
         let embed = createEmbed({
             title: embedTitle,
