@@ -37,7 +37,7 @@ module.exports = class PlayingCommand extends Command {
         let embed = createEmbed({
             title: embedTitle,
             description: `[${song.title}](${song.url})`,
-            message: [{ name: new Date(seek * 1000).toISOString().substr(11, 8) + "[" + createBar(song.duration == 0 ? seek : song.duration, seek, 20)[0] + "]" + (song.duration == 0 ? " ◉ LIVE" : new Date(song.duration * 1000).toISOString().substr(11, 8)), value: null, inline: false }]
+            message: [{ name: new Date(seek * 1000).toISOString().substr(11, 8) + "[" + createBar(song.duration == 0 ? seek : song.duration, seek, 20)[0] + "]" + (song.duration == 0 ? " ◉ LIVE" : new Date(song.duration * 1000).toISOString().substr(11, 8)), value: "\u200b", inline: false }]
         });
 
         return message.embed(embed);
