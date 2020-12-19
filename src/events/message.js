@@ -6,20 +6,6 @@ Levels.setURL(mongo_url);
 
 const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.com\/invite|discord\.com\/invite)\/.+[a-z]/gi;
 
-async function isAdvertisement(guild, invite) {
-    let res = true;
-
-    let invites = await guild.fetchInvites();
-
-    for (let v of invites) {
-        if (invite === v[0]) {
-            res = false;
-        };
-    };
-
-    return res;
-};
-
 module.exports = async (client, message) => {
     if (!message.guild || message.author.bot) return;
     if (message.partial) await message.fetch();
@@ -29,20 +15,18 @@ module.exports = async (client, message) => {
             let guildData = await collection.findOne({ GuildID: message.guild.id });
 
             if (guildData && guildData.NoInvites == "true") {
-                if (await isAdvertisement(message.guild, message.content.split("discord.gg/")[1])) {
-                    try {
-                        message.delete();
-                    } catch {
-                        message.say("Failed to delete message.");
-                    };
-
-                    let embed = createEmbed({
-                        title: `${bot_name}: Moderation`,
-                        description: "No outside invites!"
-                    });
-
-                    message.say(embed);
+                try {
+                    message.delete();
+                } catch {
+                    message.say("Failed to delete message.");
                 };
+
+                let embed = createEmbed({
+                    title: `${bot_name}: Moderation`,
+                    description: "No outside invites!"
+                });
+
+                message.say(embed);
             };
 
             return _client.close();
