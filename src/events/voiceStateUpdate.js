@@ -11,7 +11,7 @@ module.exports = (client, oldState, newState) => {
                     serverQueue.connection.dispatcher.destroy();
                     voiceChannel.leave();
                     client.queue.delete(oldState.guild.id);
-                    // There may be a bye bye message
+                    serverQueue.textChannel.send("I left the channel because nobody left.");
                     return;
                 }
                 voiceChannel.leave();
