@@ -1,6 +1,7 @@
-const { mongo_db } = process.env;
+const { mongo_db, bot_name } = process.env;
 const Command = require("@structures/Command");
 const getCollection = require("@utils/GetCollection");
+const createEmbed = require("@utils/CreateEmbed");
 
 module.exports = class BlockInvitesCommand extends Command {
     constructor(client) {
@@ -22,7 +23,7 @@ module.exports = class BlockInvitesCommand extends Command {
     };
 
     async run(message, { value }) {
-        let translations = this.client.getServerLocale(message.guild.id);
+        let translations = this.client.getServerLocale(message.guild.id).COMMANDS.BLOCK_INVITES;
 
         if(!message.member.hasPermission("ADMINISTRATOR") && !this.client.isOwner(message.author)) {
             return message.reply(translations.GLOBAL.ADMIN_ONLY);
@@ -39,5 +40,12 @@ module.exports = class BlockInvitesCommand extends Command {
 
             return client.close();
         });
+
+        let embed = createEmbed({
+            title: `${bot_name}: ${translations.TITLE}`,
+            description: `${translations.DESCRIPTION.format(value)}`
+        });
+
+        return message.say(embed);
     };
 };

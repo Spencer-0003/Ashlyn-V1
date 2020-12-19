@@ -57,6 +57,11 @@ module.exports = {
             CONFIRMATION_MESSAGE: "La función automática se ha establecido en {0}"
         },
 
+        BLOCK_INVITES: {
+            TITLE: "Bloquear invitaciones",
+            DESCRIPTION: "Bloquear invitaciones se estableció en {0}"
+        },
+
         UPTIME: {
             TITLE: "Tiempo de actividad",
             CURRENT_UPTIME: "Mi tiempo de actividad es"

@@ -57,6 +57,11 @@ module.exports = {
             CONFIRMATION_MESSAGE: "The auto role has been set to {0}"
         },
 
+        BLOCK_INVITES: {
+            TITLE: "Block Invites",
+            DESCRIPTION: "Block invites has been set to {0}"
+        },
+
         UPTIME: {
             TITLE: "Uptime",
             CURRENT_UPTIME: "My uptime is"
