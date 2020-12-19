@@ -11,7 +11,7 @@ module.exports = async (client, message) => {
 
     let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
 
-    if (regex.exec(message.content) && this.client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
+    if (regex.exec(message.content) && client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
         message.delete();
 
         let embed = createEmbed({
