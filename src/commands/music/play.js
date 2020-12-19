@@ -161,7 +161,7 @@ module.exports = class PlayCommand extends Command {
                 play(queue, message.guild, queueConstruct.songs[0]);
                 let embed = createEmbed({
                 title: embedTitle,
-                description: "Started Playing: " + song.title
+                description: "Started Playing: " + video.title
                 });
                 serverQueue.textChannel.embed(embed);
             } catch(err) {
