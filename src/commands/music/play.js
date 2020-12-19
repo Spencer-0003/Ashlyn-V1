@@ -137,7 +137,8 @@ module.exports = class PlayCommand extends Command {
         let toPlay = {
             id: video.id,
             title: video.title,
-            url: video.uri || video.url
+            url: video.uri || video.url,
+            duration: Math.ceil(video.duration / 1000)
         };
 
         if (!serverQueue || !serverQueue.connection || !serverQueue.voiceChannel) {
