@@ -92,11 +92,11 @@ fs.readdir("src/events", (err, files) => {
 
 // Add Locales
 
-fs.readdir("src/locale", (err, files) => {
+fs.readdir("src/locales", (err, files) => {
     if (err) return console.error;
     files.forEach(file => {
         if (!file.endsWith(".json")) return;
-        let locale = require(`./locale/${file}`);
+        let locale = require(`./locales/${file}`);
         let localeName = file.split(".")[0];
 
         if (client.shard.ids[0] === 0) {
