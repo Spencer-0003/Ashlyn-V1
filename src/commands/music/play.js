@@ -21,7 +21,7 @@ async function play(queue, guild, song) {
                     title: "Started Playing!",
                     description: "I left the channel because i was inactive for too long."
                 });
-                return queue.textChannel.send(embed);
+                return serverQueue.textChannel.send(embed);
             } else {return;} }, 60000);
     };
 
