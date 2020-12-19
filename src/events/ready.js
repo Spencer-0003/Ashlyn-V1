@@ -26,8 +26,8 @@ module.exports = async client => {
                 getCollection(mongo_db, "Auto Moderation", async function(collection, _client) {
                     let guildData = await collection.findOne({ GuildID: guild.id });
 
-                    if (guildData && guildData.NoInvites == "true") {
-                        client.serverSettings.set(guild.id, { invitesBlocked: true });
+                    if (guildData) {
+                        client.serverSettings.set(guild.id, { invitesBlocked: guildData.NoInvites });
                     } else {
                         client.serverSettings.set(guild.id, { invitesBlocked: false });
                     };
