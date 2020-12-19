@@ -15,7 +15,7 @@ module.exports = class LanguageCommand extends Command {
                     key: "language",
                     prompt: "What language do you want to use?",
                     type: "string",
-                    oneOf: ["english", "spanish"],
+                    oneOf: ["english", "spanish", "dutch"],
                 }
             ]
         });

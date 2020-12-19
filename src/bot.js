@@ -96,7 +96,7 @@ client.login(token);
 
 // Error handling
 
-// client.on("commandError", err => log(client, "Command Error", err.stack || err));
-// process.on("unhandledRejection", err => log(client, "Unhandled Rejection", err.stack || err));
-// process.on("uncaughtExceptionMonitor", err => log(client, "Uncaught Exception Monitor", err.stack || err));
-// process.on("warning", err => log(client, "Warning", err.stack || err));
+client.on("commandError", err => log(client, "Command Error", err.stack || err));
+process.on("unhandledRejection", err => log(client, "Unhandled Rejection", err.stack || err));
+process.on("uncaughtExceptionMonitor", err => log(client, "Uncaught Exception Monitor", err.stack || err));
+process.on("warning", err => log(client, "Warning", err.stack || err));

@@ -1,0 +1,165 @@
+{
+    "GLOBAL": {
+      "YES": "Ja",
+      "NO": "Geen",
+      "ADMIN_ONLY": "Alleen beheerders mogen het voorvoegsel van het commando wijzigen.",
+      "OWNER_ONLY": "Alleen de eigenaar van de botten, Spencer#0003, mag deze actie uitvoeren."
+    },
+    "COMMANDS": {
+      "PREFIX": "Zet het voorvoegsel van het commando op {0}. Om commando's uit te voeren gebruik je, {1}",
+      "MAGIC_8_BALL": {
+        "YES": "Ja.",
+        "NO": "Nee.",
+        "SOURCES": "Mijn bronnen lijken dat te geloven.",
+        "DONT_THINK_SO": "Ik denk het niet.",
+        "UNLIKELY": "Het is onwaarschijnlijk."
+      },
+      "ROCK_PAPER_SCISSORS": {
+        "TITLE": "Steen, papier, schaar",
+        "TIE": "Het is een gelijkspel!",
+        "WIN": "Je hebt gewonnen!",
+        "LOSS": "Ik heb gewonnen!"
+      },
+      "LEADERBOARD": {
+        "TITLE": "Leaderboard",
+        "EMPTY_LEADERBORD": "Leaderboard is leeg.",
+        "TOP_1O_USERS": "Top 10 gebruikers in"
+      },
+      "PING": {
+        "TITLE": "Ping",
+        "PING": "Mijn ping is"
+      },
+      "RANK": {
+        "TITLE": "Rang",
+        "NO_XP": "Deze gebruiker heeft nog geen XP verdiend.",
+        "IS_RANK": "is rang"
+      },
+      "SERVER": {
+        "CREATED": "Gemaakt op",
+        "OWNER": "Eigenaar",
+        "BOOSTS": "Boosts",
+        "BOOST_TIER": "Boost Tier",
+        "REGION": "Regio",
+        "EXPLICIT_FILTER": "Expliciete filter",
+        "VERIFICATION_LEVEL": "Verificatieniveau",
+        "MEMBERS": "Leden"
+      },
+      "AUTO_ROLE": {
+        "TITLE": "Auto Rol",
+        "CONFIRMATION_MESSAGE": "De automatische rol is ingesteld op {0}"
+      },
+      "BLOCK_INVITES": {
+        "TITLE": "Blok nodigt uit",
+        "DESCRIPTION": "Blokuitnodigingen is ingesteld op {0}"
+      },
+      "UPTIME": {
+        "TITLE": "Uptime",
+        "CURRENT_UPTIME": "Mijn uptime is"
+      },
+      "USER": {
+        "JOINED_DISCORD": "Samengevoegde onenigheid",
+        "BOT": "Bot",
+        "SERVER_JOIN_DATE": "Server Datum toetreding",
+        "HIGHEST_ROLE": "Hoogste rol",
+        "HOIST_ROLE": "Takel Rol",
+        "ROLES": "Rollen",
+        "NONE": "Geen"
+      },
+      "MODERATION": {
+        "TITLE": "Gematigdheid",
+        "MODERATOR": "Moderator",
+        "NICKNAME": "Bijnaam",
+        "SELF_BAN": "Je kunt jezelf niet verbannen.",
+        "SELF_DEAFEN": "Je kunt jezelf niet doof maken.",
+        "SELF_KICK": "Je kunt jezelf niet schoppen.",
+        "SELF_MUTE": "Je kunt jezelf niet verdoven.",
+        "DM_FAIL": "Ik heb gefaald om deze gebruiker te DM'en.",
+        "DM_BAN_MESSAGE": "Je bent verbannen van {0} voor {1}",
+        "DM_KICK_MESSAGE": "Je bent geschopt van {0} voor {1}",
+        "DM_MUTE_MESSAGE": "Jij bent in {0} gedempt voor {1}",
+        "DM_UNMUTE_MESSAGE": "Je bent ongemuteerd in {0}",
+        "BAN_MESSAGE": "Ik heb {0} verboden voor {1}",
+        "UNBAN_MESSAGE": "{0} is onbanned.",
+        "KICK_MESSAGE": "Ik heb {0} geschopt voor {1}",
+        "INVALID_AMOUNT": "Ongeldige hoeveelheid berichten",
+        "NOT_BANNED": "Deze gebruiker is niet verboden.",
+        "CLEARED_MESSAGES": "Succesvol verwijderde {bedrag} berichten.",
+        "NOT_DEAFENED": "Deze gebruiker is niet doof.",
+        "ALREADY_DEAFENED": "Deze gebruiker is al doof.",
+        "SUCCESSFULLY_DEAFENED": "Ik ben doof geworden <@{0}>.</@{0}>",
+        "SUCCESSFULLY_UNDEAFENED": "Ik ben niet doof geworden. <@{0}/>",
+        "ALREADY_MUTED": "Deze gebruiker is al gedempt.",
+        "SET_OWNER_NICKNAME": "Ik kan de bijnaam van de eigenaar niet instellen.",
+        "NICKNAME_CHANGE": "<@{0}>De bijnaam van 's is veranderd in {1}</@{0}>"
+      },
+      "MUSIC": {
+        "TITLE": "Muziek",
+        "NO_SONG": "Er is geen liedje gespecificeerd.",
+        "VIDEO_NOT_FOUND": "Video niet gevonden.",
+        "INVALID_PROVIDER": "Ik ondersteun deze provider momenteel niet.",
+        "NOT_IN_VOICE": "Je zit niet in het spraakkanaal.",
+        "CANT_JOIN": "Ik heb geen toestemming om in het spraakkanaal te komen.",
+        "CANT_SPEAK": "Ik heb geen toestemming om in het spraakkanaal te spreken.",
+        "ADDED_TO_QUEUE": "is toegevoegd aan de wachtrij.",
+        "ERROR": "Er was een onverwachte fout bij het verbinden met het spraakkanaal, als Discord niet down is, waarschuw dan Spencer#0003.",
+        "SONG_NOT_PLAYING": "Er wordt momenteel geen enkel liedje gespeeld.",
+        "ALREADY_PAUSED": "De muziek is al gepauzeerd.",
+        "ALREADY_PLAYING": "Er speelt al muziek.",
+        "SUCCESSFULLY_PAUSED": "De muziek is al gepauzeerd.",
+        "SUCCESSFULLY_RESUMED": "De muziek is hervat.",
+        "ENABLED_LOOPING": "Ik heb looping ingeschakeld.",
+        "DISABLED_LOOPING": "Ik heb de looping uitgeschakeld.",
+        "SHUFFLED": "Ik heb de wachtrij geschud.",
+        "SKIPPED": "Liedje overgeslagen.",
+        "STOPPED": "Ik heb de muziek gestopt.",
+        "SET_VOLUME": "Ik heb het volume ingesteld op"
+      },
+      "NSFW": {
+        "TITLE": "NSFW",
+        "NO_VIDEO": "Er is geen video gespecificeerd.",
+        "DURATION": "Duur",
+        "HD_VIDEO": "HD",
+        "PREMIUM_VIDEO": "Premium",
+        "VIDEO_URL": "URL"
+      },
+      "ROLEPLAY": {
+        "BLUSH": {
+          "SOLO": "{0} is aan het blozen",
+          "MESSAGE_ONE": "{0} werd rood door {1}",
+          "MESSAGE_TWO": "{1} gemaakt {0} wordt rood"
+        },
+        "CHEER": {
+          "SOLO": "{0} is juichen",
+          "MESSAGE_ONE": "{0} is juichen voor {1}",
+          "MESSAGE_TWO": "{0} staat te juichen {1} op"
+        },
+        "CUDDLE": {
+          "SOLO": "{0} wil knuffelen",
+          "MESSAGE_ONE": "{0} omarmt {1} voor knuffels",
+          "MESSAGE_TWO": "{0} is aan het knuffelen {1}"
+        },
+        "DANCE": {
+          "SOLO": "{0} is aan het dansen",
+          "TOGETHER": "{0} wil dansen met {1}"
+        }
+      },
+      "NSFW_ROLEPLAY": {
+        "BLOWJOB": {
+          "SOLO": "{0} hunkert naar een pijpbeurt",
+          "MESSAGE_ONE": "{0} wil slikken {1}",
+          "MESSAGE_TWO": "{0} de hete lading ingeslikt {1}"
+        },
+        "FUCK": {
+          "SOLO": "{0} wil neuken",
+          "MESSAGE_ONE": "{0} wil neuken {1}",
+          "MESSAGE_TWO": "{0} wil knallen {1}"
+        },
+        "SPANK": {
+          "SOLO": "{0} wil geslagen worden",
+          "MESSAGE_ONE": "{0} wil dat {1} geslagen wordt door {0}",
+          "MESSAGE_TWO": "{0} wil {1} ze een pak slaag geven",
+          "MESSAGE_THREE": "{0} is ondeugend geweest en moet {1} hen een lesje leren"
+        }
+      }
+    }
+  }
