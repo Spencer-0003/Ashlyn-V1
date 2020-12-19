@@ -160,8 +160,8 @@ module.exports = class PlayCommand extends Command {
                 await queueConstruct.connection.voice.setSelfDeaf(true);
                 play(queue, message.guild, queueConstruct.songs[0]);
                 let embed = createEmbed({
-                title: embedTitle,
-                description: "Started Playing: " + video.title
+                    title: embedTitle,
+                    description: "Started Playing: " + video.title
                 });
                 serverQueue.textChannel.embed(embed);
             } catch(err) {
