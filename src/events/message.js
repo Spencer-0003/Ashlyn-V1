@@ -8,11 +8,11 @@ const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.co
 module.exports = async (client, message) => {
     if (!message.guild || message.author.bot) return;
 
-    let translations = await client.getServerLocale(message.guild).COMMANDS.MODERATION;
+    let translations = client.getServerLocale(message.guild).COMMANDS.MODERATION;
 
     if (regex.exec(message.content) && client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
         try {
-            await message.delete();
+            message.delete();
 
             let embed = createEmbed({
                 title: `${bot_name}: ${translations.TITLE}`,
