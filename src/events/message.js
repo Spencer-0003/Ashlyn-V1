@@ -9,10 +9,11 @@ module.exports = async (client, message) => {
     if (!message.guild || message.author.bot) return;
     if (message.partial) await message.fetch();
 
-    let translations = client.getServerLocale(message.guild).COMMANDS.MODERATION;
+    let translations = await client.getServerLocale(message.guild).COMMANDS.MODERATION;
 
     if (regex.exec(message.content) && client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
-        message.delete();
+        try {
+        await message.delete();
 
         let embed = createEmbed({
             title: `${bot_name}: ${translations.TITLE}`,
@@ -20,6 +21,9 @@ module.exports = async (client, message) => {
         });
 
         return message.say(embed);
+        } catch(err) {
+        message.channel.send("Thats why i can't delete this invite : " + err)
+        }
     };
 
     let randomXp = Math.floor(Math.random() * 9) + 1;
