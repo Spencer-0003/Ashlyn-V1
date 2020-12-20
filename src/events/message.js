@@ -11,18 +11,14 @@ module.exports = async (client, message) => {
     let translations = client.getServerLocale(message.guild).COMMANDS.MODERATION;
 
     if (regex.exec(message.content) && client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
-        try {
-            message.delete();
+        message.delete();
 
-            let embed = createEmbed({
-                title: `${bot_name}: ${translations.TITLE}`,
-                description: "No invites!"
-            });
+        let embed = createEmbed({
+            title: `${bot_name}: ${translations.TITLE}`,
+            description: "No invites!"
+        });
 
-            return message.say(embed);
-        } catch(err) {
-            message.channel.send("Thats why i can't delete this invite : " + err);
-        }
+        return message.say(embed);
     };
 
     let randomXp = Math.floor(Math.random() * 9) + 1;
