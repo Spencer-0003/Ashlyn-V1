@@ -7,22 +7,21 @@ const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.co
 
 module.exports = async (client, message) => {
     if (!message.guild || message.author.bot) return;
-    if (message.partial) await message.fetch();
 
     let translations = await client.getServerLocale(message.guild).COMMANDS.MODERATION;
 
     if (regex.exec(message.content) && client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
         try {
-        await message.delete();
+            await message.delete();
 
-        let embed = createEmbed({
-            title: `${bot_name}: ${translations.TITLE}`,
-            description: "No invites!"
-        });
+            let embed = createEmbed({
+                title: `${bot_name}: ${translations.TITLE}`,
+                description: "No invites!"
+            });
 
-        return message.say(embed);
+            return message.say(embed);
         } catch(err) {
-        message.channel.send("Thats why i can't delete this invite : " + err)
+            message.channel.send("Thats why i can't delete this invite : " + err);
         }
     };
 
