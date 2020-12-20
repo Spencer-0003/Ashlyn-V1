@@ -10,7 +10,7 @@ module.exports = async (client, message) => {
 
     let translations = await client.getServerLocale(message.guild).COMMANDS.MODERATION;
 
-    if (regex.exec(message.content) && client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
+    if (regex.exec(message.content) && client.serverSettings.get(message.guild.id).invitesBlocked /*&& message.deletable*/) {
         try {
             await message.delete();
 
