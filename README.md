@@ -30,7 +30,7 @@ Ashlyn is a multi-purpose Discord bot.
 ### Where can I invite Ashlyn?
 
 [Top.gg](https://top.gg/bot/773305746695520298)\
-[discord.bots.gg](https://discord.bots.gg/bots/773305746695520298)\
+[discord.bots.gg](https://discord.bots.gg/bots/773305746695520298)
 
 You can join the Discord server [here](https://discord.gg/FhGVhR28pJ)
 
