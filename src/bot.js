@@ -22,8 +22,8 @@ String.prototype.format = function() {
 const fs = require("fs");
 const path = require("path");
 
-const { MongoClient } = require("mongodb");
-const MongoDBProvider = require("commando-provider-mongo");
+// const { MongoClient } = require("mongodb");
+// const MongoDBProvider = require("commando-provider-mongo");
 
 const log = require("@utils/LogError");
 
@@ -66,12 +66,12 @@ client.registry.findGroups("util")[0].name = "🔦 Utility";
 
 // Set Provider
 
-client.setProvider(MongoClient.connect(mongo_url, { useNewUrlParser: true, useUnifiedTopology: true }).then(mongoClient => {
-    console.log("Connected to database.");
-    return new MongoDBProvider(mongoClient, mongo_db);
-}).catch(err => {
-    throw new Error(err);
-}));
+// client.setProvider(MongoClient.connect(mongo_url, { useNewUrlParser: true, useUnifiedTopology: true }).then(mongoClient => {
+//     console.log("Connected to database.");
+//     return new MongoDBProvider(mongoClient, mongo_db);
+// }).catch(err => {
+//     throw new Error(err);
+// }));
 
 // Add Events
 
