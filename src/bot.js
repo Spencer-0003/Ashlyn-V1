@@ -35,7 +35,7 @@ const client = new Client({
     owner: "519790100956184586",
     invite: "https://discord.gg/wfyhsxZ6CV",
 });
-client.locales = new Array();
+
 client.registry
     .registerDefaultTypes()
     .registerGroups([
@@ -96,7 +96,6 @@ fs.readdir("src/locales", (err, files) => {
     if (err) return console.error;
     files.forEach(file => {
         if (!file.endsWith(".json")) return;
-        let locale = require(`./locales/${file}`);
         let localeName = file.split(".")[0];
 
         if (client.shard.ids[0] === 0) {

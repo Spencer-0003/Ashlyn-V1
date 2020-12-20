@@ -9,5 +9,6 @@ module.exports = class AshlynClient extends CommandoClient {
         this.games = new Map();
         this.getServerLocale = getServerLocale;
         this.serverSettings = new Map();
+        this.locales = new Array();
     };
 };
