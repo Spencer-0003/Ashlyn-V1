@@ -26,7 +26,7 @@ const regex = /(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li|club)|discordapp\.co
 module.exports = async (client, message) => {
     if (!message.guild || message.author.bot) return;
 
-    antiSpam.message(message))
+    antiSpam.message(message)
 
     
     if (regex.test(message.content) && client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
