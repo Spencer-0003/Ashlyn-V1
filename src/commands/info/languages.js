@@ -1,3 +1,4 @@
+const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -8,7 +9,7 @@ module.exports = class UptimeCommand extends Command {
             aliases: ["locales"],
             group: "info",
             memberName: "languages",
-            description: `Tells you all languages supported by ${client.user.username}.`
+            description: `Tells you all languages supported by ${bot_name}.`
         });
     };
 
