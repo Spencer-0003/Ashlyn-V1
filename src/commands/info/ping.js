@@ -1,4 +1,3 @@
-const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -14,7 +13,7 @@ module.exports = class PingCommand extends Command {
 
     run(message) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.PING;
-        let embedTitle = `${bot_name}: ${translations.TITLE}`;
+        let embedTitle = `${message.client.user.username}: ${translations.TITLE}`;
 
         let embed = createEmbed({
             title: embedTitle,

@@ -1,4 +1,3 @@
-const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -23,7 +22,7 @@ module.exports = class PornHubCommand extends Command {
 
         if (!search) {
             let embed = createEmbed({
-                title: `${bot_name}: NSFW`,
+                title: `${message.client.user.username}: NSFW`,
                 description: "No video specified."
             });
 

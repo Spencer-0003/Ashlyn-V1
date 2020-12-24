@@ -1,4 +1,3 @@
-const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 const createBar = require("string-progressbar");
@@ -28,7 +27,7 @@ module.exports = class PlayingCommand extends Command {
 
     run(message) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.MUSIC;
-        let embedTitle = `${bot_name}: ${translations.TITLE}`;
+        let embedTitle = `${message.client.user.username}: ${translations.TITLE}`;
 
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);

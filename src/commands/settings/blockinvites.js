@@ -1,4 +1,4 @@
-const { mongo_db, bot_name } = process.env;
+const { mongo_db } = process.env;
 const Command = require("@structures/Command");
 const getCollection = require("@utils/GetCollection");
 const createEmbed = require("@utils/CreateEmbed");
@@ -44,7 +44,7 @@ module.exports = class BlockInvitesCommand extends Command {
         this.client.serverSettings.set(message.guild.id, { invitesBlocked: value });
 
         let embed = createEmbed({
-            title: `${bot_name}: ${translations.TITLE}`,
+            title: `${message.client.user.username}: ${translations.TITLE}`,
             description: `${translations.DESCRIPTION.format(value)}`
         });
 

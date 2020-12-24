@@ -1,4 +1,3 @@
-const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -22,7 +21,7 @@ module.exports = class EarRapeCommand extends Command {
 
         if (!voiceChannel) {
             let embed = createEmbed({
-                title: `${bot_name}: Music`,
+                title: `${message.client.user.username}: Music`,
                 description: "You need to be in a voice channel."
             });
 
@@ -31,7 +30,7 @@ module.exports = class EarRapeCommand extends Command {
 
         if (!serverQueue) {
             let embed = createEmbed({
-                title: `${bot_name}: Music`,
+                title: `${message.client.user.username}: Music`,
                 description: "No music is currently playing."
             });
 
@@ -42,7 +41,7 @@ module.exports = class EarRapeCommand extends Command {
         serverQueue.connection.dispatcher.setVolumeLogarithmic(100 / 5);
 
         let embed = createEmbed({
-            title: `${bot_name}: Music`,
+            title: `${message.client.user.username}: Music`,
             description: "Done."
         });
 

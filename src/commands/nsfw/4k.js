@@ -1,4 +1,3 @@
-const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -18,7 +17,7 @@ module.exports = class FourKCommand extends Command {
     async run(message) {
         superagent.get("https://nekobot.xyz/api/image?type=4k").end((err, response) => {
             let embed = createEmbed({
-                title: `${bot_name}: NSFW`,
+                title: `${message.client.user.username}: NSFW`,
                 image: (err || response.body.message),
                 thumbnail: false
             });

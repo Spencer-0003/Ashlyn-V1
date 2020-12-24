@@ -1,4 +1,3 @@
-const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -30,7 +29,7 @@ module.exports = class NicknameCommand extends Command {
 
     run(message, { user, nickname }) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
-        let embedTitle = `${bot_name}: ${translations.NICKNAME}`;
+        let embedTitle = `${message.client.user.username}: ${translations.NICKNAME}`;
 
         if (user.id === message.guild.ownerID) {
             let embed = createEmbed({

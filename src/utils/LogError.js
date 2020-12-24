@@ -1,9 +1,9 @@
-const { error_log_channel, bot_name } = process.env;
+const { error_log_channel } = process.env;
 const createEmbed = require("@utils/CreateEmbed");
 
 module.exports = (client, type, err) => {
     let embed = createEmbed({
-        title: `${bot_name}: Error`,
+        title: `${client.user.username}: Error`,
         message: [{ name: type, value: `\`\`\`\n${err}\`\`\`` }]
     });
 

@@ -1,4 +1,3 @@
-const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -29,7 +28,7 @@ module.exports = class KickCommand extends Command {
 
     async run(message, { user, kickReason }) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
-        let embedTitle = `${bot_name}: ${translations.TITLE}`;
+        let embedTitle = `${message.client.user.username}: ${translations.TITLE}`;
 
         let embed = createEmbed({
             title: embedTitle,

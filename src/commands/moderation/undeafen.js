@@ -1,4 +1,3 @@
-const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -24,7 +23,7 @@ module.exports = class UndeafenCommand extends Command {
 
     run(message, { user }) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.MODERATION;
-        let embedTitle = `${bot_name}: ${translations.TITLE}`;
+        let embedTitle = `${message.client.user.username}: ${translations.TITLE}`;
 
         if (user === message.author) {
             let errorEmbed = createEmbed({

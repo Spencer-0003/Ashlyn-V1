@@ -1,4 +1,4 @@
-const { mongo_db, bot_name } = process.env;
+const { mongo_db } = process.env;
 
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
@@ -42,7 +42,7 @@ module.exports = class AutoRoleCommand extends Command {
         });
 
         let embed = createEmbed({
-            title: `${bot_name}: ${translations.COMMANDS.AUTO_ROLE.TITLE}`,
+            title: `${message.client.user.username}: ${translations.COMMANDS.AUTO_ROLE.TITLE}`,
             description: translations.COMMANDS.AUTO_ROLE.CONFIRMATION_MESSAGE
         });
 

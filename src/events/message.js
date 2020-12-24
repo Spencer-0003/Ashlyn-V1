@@ -1,4 +1,4 @@
-const { mongo_url, bot_name } = process.env;
+const { mongo_url } = process.env;
 const Levels = require("discord-xp");
 const AntiSpam = require("discord-anti-spam");
 
@@ -35,7 +35,7 @@ module.exports = async (client, message) => {
         let translations = await client.getServerLocale(message.guild).COMMANDS.MODERATION;
 
         let embed = await createEmbed({
-            title: `${bot_name}: ${translations.TITLE}`,
+            title: `${client.user.username}: ${translations.TITLE}`,
             description: "No invites!"
         });
 

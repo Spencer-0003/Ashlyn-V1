@@ -1,4 +1,3 @@
-const { bot_name } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
@@ -34,7 +33,7 @@ module.exports = class Rule34Command extends Command {
         posts({ tags: tagList }).then((value) => {
             if (!value || !value.posts) {
                 let embed = createEmbed({
-                    title: `${bot_name}: NSFW`,
+                    title: `${message.client.user.username}: NSFW`,
                     description: "No images found",
                     thumbnail: false
                 });
@@ -46,7 +45,7 @@ module.exports = class Rule34Command extends Command {
                 if (!value.posts[i]) return;
 
                 let embed = createEmbed({
-                    title: `${bot_name}: NSFW`,
+                    title: `${message.client.user.username}: NSFW`,
                     image: value.posts[i].file_url,
                     thumbnail: false
                 });
