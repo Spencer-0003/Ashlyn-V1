@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Spencer-0003/Ashlyn#readme",
   "dependencies": {
     "discord-anti-spam": "^2.4.1",
+    "discord-logs": "^1.8.2",
     "discord-xp": "^1.1.7",
     "discord.js": "^12.5.1",
     "discord.js-commando": "github:discordjs/Commando",
