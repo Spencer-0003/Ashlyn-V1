@@ -27,6 +27,7 @@ const path = require("path");
 // const MongoDBProvider = require("commando-provider-mongo");
 
 const log = require("@utils/LogError");
+const logs = require("discord-logs");
 
 // Create Client
 
@@ -64,6 +65,7 @@ client.registry
     .registerCommandsIn(path.join(__dirname, "commands"));
 
 client.registry.findGroups("util")[0].name = "🔦 Utility";
+logs(client);
 
 // Set Provider
 
