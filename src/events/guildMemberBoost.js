@@ -2,7 +2,7 @@ const createEmbed = require("@utils/CreateEmbed");
 
 module.exports = (client, member) => {
     let embed = createEmbed({
-        title: `$client.user.username: Boost`,
+        title: `${client.user.username}: Boost`,
         description: `Thanks for boosting ${member.guild.name}!`
     });
 
