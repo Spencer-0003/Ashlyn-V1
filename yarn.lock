@@ -444,10 +444,10 @@ combined-stream@^1.0.6, combined-stream@^1.0.8, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commando-provider-mongo@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/commando-provider-mongo/-/commando-provider-mongo-2.0.1.tgz#c5746830b005e46eecf404f729bb1ac0dcfdf672"
-  integrity sha512-S1zbXC9iFGYZfGV/McWGAMq9/9Qodgjhn+IKHKWEHljkkvtpXaTCfnNPVBwk8Q9v9pq1N6nS2fd+a70aoBOXYw==
+commando-provider-mongo@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/commando-provider-mongo/-/commando-provider-mongo-2.0.2.tgz#93ca471a512d241801d84c50b58a8b327b23ab0d"
+  integrity sha512-7ubI2aDbmIsTVVTrX+Hhc4bEMuhZaF/2cfiYZru0fpEvzuaj2dPKPPJ/BN2wTbicHe8ak/47/evwnzIvJgWXUQ==
 
 common-tags@^1.8.0:
   version "1.8.0"
