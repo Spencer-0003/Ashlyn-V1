@@ -95,7 +95,7 @@
             "KICK_MESSAGE": "I have kicked {0} for {1}",
             "INVALID_AMOUNT": "Invalid amount of messages",
             "NOT_BANNED": "This user is not banned.",
-            "CLEARED_MESSAGES": "Successfully deleted {amount} messages.",
+            "CLEARED_MESSAGES": "Successfully deleted {0} messages.",
             "NOT_DEAFENED": "This user is not deafened.",
             "ALREADY_DEAFENED": "This user is already deafened.",
             "SUCCESSFULLY_DEAFENED": "I have deafened <@{0}>.",

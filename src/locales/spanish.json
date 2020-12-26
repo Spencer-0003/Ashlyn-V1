@@ -95,7 +95,7 @@
             "KICK_MESSAGE": "He pateado durante {0}",
             "INVALID_AMOUNT": "Cantidad inválida de mensajes",
             "NOT_BANNED": "Este usuario no está prohibido.",
-            "CLEARED_MESSAGES": "Borrado con éxito de {muchos} mensajes.",
+            "CLEARED_MESSAGES": "Borrado con éxito de {0} mensajes.",
             "NOT_DEAFENED": "Este usuario no está sordo.",
             "ALREADY_DEAFENED": "Este usuario ya está ensordecido.",
             "SUCCESSFULLY_DEAFENED": "He sido ensordecido <@{0}>.</@{0}>",

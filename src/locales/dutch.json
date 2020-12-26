@@ -95,7 +95,7 @@
             "KICK_MESSAGE": "Ik heb {0} geschopt voor {1}",
             "INVALID_AMOUNT": "Ongeldige hoeveelheid berichten",
             "NOT_BANNED": "Deze gebruiker is niet verboden.",
-            "CLEARED_MESSAGES": "Succesvol verwijderde {bedrag} berichten.",
+            "CLEARED_MESSAGES": "Succesvol verwijderde {0} berichten.",
             "NOT_DEAFENED": "Deze gebruiker is niet doof.",
             "ALREADY_DEAFENED": "Deze gebruiker is al doof.",
             "SUCCESSFULLY_DEAFENED": "Ik ben doof geworden <@{0}>.</@{0}>",

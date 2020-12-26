@@ -95,7 +95,7 @@
             "KICK_MESSAGE": "Ich habe {0} für {1} gekickt",
             "INVALID_AMOUNT": "Ungültige Anzahl von Nachrichten",
             "NOT_BANNED": "Dieser Benutzer ist nicht gebannt.",
-            "CLEARED_MESSAGES": "Erfolgreich {Anzahl} Nachrichten gelöscht.",
+            "CLEARED_MESSAGES": "Erfolgreich {0} Nachrichten gelöscht.",
             "NOT_DEAFENED": "Dieser Benutzer ist nicht betäubt.",
             "ALREADY_DEAFENED": "Dieser Benutzer ist bereits ertaubt.",
             "SUCCESSFULLY_DEAFENED": "Ich habe betäubt <@{0}>.</@{0}>",
