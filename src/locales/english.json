@@ -161,6 +161,12 @@
             "DANCE": {
                 "SOLO": "{0} is dancing",
                 "TOGETHER": "{0} wants to dance with {1}"
+            },
+
+            "KISS": {
+                "SOLO": "{0} wants to be kissed",
+                "MESSAGE_ONE": "{0} wants to be kissed by {1}",
+                "MESSAGE_TWO": "{0} wants {1} to kiss them"
             }
         },
 

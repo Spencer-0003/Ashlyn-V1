@@ -8,7 +8,7 @@
 
     "COMMANDS": {
         "PREFIX": "Ponga el prefijo del comando en {0}. Para ejecutar los comandos use, {1}",
-
+        
         "MAGIC_8_BALL": {
             "YES": "Sí.",
             "NO": "No.",
@@ -95,7 +95,7 @@
             "KICK_MESSAGE": "He pateado durante {0}",
             "INVALID_AMOUNT": "Cantidad inválida de mensajes",
             "NOT_BANNED": "Este usuario no está prohibido.",
-            "CLEARED_MESSAGES": "Borrado con éxito de {0} mensajes.",
+            "CLEARED_MESSAGES": "Borrado exitoso de {0} mensajes.",
             "NOT_DEAFENED": "Este usuario no está sordo.",
             "ALREADY_DEAFENED": "Este usuario ya está ensordecido.",
             "SUCCESSFULLY_DEAFENED": "He sido ensordecido <@{0}>.</@{0}>",
@@ -138,8 +138,10 @@
         },
 
         "ROLEPLAY": {
+            "NO_API_KEY": "Los comandos de juego de roles requieren una clave API de Otaku Gif.",
+
             "BLUSH": {
-                "SOLO": "se está sonrojando",
+                "SOLO": "{0} se está sonrojando",
                 "MESSAGE_ONE": "{0} se puso rojo por {1}",
                 "MESSAGE_TWO": "hizo que se volviera rojo"
             },
@@ -159,6 +161,12 @@
             "DANCE": {
                 "SOLO": "está bailando",
                 "TOGETHER": "Quiere bailar con..."
+            },
+
+            "KISS": {
+                "SOLO": "quiere ser besado",
+                "MESSAGE_ONE": "{0} quiere ser besado por {1}",
+                "MESSAGE_TWO": "quiere besarlos"
             }
         },
 
