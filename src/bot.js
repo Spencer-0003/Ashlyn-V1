@@ -24,7 +24,7 @@ const fs = require("fs");
 const path = require("path");
 
 // const { MongoClient } = require("mongodb");
-// const MongoDBProvider = require("commando-provider-mongo");
+// const { MongoDBProvider } = require("commando-provider-mongo");
 
 const log = require("@utils/LogError");
 const logs = require("discord-logs");

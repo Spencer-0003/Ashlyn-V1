@@ -44,7 +44,11 @@ module.exports = class UnmuteCommand extends Command {
 
         if (message.guild.member(user).roles.cache.has(muteRole.id)) {
             message.guild.member(user).roles.remove(muteRole);
-            user.send(unmuteEmbed);
+            try {
+                user.send(unmuteEmbed);
+            } catch(err) {
+                console.log("Failed to DM user: " + err);
+            };
         };
     };
 };
