@@ -83,11 +83,9 @@ module.exports = class MuteCommand extends Command {
 
         message.guild.member(user).roles.add(muteRole);
 
-        try {
-            await user.send(embed);
-        } catch {
-            message.say(translations.DM_FAIL);
-        };
+        await user.send(embed).catch(() => {
+            console.log(translations.DM_FAIL);
+        });
 
         setTimeout(() => {
             let unmuteEmbed = createEmbed({
@@ -98,11 +96,9 @@ module.exports = class MuteCommand extends Command {
 
             if (message.guild.member(user).roles.has(muteRole)) {
                 message.guild.member(user).roles.remove(muteRole);
-                try {
-                    user.send(unmuteEmbed);
-                } catch {
-                    message.say(translations.DM_FAIL);
-                };
+                user.send(unmuteEmbed).catch(() => {
+                    console.log(translations.DM_FAIL);
+                });
             };
         }, muteDuration * 1000);
 

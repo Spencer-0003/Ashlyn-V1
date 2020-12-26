@@ -61,7 +61,7 @@ module.exports = class HelpCommand extends Command {
                 if (message.channel.type !== "dm") msgs.push(await message.say("Please check your DMs :slight_smile:"));
                 return null;
             } catch {
-                message.reply("Failed to send DM. Do you have DMs disabled.?");
+                message.reply("Failed to send DM. Do you have DMs disabled?");
                 return null;
             };
         };

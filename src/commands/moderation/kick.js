@@ -45,11 +45,9 @@ module.exports = class KickCommand extends Command {
             return message.say(errorEmbed);
         };
 
-        try {
-            await user.send(embed);
-        } catch {
-            message.say(translations.DM_FAIL);
-        };
+        await user.send(embed).catch(() => {
+            console.log(translations.DM_FAIL);
+        });
 
         let kickEmbed = createEmbed({
             title: embedTitle,
