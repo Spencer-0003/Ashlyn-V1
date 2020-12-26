@@ -138,6 +138,8 @@
         },
 
         "ROLEPLAY": {
+            "NO_API_KEY": "Roleplay commands require an Otaku Gif API key.",
+
             "BLUSH": {
                 "SOLO": "{0} is blushing",
                 "MESSAGE_ONE": "{0} turned red because of {1}",

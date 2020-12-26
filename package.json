@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/Spencer-0003/Ashlyn#readme",
   "dependencies": {
-    "commando-provider-mongo": "^2.0.1",
+    "commando-provider-mongo": "^2.0.2",
     "discord-anti-spam": "^2.4.1",
     "discord-logs": "^1.8.2",
     "discord-xp": "^1.1.7",

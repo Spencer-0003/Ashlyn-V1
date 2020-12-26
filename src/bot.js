@@ -3,7 +3,7 @@
 require("module-alias/register");
 require("dotenv").config();
 
-const { token, mongo_url, mongo_db, bot_name } = process.env;
+const { token, mongo_url, mongo_db, bot_name, otaku_gif_api_key } = process.env;
 
 // Setup Custom Log
 
@@ -74,6 +74,12 @@ client.setProvider(MongoClient.connect(mongo_url, { useNewUrlParser: true, useUn
 }).catch(err => {
     throw new Error(err);
 }));
+
+// Check if API key exists
+
+if (!otaku_gif_api_key) {
+    console.log("[WARNING] If you don't supply an API key, roleplay commands will be disabled.");
+};
 
 // Add Events
 

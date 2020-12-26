@@ -1,6 +1,8 @@
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
-const getRoleplayImage = require("@utils/Roleplay/GetRoleplayImage");
+
+const { otaku_gif_api_key } = process.env;
+const superagent = require("superagent");
 
 let getBlushText = (translations, author, user) => {
     let blushes = [
@@ -31,24 +33,44 @@ module.exports = class BlushCommand extends Command {
     };
 
     run(message, { user }) {
-        let translations = this.client.getServerLocale(message.guild).COMMANDS.ROLEPLAY.BLUSH;
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.ROLEPLAY;
+
+        if (!this.client.roleplayEnabled) {
+            let embed = createEmbed({
+                description: translations.NO_API_KEY,
+            });
+
+            return message.embed(embed);
+        };
 
         if (user == message.author) {
-            let embed = createEmbed({
-                description: translations.SOLO.format(user.username),
-                thumbnail: false,
-                image: getRoleplayImage(this.name)
-            });
+            superagent
+                .get("https://api.otakugifs.xyz/gif/blush")
+                .set("X-API-KEY", otaku_gif_api_key)
+                .end((err, response) => {
+                    let embed = createEmbed({
+                        description: translations.BLUSH.SOLO.format(user.username),
+                        image: (err || response.body.url),
+                        thumbnail: false,
+                        footer: "Powered by otakugifs.xyz"
+                    });
 
-            return message.embed(embed);
+                    return message.embed(embed);
+                });
         } else {
-            let embed = createEmbed({
-                description: getBlushText(translations, message.author.username, user.username),
-                thumbnail: false,
-                image: getRoleplayImage(this.name)
-            });
+            superagent
+                .get("https://api.otakugifs.xyz/gif/blush")
+                .set("X-API-KEY", otaku_gif_api_key)
+                .end((err, response) => {
+                    let embed = createEmbed({
+                        description: getBlushText(translations.BLUSH, message.author.username, user.username),
+                        image: (err || response.body.url),
+                        thumbnail: false,
+                        footer: "Powered by otakugifs.xyz"
+                    });
 
-            return message.embed(embed);
+                    return message.embed(embed);
+                });
         };
     };
 };
