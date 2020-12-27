@@ -45,8 +45,10 @@ module.exports = class VolumeCommand extends Command {
             return message.embed(embed);
         };
 
-        serverQueue.volume = vol;
-        serverQueue.connection.dispatcher.setVolumeLogarithmic(vol / 5);
+        if (serverQueue.connection && serverQueue.connection.dispatcher) {
+            serverQueue.volume = vol;
+            serverQueue.connection.dispatcher.setVolumeLogarithmic(vol / 5);
+        };
 
         let embed = createEmbed({
             title: embedTitle,
