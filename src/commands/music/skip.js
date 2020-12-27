@@ -1,5 +1,6 @@
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
+const { canModifyQueue } = require("@utils/canModifyQueue");
 
 module.exports = class SkipCommand extends Command {
     constructor(client) {
@@ -18,21 +19,12 @@ module.exports = class SkipCommand extends Command {
 
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
-        let voiceChannel = message.member.voice.channel;
+        if (!canModifyQueue(message.member)) return;
 
         if (!serverQueue) {
             let embed = createEmbed({
                 title: embedTitle,
                 description: translations.NO_SONG
-            });
-
-            return message.embed(embed);
-        };
-
-        if (voiceChannel !== serverQueue.voiceChannel) {
-            let embed = createEmbed({
-                title: embedTitle,
-                description: translations.NOT_IN_VOICE
             });
 
             return message.embed(embed);
