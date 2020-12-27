@@ -38,7 +38,9 @@ module.exports = class SkipCommand extends Command {
             return message.embed(embed);
         };
 
-        serverQueue.connection.dispatcher.end();
+        if (serverQueue.connection && serverQueue.connection.dispatcher) {
+            serverQueue.connection.dispatcher.end();
+        };
 
         let embed = createEmbed({
             title: embedTitle,
