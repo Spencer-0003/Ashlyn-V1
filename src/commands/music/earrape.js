@@ -1,5 +1,6 @@
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
+const { canModifyQueue } = require("@utils/canModifyQueue");
 
 module.exports = class EarRapeCommand extends Command {
     constructor(client) {
@@ -17,16 +18,7 @@ module.exports = class EarRapeCommand extends Command {
     run(message) {
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
-        let voiceChannel = message.member.voice.channel;
-
-        if (!voiceChannel) {
-            let embed = createEmbed({
-                title: `${message.client.user.username}: Music`,
-                description: "You need to be in a voice channel."
-            });
-
-            return message.embed(embed);
-        };
+        if (!canModifyQueue(message.member)) return;
 
         if (!serverQueue) {
             let embed = createEmbed({
