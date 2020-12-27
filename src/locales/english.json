@@ -152,6 +152,12 @@
                 "MESSAGE_TWO": "{0} is cheering {1} on"
             },
 
+            "CRY": {
+                "SOLO": "{0} is crying",
+                "MESSAGE_ONE": "{1} made {0} cry",
+                "MESSAGE_TWO": "{1} is crying because of {0}"
+            },
+
             "CUDDLE": {
                 "SOLO": "{0} wants to cuddle",
                 "MESSAGE_ONE": "{0} is embracing {1} for cuddles",

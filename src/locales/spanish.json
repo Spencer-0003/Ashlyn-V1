@@ -8,7 +8,7 @@
 
     "COMMANDS": {
         "PREFIX": "Ponga el prefijo del comando en {0}. Para ejecutar los comandos use, {1}",
-        
+
         "MAGIC_8_BALL": {
             "YES": "Sí.",
             "NO": "No.",
@@ -150,6 +150,12 @@
                 "SOLO": "está animando",
                 "MESSAGE_ONE": "{0} está animando a {1}",
                 "MESSAGE_TWO": "está animando a"
+            },
+
+            "CRY": {
+                "SOLO": "está llorando",
+                "MESSAGE_ONE": "hizo llorar...",
+                "MESSAGE_TWO": "{1}está llorando por{0}"
             },
 
             "CUDDLE": {

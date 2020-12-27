@@ -1,186 +1,198 @@
 {
-  "GLOBAL": {
+    "GLOBAL": {
       "YES": "Ja",
       "NO": "Nein",
       "ADMIN_ONLY": "Nur Administratoren dürfen diese Aktion durchführen.",
       "OWNER_ONLY": "Nur der Bot-Besitzer, Spencer#0003, darf diese Aktion ausführen."
-  },
+    },
 
-  "COMMANDS": {
-        "PREFIX": "Setzen Sie das Befehlspräfix auf {0}. Um Befehle auszuführen, verwenden Sie {1}",
+    "COMMANDS": {
+      "PREFIX": "Setzen Sie das Befehlspräfix auf {0}. Um Befehle auszuführen, verwenden Sie {1}",
 
-        "MAGIC_8_BALL": {
-            "YES": "Ja.",
-            "NO": "Nein.",
-            "SOURCES": "Meine Quellen scheinen das zu glauben.",
-            "DONT_THINK_SO": "Ich glaube es nicht.",
-            "UNLIKELY": "Es ist unwahrscheinlich."
+      "MAGIC_8_BALL": {
+        "YES": "Ja.",
+        "NO": "Nein.",
+        "SOURCES": "Meine Quellen scheinen das zu glauben.",
+        "DONT_THINK_SO": "Ich glaube es nicht.",
+        "UNLIKELY": "Es ist unwahrscheinlich."
+      },
+
+      "ROCK_PAPER_SCISSORS": {
+        "TITLE": "Stein, Papier, Schere",
+        "TIE": "Es ist ein Unentschieden!",
+        "WIN": "Du hast gewonnen!",
+        "LOSS": "Ich habe gewonnen!"
+      },
+
+      "LEADERBOARD": {
+        "TITLE": "Bestenliste",
+        "EMPTY_LEADERBORD": "Die Bestenliste ist leer.",
+        "TOP_1O_USERS": "Top 10 Benutzer in"
+      },
+
+      "PING": {
+        "TITLE": "Ping",
+        "PING": "Mein Ping ist"
+      },
+
+      "RANK": {
+        "TITLE": "Rang",
+        "NO_XP": "Dieser Benutzer hat noch keine XP gesammelt.",
+        "IS_RANK": "ist Rang"
+      },
+
+      "SERVER": {
+        "CREATED": "Erstellt",
+        "OWNER": "Besitzer",
+        "BOOSTS": "Boosts",
+        "BOOST_TIER": "Boost-Stufe",
+        "REGION": "Region",
+        "EXPLICIT_FILTER": "Expliziter Filter",
+        "VERIFICATION_LEVEL": "Verifizierungsstufe",
+        "MEMBERS": "Mitglieder"
+      },
+
+      "AUTO_ROLE": {
+        "TITLE": "Auto-Rolle",
+        "CONFIRMATION_MESSAGE": "Die Auto-Rolle wurde auf {0} gesetzt"
+      },
+
+      "BLOCK_INVITES": {
+        "TITLE": "Einladungen blockieren",
+        "DESCRIPTION": "Einladungen blockieren wurde auf {0} gesetzt"
+      },
+
+      "UPTIME": {
+        "TITLE": "Betriebszeit",
+        "CURRENT_UPTIME": "Meine Betriebszeit ist"
+      },
+
+      "USER": {
+        "JOINED_DISCORD": "Discord beigetreten",
+        "BOT": "Bot",
+        "SERVER_JOIN_DATE": "Server Join Datum",
+        "HIGHEST_ROLE": "Höchste Rolle",
+        "HOIST_ROLE": "Hebezeug-Rolle",
+        "ROLES": "Rollen",
+        "NONE": "Keine"
+      },
+
+      "MODERATION": {
+        "TITLE": "Moderation",
+        "MODERATOR": "Moderator",
+        "NICKNAME": "Spitzname",
+        "SELF_BAN": "Sie können sich nicht selbst verbieten.",
+        "SELF_DEAFEN": "Du kannst dich nicht betäuben.",
+        "SELF_KICK": "Du kannst dich nicht selbst treten.",
+        "SELF_MUTE": "Du kannst dich nicht stumm schalten.",
+        "DM_FAIL": "Du konntest diesen Benutzer nicht DMen.",
+        "DM_BAN_MESSAGE": "Du wurdest von {0} für {1} gebannt",
+        "DM_KICK_MESSAGE": "Du wurdest aus {0} für {1} gekickt.",
+        "DM_MUTE_MESSAGE": "Du wurdest in {0} für {1} stummgeschaltet.",
+        "DM_UNMUTE_MESSAGE": "Du wurdest in {0} wieder freigeschaltet",
+        "BAN_MESSAGE": "Ich habe {0} für {1} gebannt",
+        "UNBAN_MESSAGE": "{0} wurde entbannt.",
+        "KICK_MESSAGE": "Ich habe {0} für {1} gekickt",
+        "INVALID_AMOUNT": "Ungültige Anzahl von Nachrichten",
+        "NOT_BANNED": "Dieser Benutzer ist nicht gebannt.",
+        "CLEARED_MESSAGES": "Erfolgreich {0} Nachrichten gelöscht.",
+        "NOT_DEAFENED": "Dieser Benutzer ist nicht betäubt.",
+        "ALREADY_DEAFENED": "Dieser Benutzer ist bereits ertaubt.",
+        "SUCCESSFULLY_DEAFENED": "Ich habe betäubt <@{0}>.</@{0}>",
+        "SUCCESSFULLY_UNDEAFENED": "Ich habe nicht betäubt <@{0}/>",
+        "ALREADY_MUTED": "Dieser Benutzer ist bereits stummgeschaltet.",
+        "SET_OWNER_NICKNAME": "Ich kann den Spitznamen des Besitzers nicht einstellen.",
+        "NICKNAME_CHANGE": "<@{0}>Der Spitzname des Besitzers wurde auf {1} geändert.</@{0}>"
+      },
+
+      "MUSIC": {
+        "TITLE": "Musik",
+        "NO_SONG": "Kein Lied angegeben.",
+        "VIDEO_NOT_FOUND": "Video nicht gefunden.",
+        "INVALID_PROVIDER": "Ich unterstütze diesen Anbieter derzeit nicht.",
+        "NOT_IN_VOICE": "Sie befinden sich nicht im Sprachkanal.",
+        "CANT_JOIN": "Ich habe nicht die Berechtigung, dem Sprachkanal beizutreten.",
+        "CANT_SPEAK": "Ich habe nicht die Berechtigung, im Sprachkanal zu sprechen.",
+        "ADDED_TO_QUEUE": "wurde der Warteschlange hinzugefügt.",
+        "ERROR": "Es gab einen unerwarteten Fehler beim Verbinden mit dem Sprachkanal, wenn Discord nicht down ist, bitte Spencer#0003 alarmieren",
+        "SONG_NOT_PLAYING": "Es wird derzeit kein Lied abgespielt.",
+        "ALREADY_PAUSED": "Die Musik ist bereits pausiert.",
+        "ALREADY_PLAYING": "Musik wird bereits abgespielt.",
+        "SUCCESSFULLY_PAUSED": "Musik wurde pausiert.",
+        "SUCCESSFULLY_RESUMED": "Die Musik wurde fortgesetzt.",
+        "ENABLED_LOOPING": "Ich habe die Schleifenwiedergabe aktiviert.",
+        "DISABLED_LOOPING": "Ich habe die Schleifenwiedergabe deaktiviert.",
+        "SHUFFLED": "Ich habe die Warteschlange umgeschaltet.",
+        "SKIPPED": "Lied wurde übersprungen.",
+        "STOPPED": "Ich habe die Musik angehalten.",
+        "SET_VOLUME": "Ich habe die Lautstärke auf"
+      },
+
+      "NSFW": {
+        "TITLE": "NSFW",
+        "NO_VIDEO": "Kein Video angegeben.",
+        "DURATION": "Dauer",
+        "HD_VIDEO": "HD",
+        "PREMIUM_VIDEO": "Premium",
+        "VIDEO_URL": "URL"
+      },
+
+      "ROLEPLAY": {
+        "NO_API_KEY": "Rollenspiel-Befehle erfordern einen Otaku Gif API-Schlüssel.",
+
+        "BLUSH": {
+          "SOLO": "{0} ist errötet",
+          "MESSAGE_ONE": "{0} ist rot geworden wegen {1}",
+          "MESSAGE_TWO": "{1} hat {0} dazu gebracht, rot zu werden"
         },
 
-        "ROCK_PAPER_SCISSORS": {
-            "TITLE": "Stein, Papier, Schere",
-            "TIE": "Es ist ein Unentschieden!",
-            "WIN": "Du hast gewonnen!",
-            "LOSS": "Ich habe gewonnen!"
+        "CHEER": {
+          "SOLO": "{0} jubelt",
+          "MESSAGE_ONE": "{0} jubelt für {1}",
+          "MESSAGE_TWO": "{0} jubelt {1} zu"
         },
 
-        "LEADERBOARD": {
-            "TITLE": "Bestenliste",
-            "EMPTY_LEADERBORD": "Die Bestenliste ist leer.",
-            "TOP_1O_USERS": "Top 10 Benutzer in"
+        "CRY": {
+          "SOLO": "{0} weint",
+          "MESSAGE_ONE": "{1} hat {0} zum Weinen gebracht",
+          "MESSAGE_TWO": "{1} weint wegen {0}"
         },
 
-        "PING": {
-            "TITLE": "Ping",
-            "PING": "Mein Ping ist"
+        "CUDDLE": {
+          "SOLO": "{0} will kuscheln",
+          "MESSAGE_ONE": "{0} umarmt {1} zum Kuscheln",
+          "MESSAGE_TWO": "{0} kuschelt mit {1}"
         },
 
-        "RANK": {
-            "TITLE": "Rang",
-            "NO_XP": "Dieser Benutzer hat noch keine XP gesammelt.",
-            "IS_RANK": "ist Rang"
+        "DANCE": {
+          "SOLO": "{0} tanzt",
+          "TOGETHER": "{0} will mit {1} tanzen"
         },
 
-        "SERVER": {
-            "CREATED": "Erstellt",
-            "OWNER": "Besitzer",
-            "BOOSTS": "Boosts",
-            "BOOST_TIER": "Boost-Stufe",
-            "REGION": "Region",
-            "EXPLICIT_FILTER": "Expliziter Filter",
-            "VERIFICATION_LEVEL": "Verifizierungsstufe",
-            "MEMBERS": "Mitglieder"
-        },
-
-        "AUTO_ROLE": {
-            "TITLE": "Auto-Rolle",
-            "CONFIRMATION_MESSAGE": "Die Auto-Rolle wurde auf {0} gesetzt"
-        },
-
-        "BLOCK_INVITES": {
-            "TITLE": "Einladungen blockieren",
-            "DESCRIPTION": "Einladungen blockieren wurde auf {0} gesetzt"
-        },
-
-        "UPTIME": {
-            "TITLE": "Betriebszeit",
-            "CURRENT_UPTIME": "Meine Betriebszeit ist"
-        },
-
-        "USER": {
-            "JOINED_DISCORD": "Discord beigetreten",
-            "BOT": "Bot",
-            "SERVER_JOIN_DATE": "Server Join Datum",
-            "HIGHEST_ROLE": "Höchste Rolle",
-            "HOIST_ROLE": "Hebezeug-Rolle",
-            "ROLES": "Rollen",
-            "NONE": "Keine"
-        },
-
-        "MODERATION": {
-            "TITLE": "Moderation",
-            "MODERATOR": "Moderator",
-            "NICKNAME": "Spitzname",
-            "SELF_BAN": "Sie können sich nicht selbst verbieten.",
-            "SELF_DEAFEN": "Du kannst dich nicht betäuben.",
-            "SELF_KICK": "Du kannst dich nicht selbst treten.",
-            "SELF_MUTE": "Du kannst dich nicht stumm schalten.",
-            "DM_FAIL": "Du konntest diesen Benutzer nicht DMen.",
-            "DM_BAN_MESSAGE": "Du wurdest von {0} für {1} gebannt",
-            "DM_KICK_MESSAGE": "Du wurdest aus {0} für {1} gekickt.",
-            "DM_MUTE_MESSAGE": "Du wurdest in {0} für {1} stummgeschaltet.",
-            "DM_UNMUTE_MESSAGE": "Du wurdest in {0} wieder freigeschaltet",
-            "BAN_MESSAGE": "Ich habe {0} für {1} gebannt",
-            "UNBAN_MESSAGE": "{0} wurde entbannt.",
-            "KICK_MESSAGE": "Ich habe {0} für {1} gekickt",
-            "INVALID_AMOUNT": "Ungültige Anzahl von Nachrichten",
-            "NOT_BANNED": "Dieser Benutzer ist nicht gebannt.",
-            "CLEARED_MESSAGES": "Erfolgreich {0} Nachrichten gelöscht.",
-            "NOT_DEAFENED": "Dieser Benutzer ist nicht betäubt.",
-            "ALREADY_DEAFENED": "Dieser Benutzer ist bereits ertaubt.",
-            "SUCCESSFULLY_DEAFENED": "Ich habe betäubt <@{0}>.</@{0}>",
-            "SUCCESSFULLY_UNDEAFENED": "Ich habe unbetäubt <@{0}/>",
-            "ALREADY_MUTED": "Dieser Benutzer ist bereits stummgeschaltet.",
-            "SET_OWNER_NICKNAME": "Ich kann den Spitznamen des Besitzers nicht einstellen.",
-            "NICKNAME_CHANGE": "<@{0}>Der Spitzname des Besitzers wurde auf {1} geändert.</@{0}>"
-        },
-
-        "MUSIC": {
-            "TITLE": "Musik",
-            "NO_SONG": "Kein Lied angegeben.",
-            "VIDEO_NOT_FOUND": "Video nicht gefunden.",
-            "INVALID_PROVIDER": "Ich unterstütze diesen Anbieter derzeit nicht.",
-            "NOT_IN_VOICE": "Sie befinden sich nicht im Sprachkanal.",
-            "CANT_JOIN": "Ich habe nicht die Berechtigung, dem Sprachkanal beizutreten.",
-            "CANT_SPEAK": "Ich habe nicht die Berechtigung, im Sprachkanal zu sprechen.",
-            "ADDED_TO_QUEUE": "wurde der Warteschlange hinzugefügt.",
-            "ERROR": "Es gab einen unerwarteten Fehler beim Verbinden mit dem Sprachkanal, wenn Discord nicht down ist, bitte Spencer#0003 alarmieren",
-            "SONG_NOT_PLAYING": "Es wird derzeit kein Lied gespielt.",
-            "ALREADY_PAUSED": "Die Musik ist bereits pausiert.",
-            "ALREADY_PLAYING": "Musik wird bereits abgespielt.",
-            "SUCCESSFULLY_PAUSED": "Musik wurde pausiert.",
-            "SUCCESSFULLY_RESUMED": "Die Musik wurde fortgesetzt.",
-            "ENABLED_LOOPING": "Ich habe die Schleifenwiedergabe aktiviert.",
-            "DISABLED_LOOPING": "Ich habe die Schleifenwiedergabe deaktiviert.",
-            "SHUFFLED": "Ich habe die Warteschlange umgeschaltet.",
-            "SKIPPED": "Lied wurde übersprungen.",
-            "STOPPED": "Ich habe die Musik angehalten.",
-            "SET_VOLUME": "Ich habe die Lautstärke auf"
-        },
-
-        "NSFW": {
-            "TITLE": "NSFW",
-            "NO_VIDEO": "Kein Video angegeben.",
-            "DURATION": "Dauer",
-            "HD_VIDEO": "HD",
-            "PREMIUM_VIDEO": "Premium",
-            "VIDEO_URL": "URL"
-        },
-
-        "ROLEPLAY": {
-            "BLUSH": {
-                "SOLO": "{0} errötet",
-                "MESSAGE_ONE": "{0} ist rot geworden wegen {1}",
-                "MESSAGE_TWO": "{1} hat {0} rot werden lassen"
-            },
-
-            "CHEER": {
-                "SOLO": "{0} jubelt",
-                "MESSAGE_ONE": "{0} jubelt für {1}",
-                "MESSAGE_TWO": "{0} jubelt {1} zu"
-            },
-
-            "CUDDLE": {
-                "SOLO": "{0} will kuscheln",
-                "MESSAGE_ONE": "{0} umarmt {1} zum Kuscheln",
-                "MESSAGE_TWO": "{0} kuschelt mit {1}"
-            },
-
-            "DANCE": {
-                "SOLO": "{0} tanzt",
-                "TOGETHER": "{0} will mit {1} tanzen"
-            }
-        },
-
-        "NSFW_ROLEPLAY": {
-            "BLOWJOB": {
-                "SOLO": "{0} sehnt sich nach einem Blowjob",
-                "MESSAGE_ONE": "{0} will schlucken {1}",
-                "MESSAGE_TWO": "{0} hat {1}'s heiße Ladung geschluckt"
-            },
-
-            "FUCK": {
-                "SOLO": "{0} will ficken",
-                "MESSAGE_ONE": "{0} will {1} ficken",
-                "MESSAGE_TWO": "{0} will {1} bumsen"
-            },
-
-            "SPANK": {
-                "SOLO": "{0} will den Hintern versohlt bekommen",
-                "MESSAGE_ONE": "{0} will, dass {1} von {0} den Hintern versohlt bekommt",
-                "MESSAGE_TWO": "{0} will, dass {1} ihm den Hintern versohlt",
-                "MESSAGE_THREE": "{0} war ungezogen und braucht {1}, um ihm eine Lektion zu erteilen"
-            }
+        "KISS": {
+          "SOLO": "{0} will geküsst werden",
+          "MESSAGE_ONE": "{0} will von {1} geküsst werden",
+          "MESSAGE_TWO": "{0} will, dass {1} sie küsst"
         }
+      },
+
+      "NSFW_ROLEPLAY": {
+        "BLOWJOB": {
+          "SOLO": "{0} sehnt sich nach einem Blowjob",
+          "MESSAGE_ONE": "{0} will {1} schlucken",
+          "MESSAGE_TWO": "{0} hat {1}s heiße Ladung geschluckt"
+        },
+        "FUCK": {
+          "SOLO": "{0} will ficken",
+          "MESSAGE_ONE": "{0} will {1} ficken",
+          "MESSAGE_TWO": "{0} will {1} bumsen"
+        },
+        "SPANK": {
+          "SOLO": "{0} will den Hintern versohlt bekommen",
+          "MESSAGE_ONE": "{0} will, dass {1} von {0} den Hintern versohlt bekommt",
+          "MESSAGE_TWO": "{0} will, dass {1} ihm den Hintern versohlt",
+          "MESSAGE_THREE": "{0} war ungezogen und braucht {1}, um ihm eine Lektion zu erteilen"
+        }
+      }
     }
-}
+  }

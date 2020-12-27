@@ -1,10 +1,10 @@
 {
-  "GLOBAL": {
-      "YES": "Ja",
-      "NO": "Geen",
-      "ADMIN_ONLY": "Alleen beheerders mogen deze actie uitvoeren.",
-      "OWNER_ONLY": "Alleen de eigenaar van de botten, Spencer#0003, mag deze actie uitvoeren."
-  },
+    "GLOBAL": {
+        "YES": "Ja",
+        "NO": "Geen",
+        "ADMIN_ONLY": "Alleen beheerders mogen deze actie uitvoeren.",
+        "OWNER_ONLY": "Alleen de eigenaar van de botten, Spencer#0003, mag deze actie uitvoeren."
+    },
 
     "COMMANDS": {
         "PREFIX": "Zet het voorvoegsel van het commando op {0}. Om commando's uit te voeren gebruik je, {1}",
@@ -138,8 +138,10 @@
         },
 
         "ROLEPLAY": {
+            "NO_API_KEY": "Rollenspel commando's vereisen een Otaku Gif API sleutel.",
+    
             "BLUSH": {
-                "SOLO": "{0} is aan het blozen",
+                "SOLO": "{0} is blozend",
                 "MESSAGE_ONE": "{0} werd rood door {1}",
                 "MESSAGE_TWO": "{1} gemaakt {0} wordt rood"
             },
@@ -148,6 +150,12 @@
                 "SOLO": "{0} is juichen",
                 "MESSAGE_ONE": "{0} is juichen voor {1}",
                 "MESSAGE_TWO": "{0} staat te juichen {1} op"
+            },
+
+            "CRY": {
+                "SOLO": "{0} huilt",
+                "MESSAGE_ONE": "{\\an5} maakte {\\an5} een huilbui...",
+                "MESSAGE_TWO": "{1} huilt vanwege {0}"
             },
 
             "CUDDLE": {
@@ -159,6 +167,12 @@
             "DANCE": {
                 "SOLO": "{0} is aan het dansen",
                 "TOGETHER": "{0} wil dansen met {1}"
+            },
+
+            "KISS": {
+                "SOLO": "{0} wil gekust worden",
+                "MESSAGE_ONE": "{0} wil gekust worden door {1}",
+                "MESSAGE_TWO": "{0} wil {1} ze kussen..."
             }
         },
 
