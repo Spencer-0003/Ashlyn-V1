@@ -19,8 +19,6 @@ module.exports = class SkipCommand extends Command {
 
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
-        if (!canModifyQueue(message.member)) return;
-
         if (!serverQueue) {
             let embed = createEmbed({
                 title: embedTitle,
@@ -29,6 +27,7 @@ module.exports = class SkipCommand extends Command {
 
             return message.embed(embed);
         };
+        if (!canModifyQueue(message.member)) return;
 
         if (serverQueue.connection && serverQueue.connection.dispatcher) {
             serverQueue.connection.dispatcher.end();
