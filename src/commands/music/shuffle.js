@@ -18,8 +18,6 @@ module.exports = class ShuffleCommand extends Command {
 
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
-        if (!canModifyQueue(message.member)) return;
-
         if (!serverQueue) {
             let embed = createEmbed({
                 title: embedTitle,
@@ -28,6 +26,7 @@ module.exports = class ShuffleCommand extends Command {
 
             return message.embed(embed);
         };
+        if (!canModifyQueue(message.member)) return;
 
         let songs = serverQueue.songs;
         for (let i = songs.length - 1; i > 1; i--) {
