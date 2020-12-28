@@ -18,8 +18,6 @@ module.exports = class ResumeComamnd extends Command {
 
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
-        if (!canModifyQueue(message.member)) return;
-
         if (!serverQueue) {
             let embed = createEmbed({
                 title: embedTitle,
@@ -28,6 +26,7 @@ module.exports = class ResumeComamnd extends Command {
 
             return message.embed(embed);
         };
+        if (!canModifyQueue(message.member)) return;
 
         if (serverQueue.playing) {
             let embed = createEmbed({
