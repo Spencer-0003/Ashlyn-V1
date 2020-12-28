@@ -1,6 +1,6 @@
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
-const { canModifyQueue } = require("@utils/canModifyQueue");
+const canModifyQueue = require("@utils/CanModifyQueue");
 
 module.exports = class LoopCommand extends Command {
     constructor(client) {

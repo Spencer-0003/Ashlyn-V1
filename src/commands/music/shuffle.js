@@ -1,6 +1,6 @@
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
-const { canModifyQueue } = require("@utils/canModifyQueue");
+const canModifyQueue = require("@utils/CanModifyQueue");
 
 module.exports = class ShuffleCommand extends Command {
     constructor(client) {
