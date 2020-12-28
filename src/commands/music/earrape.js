@@ -18,8 +18,6 @@ module.exports = class EarRapeCommand extends Command {
     run(message) {
         let queue = this.client.queue;
         let serverQueue = queue.get(message.guild.id);
-        if (!canModifyQueue(message.member)) return;
-
         if (!serverQueue) {
             let embed = createEmbed({
                 title: `${message.client.user.username}: Music`,
@@ -28,6 +26,7 @@ module.exports = class EarRapeCommand extends Command {
 
             return message.embed(embed);
         };
+        if (!canModifyQueue(message.member)) return;
 
         serverQueue.volume = 100;
         serverQueue.connection.dispatcher.setVolumeLogarithmic(100 / 5);
