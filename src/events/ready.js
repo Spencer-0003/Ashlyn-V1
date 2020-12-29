@@ -30,6 +30,8 @@ module.exports = async client => {
 
                     return _client.close();
                 });
+
+                guild.locale = client.serverSettings.get(guild.id).language;
             });
         });
     };
