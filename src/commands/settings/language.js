@@ -1,5 +1,7 @@
+const { mongo_db } = process.env;
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
+const getCollection = require("@utils/GetCollection");
 
 module.exports = class LanguageCommand extends Command {
     constructor(client) {
@@ -26,6 +28,13 @@ module.exports = class LanguageCommand extends Command {
         if(!message.member.hasPermission("ADMINISTRATOR") && !this.client.isOwner(message.author)) {
             return message.reply(translations.GLOBAL.ADMIN_ONLY);
         };
+
+        getCollection(mongo_db, "Guild Settings", async function(collection, client) {
+            let guildData = await collection.findOne({ GuildID: message.guild.id });
+
+            await collection.updateOne(guildData, { $set: { Language: language } });
+            return client.close();
+        });
 
         message.guild.locale = language;
 
