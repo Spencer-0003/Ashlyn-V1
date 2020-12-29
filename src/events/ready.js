@@ -27,11 +27,10 @@ module.exports = async client => {
                     let guildData = await collection.findOne({ GuildID: guild.id });
 
                     client.serverSettings.set(guild.id, guildData);
+                    guild.locale = client.serverSettings.get(guild.id).language;
 
                     return _client.close();
                 });
-
-                guild.locale = client.serverSettings.get(guild.id).language;
             });
         });
     };
