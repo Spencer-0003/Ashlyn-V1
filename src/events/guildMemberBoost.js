@@ -1,8 +1,7 @@
 const createEmbed = require("@utils/CreateEmbed");
 
 module.exports = (client, member) => {
-    // requested by moderator
-    if (member.guild.id === "110373943822540800") return;
+    if (!client.serverSettings.get(member.guild.id).ThankBoosters) return;
 
     let embed = createEmbed({
         title: `${client.user.username}: Boost`,

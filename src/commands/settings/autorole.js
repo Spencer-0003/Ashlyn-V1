@@ -29,14 +29,10 @@ module.exports = class AutoRoleCommand extends Command {
             return message.reply(translations.GLOBAL.ADMIN_ONLY);
         };
 
-        getCollection(mongo_db, "Auto Roles", async function(collection, client) {
+        getCollection(mongo_db, "Guild Settings", async function(collection, client) {
             let guildData = await collection.findOne({ GuildID: message.guild.id });
 
-            if (!guildData) {
-                await collection.insertOne({ GuildID: message.guild.id, Role: role.id });
-            } else {
-                await collection.updateOne(guildData, { $set: { GuildID: message.guild.id, Role: role.id } });
-            };
+            await collection.updateOne(guildData, { $set: { AutoRole: role.id } });
 
             return client.close();
         });

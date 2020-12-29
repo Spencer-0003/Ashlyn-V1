@@ -29,7 +29,7 @@ module.exports = async (client, message) => {
 
     antiSpam.message(message);
 
-    if (regex.test(message.content) && client.serverSettings.get(message.guild.id).invitesBlocked && message.deletable) {
+    if (regex.test(message.content) && client.serverSettings.get(message.guild.id).NoInvites && message.deletable) {
         await message.delete();
 
         let translations = await client.getServerLocale(message.guild).COMMANDS.MODERATION;

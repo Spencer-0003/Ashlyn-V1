@@ -23,14 +23,10 @@ module.exports = async client => {
 
         guilds.forEach(element => {
             element.forEach(guild => {
-                getCollection(mongo_db, "Auto Moderation", async function(collection, _client) {
+                getCollection(mongo_db, "Guild Settings", async function(collection, _client) {
                     let guildData = await collection.findOne({ GuildID: guild.id });
 
-                    if (guildData) {
-                        client.serverSettings.set(guild.id, { invitesBlocked: guildData.NoInvites });
-                    } else {
-                        client.serverSettings.set(guild.id, { invitesBlocked: false });
-                    };
+                    client.serverSettings.set(guild.id, guildData);
 
                     return _client.close();
                 });

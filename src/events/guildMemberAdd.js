@@ -5,10 +5,10 @@ const createEmbed = require("@utils/CreateEmbed");
 module.exports = (client, member) => {
     if (member.bot) return;
 
-    getCollection(mongo_db, "Auto Moderation", async function(collection, _client) {
+    getCollection(mongo_db, "Guild Settings", async function(collection, _client) {
         let guildData = await collection.findOne({ GuildID: member.guild.id });
 
-        if (guildData && guildData.NoAlts == "true") {
+        if (guildData && guildData.NoAlts) {
             if (member.user.createdAt < "259200000") {
                 let embed = createEmbed({
                     title: `${client.user.username}: Moderation`,
@@ -28,11 +28,12 @@ module.exports = (client, member) => {
         return _client.close();
     });
 
-    getCollection(mongo_db, "Auto Roles", async function(collection, _client) {
+    getCollection(mongo_db, "Guild Settings", async function(collection, _client) {
         let guildData = await collection.findOne({ GuildID: member.guild.id });
 
-        if (guildData) {
-            let role = guildData.Role;
+        let role = guildData.AutoRole;
+
+        if (role) {
             await member.roles.add(role);
         };
 
