@@ -37,6 +37,7 @@ module.exports = class LanguageCommand extends Command {
         });
 
         message.guild.locale = language;
+        this.client.serverSettings.get(message.guild.id).language = language;
 
         let embed = createEmbed({
             title: `${message.client.user.username}: Language`,
