@@ -27,7 +27,11 @@ module.exports = async client => {
                     let guildData = await collection.findOne({ GuildID: guild.id });
 
                     client.serverSettings.set(guild.id, guildData);
-                    guild.locale = client.serverSettings.get(guild.id).language;
+                    if (client.serverSettings.get(guild.id)) {
+                        guild.locale = client.serverSettings.get(guild.id).language;
+                    } else {
+                        guild.locale = "english";
+                    };
 
                     return _client.close();
                 });
