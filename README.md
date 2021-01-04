@@ -49,3 +49,8 @@ Ashlyn has moderation, music, fun, roleplay and NSFW commands, a full list of th
 
 - ©2020-2021 Spencer#0003
 - Avatar Art: WallpaperAccess
+
+
+## Notices
+
+This bot is under HEAVY development. If the bot restarts, it's most likely me updating it.
