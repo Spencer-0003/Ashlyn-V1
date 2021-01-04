@@ -53,4 +53,5 @@ Ashlyn has moderation, music, fun, roleplay and NSFW commands, a full list of th
 
 ## Notices
 
-This bot is under HEAVY development. If the bot restarts, it's most likely me updating it.
+- This bot is under HEAVY development. If the bot restarts, it's most likely me updating it.
+- Self-Hosting questions for this bot will not be assisted by the bot developer.
