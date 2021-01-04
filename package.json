@@ -41,7 +41,7 @@
     "simpleyt": "^1.0.7",
     "string-progressbar": "^1.0.1",
     "superagent": "^6.1.0",
-    "ytdl-core": "^4.3.0",
+    "ytdl-core": "^4.4.0",
     "ytdl-core-discord": "^1.2.5"
   },
   "_moduleAliases": {
