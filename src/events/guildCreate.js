@@ -3,7 +3,7 @@ const createEmbed = require("@utils/CreateEmbed");
 const getCollection = require("@utils/GetCollection");
 
 module.exports = async (client, guild) => {
-    let guildSchema = require("../schemas/guild");
+    let guildSchema = require("@schemas/guild");
 
     let embed = createEmbed({
         title: `${client.user.username}: Welcome`,
