@@ -48,8 +48,7 @@
     "@utils": "src/utils",
     "@structures": "src/structures",
     "@events": "src/events",
-    "@locales": "src/locales",
-    "@schemas": "src/schemas"
+    "@locales": "src/locales"
   },
   "devDependencies": {
     "eslint": "^7.17.0",
