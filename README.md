@@ -23,6 +23,11 @@
   </a>
 </div>
 
+### Feel like supporting me and the development of this bot?
+
+[:heart: Sponsor](https://github.com/sponsors/Spencer-0003)\
+[:coffee: Buy me a coffee](https://ko-fi.com/spencer0003)
+
 ## What is Ashlyn?
 
 Ashlyn is a multi-purpose Discord bot.
