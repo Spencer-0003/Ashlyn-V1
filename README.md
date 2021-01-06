@@ -1,4 +1,5 @@
 <div align="center">
+  <img width="150" height="150" alt="Ashlyn" src="https://i.imgur.com/FoezDWf.png">  
   <br>
   <strong><i>Ashlyn</i></strong>
   <br>
