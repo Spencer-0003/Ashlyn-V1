@@ -43,6 +43,7 @@ client.registry
         ["fun", "😀 Fun"],
         ["games", "🎮 Games"],
         ["info", "📈 Info"],
+        ["levels", "➕ Levels"],
         ["moderation", "📏 Moderation"],
         ["nsfw", "🥵 NSFW"],
         ["music", "🎧 Music"],
