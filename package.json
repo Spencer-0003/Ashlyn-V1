@@ -41,7 +41,7 @@
     "simpleyt": "^1.0.7",
     "string-progressbar": "^1.0.1",
     "superagent": "^6.1.0",
-    "ytdl-core": "^4.4.0",
+    "ytdl-core": "^4.4.1",
     "ytdl-core-discord": "^1.2.5"
   },
   "_moduleAliases": {
@@ -53,6 +53,6 @@
   },
   "devDependencies": {
     "eslint": "^7.17.0",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.7"
   }
 }
