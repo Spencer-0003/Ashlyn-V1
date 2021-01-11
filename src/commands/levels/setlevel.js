@@ -10,7 +10,7 @@ module.exports = class SetLevelCommand extends Command {
             group: "levels",
             memberName: "setlevel",
             description: `Sets the rank of a chosen user.`,
-            clientPermissions: ["ADMINISTRATOR"],
+            userPermissions: ["ADMINISTRATOR"],
             args: [
                 {
                     key: "user",
