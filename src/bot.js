@@ -122,7 +122,7 @@ client.login(token);
 
 // Error handling
 
-client.on("commandError", err => log(client, "Command Error", err));
+client.on("commandError", (command, err) => log(client, "Command Error", err, command));
 process.on("unhandledRejection", err => log(client, "Unhandled Rejection", err));
 process.on("rejectionHandled", err => log(client, "Rejection Handled", err));
 process.on("uncaughtExceptionMonitor", err => log(client, "Uncaught Exception Monitor", err));
