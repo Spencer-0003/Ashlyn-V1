@@ -605,7 +605,8 @@ discord-xp@^1.1.7:
 
 "discord.js-commando@github:discordjs/Commando":
   version "0.11.0-dev"
-  resolved "https://codeload.github.com/discordjs/Commando/tar.gz/198d7604e3725ee88dceab9b5f296edb1b7580a5"
+  uid "0c2541af3710e3d283464e465f21f2c3597f9647"
+  resolved "https://codeload.github.com/discordjs/Commando/tar.gz/0c2541af3710e3d283464e465f21f2c3597f9647"
   dependencies:
     common-tags "^1.8.0"
     require-all "^3.0.0"
