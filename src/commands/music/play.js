@@ -3,8 +3,8 @@ const createEmbed = require("@utils/CreateEmbed");
 
 const { google_api_key } = process.env;
 
-// const ytdl = require("ytdl-core");
-const ytdl = require("ytdl-core-discord");
+const ytdl = require("ytdl-core");
+// const ytdl = require("ytdl-core-discord");
 const YouTube = require("simple-youtube-api");
 const youtube = new YouTube(google_api_key);
 
