@@ -3,8 +3,8 @@ const createEmbed = require("@utils/CreateEmbed");
 
 const { google_api_key } = process.env;
 
-const ytdl = require("ytdl-core");
-// const ytdl = require("ytdl-core-discord");
+// const ytdl = require("ytdl-core");
+const ytdl = require("ytdl-core-discord");
 const YouTube = require("simple-youtube-api");
 const youtube = new YouTube(google_api_key);
 
@@ -26,10 +26,8 @@ async function play(queue, guild, song) {
             } else {return;} }, 60000);
     };
 
-    // let downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0 });
-    // let dispatcher = serverQueue.connection.play(downloadedSong, { type: "opus" })
     let downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0 });
-    let dispatcher = serverQueue.connection.play(downloadedSong)
+    let dispatcher = serverQueue.connection.play(downloadedSong, { type: "opus" })
         .on("finish", () => {
             if (!serverQueue.loop) serverQueue.songs.shift();
             play(queue, guild, serverQueue.songs[0]);
