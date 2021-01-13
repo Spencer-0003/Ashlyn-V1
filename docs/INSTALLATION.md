@@ -12,7 +12,7 @@ How to install Ashlyn.
 ## Usage
 
 1. Clone the repo: `git clone https://github.com/Spencer-0003/Ashlyn`
-2. Install all dependencies: `npm i`
+2. Install all dependencies: `npm i` or `yarn`
 3. Rename `.env.example` to `.env`
 4. Create a bot at [Discord Developers](https://discord.com/developers/applications)
 5. Copy your token and paste into `.env`
