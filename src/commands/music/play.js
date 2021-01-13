@@ -23,7 +23,7 @@ async function play(queue, guild, song) {
                     description: "I left the channel because i was inactive for too long."
                 });
                 return serverQueue.textChannel.send(embed);
-            } else {return;} }, 60000);
+            }}, 60000);
     };
 
     let downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0 });
