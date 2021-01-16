@@ -26,10 +26,11 @@ module.exports = async client => {
                 getCollection(mongo_db, "Guild Settings", async function(collection, _client) {
                     let guildData = await collection.findOne({ GuildID: guild.id });
 
-                    client.serverSettings.set(guild.id, guildData);
-                    if (client.serverSettings.get(guild.id)) {
-                        guild.locale = client.serverSettings.get(guild.id).language;
+                    if (guildData) {
+                        client.serverSettings.set(guild.id, guildData);
+                        guild.locale = guildData.language;
                     } else {
+                        client.serverSettings.set(guild.id, {});
                         guild.locale = "english";
                     };
 
