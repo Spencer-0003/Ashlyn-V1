@@ -42,13 +42,17 @@ module.exports = async (client, message) => {
         return message.say(embed);
     };
 
-    let randomXp = Math.floor(Math.random() * 9) + 1;
-    let hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXp);
+    try {
+        let randomXp = Math.floor(Math.random() * 9) + 1;
+        let hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXp);
 
-    if (hasLeveledUp) {
-        let user = await Levels.fetch(message.author.id, message.guild.id);
-        return message.channel.send(`${message.author}, congratulations! You have leveled up to **${user.level}**. :tada:`).catch(err => {
-            console.log("Failed to send level up notification: " + err);
-        });
+        if (hasLeveledUp) {
+            let user = await Levels.fetch(message.author.id, message.guild.id);
+            return message.channel.send(`${message.author}, congratulations! You have leveled up to **${user.level}**. :tada:`).catch(err => {
+                console.log("Failed to send level up notification: " + err);
+            });
+        };
+    } catch(err) {
+        console.log(`Error appending XP: ${err}`);
     };
 };
