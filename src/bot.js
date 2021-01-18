@@ -3,7 +3,7 @@
 require("module-alias/register");
 require("dotenv").config();
 
-const { token, mongo_url, mongo_db, bot_name, otaku_gif_api_key, top_gg_api_key } = process.env;
+const { token, mongo_url, mongo_db, bot_name, otaku_gif_api_key } = process.env;
 
 // Setup Custom Log
 
@@ -27,8 +27,6 @@ const { MongoDBProvider } = require("commando-provider-mongo");
 
 const log = require("@utils/LogError");
 const logs = require("discord-logs");
-const Topgg = require("@top-gg/sdk");
-const api = new Topgg.Api(top_gg_api_key);
 
 // Create Client
 
@@ -117,18 +115,6 @@ fs.readdir("src/locales", (err, files) => {
         client.locales.push(localeName);
     });
 });
-
-// Setup Top.gg events
-
-if (top_gg_api_key) {
-    setInterval(() => {
-        api.postStats({
-            serverCount: client.guilds.cache.size,
-            shardId: client.shard.ids[0],
-            shardCount: client.options.shardCount
-        });
-    }, 1800000);
-};
 
 // Login
 
