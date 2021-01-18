@@ -17,6 +17,8 @@ module.exports = async (client, guild) => {
         return _client.close();
     });
 
+    client.serverSettings.set(guild.id, guildSchema);
+
     if (guild.systemChannel && guild.systemChannel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
         return guild.systemChannel.send(embed);
     } else {
