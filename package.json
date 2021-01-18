@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Spencer-0003/Ashlyn#readme",
   "dependencies": {
+    "@top-gg/sdk": "^3.0.6",
     "commando-provider-mongo": "^2.0.2",
     "discord-anti-spam": "^2.4.1",
     "discord-logs": "^1.8.2",
