@@ -606,10 +606,10 @@ discord-anti-spam@^2.4.1:
   resolved "https://registry.yarnpkg.com/discord-anti-spam/-/discord-anti-spam-2.4.1.tgz#cdbc1d1332bfef53f8bd006d9c755fe4aaf3f227"
   integrity sha512-LuWYmeVYnsIDkLqQH811vod7jWnnYI03o0DAiV+7sY7tAKQjpqC9hYkP8f5PaODA9Jl4zoMNXDAVA4aAwmeuaA==
 
-discord-logs@^1.8.2:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/discord-logs/-/discord-logs-1.8.2.tgz#5860b02df6441b7aa7e926a9730558a0c161fdac"
-  integrity sha512-G6lnC3LTNJBUmUrkW4kH3AHnHSC9k0Cmuzo0ndOToJR54acMVt3k7JftTpEeUbhcNIpn6Y5RjuHQBmLejg1vVA==
+discord-logs@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/discord-logs/-/discord-logs-1.9.0.tgz#4446125659331ec95b8c5f463f777198e64c17d0"
+  integrity sha512-wyTwB/KrWvgRXLfxxtAP9EJwSq3EcKasv3uEsWz1BCgmDiYJ6qXcNx28wcJWNIa7CeCUojnBODOgc7pQdEOwbw==
   dependencies:
     "@types/node" "^14.0.1"
     "@types/ws" "^7.2.1"
