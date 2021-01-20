@@ -7,15 +7,15 @@ module.exports = (client, type, err, extra) => {
         message: [{ name: type, value: `\`\`\`\n${err}\`\`\`` }]
     });
 
-    if (extra && type == "Command Error") {
+    if (type == "Command Error") {
         embed.addField("Command Name", extra.info.name);
     };
 
-    if (extra && type == "Unhandled Rejection") {
+    if (type == "Unhandled Rejection") {
         embed.addField("Promise", `\`\`\`\n${extra}\`\`\``);
     };
 
-    if (type == "Unhandled Rejection") {
+    if (type == "Unhandled Rejection" || type == "Client Error") {
         embed.addField("Stack", `\`\`\`\n${err.stack}\`\`\``);
     };
 

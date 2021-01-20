@@ -1,3 +1,5 @@
+const log = require("@utils/LogError");
+
 module.exports = (client, err) => {
-    console.log(`Error: ${err}`);
+    log(client, "Client Error", err);
 };
