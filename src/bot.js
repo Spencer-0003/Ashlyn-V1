@@ -91,13 +91,13 @@ fs.readdir("src/events", (err, files) => {
         let event = require(`./events/${file}`);
         let eventName = file.split(".")[0];
 
-        if (client.shard.ids[0] === 0) {
-            console.log(`Loaded event "${eventName}"`);
-        };
-
         client.on(eventName, event.bind(null, client));
         delete require.cache[require.resolve(`./events/${file}`)];
     });
+
+    if (client.shard.ids[0] === 0) {
+        console.log("Loaded events.");
+    };
 });
 
 // Add Locales
@@ -108,12 +108,12 @@ fs.readdir("src/locales", (err, files) => {
         if (!file.endsWith(".json")) return;
         let localeName = file.split(".")[0];
 
-        if (client.shard.ids[0] === 0) {
-            console.log(`Loaded locale "${localeName}"`);
-        };
-
         client.locales.push(localeName);
     });
+
+    if (client.shard.ids[0] === 0) {
+        console.log("Loaded locales.");
+    };
 });
 
 // Login
