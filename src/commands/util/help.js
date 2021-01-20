@@ -61,7 +61,15 @@ module.exports = class HelpCommand extends Command {
                 if (message.channel.type !== "dm") msgs.push(await message.say("Please check your DMs :slight_smile:"));
                 return null;
             } catch {
-                message.reply("Failed to send DM. Do you have DMs disabled?");
+                if (message.channel.permissionsFor(message.guild.me).has("SEND_MESSAGES")) {
+                    let errorEmbed = createEmbed({
+                        title: `${message.client.user.username}: Help`,
+                        description: "Failed to send DM, do you have DMs disabled?"
+                    });
+
+                    return message.embed(errorEmbed);
+                };
+
                 return null;
             };
         };
@@ -80,12 +88,16 @@ module.exports = class HelpCommand extends Command {
 
             if (message.channel.type !== "dm") message.say("Please check your DMs :slight_smile:");
         } catch {
-            let errorEmbed = createEmbed({
-                title: `${message.client.user.username}: Help`,
-                description: "Failed to send DM, do you have DMs disabled?"
-            });
+            if (message.channel.permissionsFor(message.guild.me).has("SEND_MESSAGES")) {
+                let errorEmbed = createEmbed({
+                    title: `${message.client.user.username}: Help`,
+                    description: "Failed to send DM, do you have DMs disabled?"
+                });
 
-            return message.embed(errorEmbed);
+                return message.embed(errorEmbed);
+            };
+
+            return null;
         };
 
         return null;
