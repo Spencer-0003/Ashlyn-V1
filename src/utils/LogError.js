@@ -1,5 +1,4 @@
-const { bot_name } = process.env;
-const { error_log_channel } = process.env;
+const { bot_name, error_log_channel } = process.env;
 const createEmbed = require("@utils/CreateEmbed");
 
 module.exports = (client, type, err, extra) => {
@@ -14,6 +13,10 @@ module.exports = (client, type, err, extra) => {
 
     if (extra && type == "unhandledRejection") {
         embed.addField("Promise", `\`\`\`\n${extra}\`\`\``);
+    };
+
+    if (type == "unhandledRejection") {
+        embed.addField("Stack", err.stack);
     };
 
     client.channels.fetch(error_log_channel).then(channel => {
