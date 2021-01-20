@@ -59,6 +59,15 @@ module.exports = class PlayCommand extends Command {
         let searchString = message.content.split(/\s+/g).slice(1).join(" ");
         let video;
 
+        if (!searchString) {
+            let embed = createEmbed({
+                title: embedTitle,
+                description: translations.NO_SONG
+            });
+
+            return message.embed(embed);
+        };
+
         if (searchString.substring(0, 32) === "https://www.youtube.com/watch?v=") {
             searchString = searchString.replace("https://www.youtube.com/watch?v=", "");
         } else if (searchString.substring(0, 17) === "https://youtu.be/") {
@@ -69,15 +78,6 @@ module.exports = class PlayCommand extends Command {
                 description: translations.INVALID_PROVIDER
             });
             return message.say(embed);
-        };
-
-        if (searchString == "") {
-            let embed = createEmbed({
-                title: embedTitle,
-                description: translations.NO_SONG
-            });
-
-            return message.embed(embed);
         };
 
         // I know this looks terrible, if you know a way to improve it, it would be appreciated!
