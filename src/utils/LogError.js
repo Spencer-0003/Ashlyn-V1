@@ -16,7 +16,7 @@ module.exports = (client, type, err, extra) => {
     };
 
     if (type == "Unhandled Rejection") {
-        embed.addField("Stack", err.stack);
+        embed.addField("Stack", `\`\`\`\n${err.stack}\`\`\``);
     };
 
     client.channels.fetch(error_log_channel).then(channel => {
