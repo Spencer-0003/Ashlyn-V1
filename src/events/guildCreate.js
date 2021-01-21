@@ -30,6 +30,11 @@ module.exports = async (client, guild) => {
             };
         });
 
-        return defaultChannel.send(embed);
+
+        if (defaultChannel) {
+            return defaultChannel.send(embed);
+        };
+
+        return null;
     };
 };
