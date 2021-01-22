@@ -28,13 +28,19 @@ async function play(queue, guild, song) {
     };
 
     let downloadedSong;
+    let streamType = song.mode === "YouTube" ? "opus" : "ogg/opus";
     if (song.mode === "YouTube") {
         downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0 });
     } else {
-        downloadedSong = await scdl.download(song.url, sc_client_id);
+        try {
+            downloadedSong = await scdl.download(song.url, scdl.FORMATS.OPUS, sc_client_id);
+        } catch {
+            downloadedSong = await scdl.downloadFormat(song.url, scdl.FORMATS.MP3, sc_client_id);
+            streamType = "unknown";
+        };
     };
 
-    let dispatcher = serverQueue.connection.play(downloadedSong, { type: "opus" })
+    let dispatcher = serverQueue.connection.play(downloadedSong, { type: streamType })
         .on("finish", () => {
             if (!serverQueue.loop) serverQueue.songs.shift();
             play(queue, guild, serverQueue.songs[0]);
