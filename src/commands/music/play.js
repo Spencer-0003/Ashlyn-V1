@@ -129,6 +129,8 @@ module.exports = class PlayCommand extends Command {
             };
         };
 
+        if (!video) return;
+
         if (!voiceChannel || this.client.queue.get(message.guild.id) && this.client.queue.get(message.guild.id).voiceChannel !== voiceChannel) {
             let embed = createEmbed({
                 title: embedTitle,
