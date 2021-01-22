@@ -33,7 +33,7 @@ async function play(queue, guild, song) {
         downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0 });
     } else {
         try {
-            downloadedSong = await scdl.download(song.url, scdl.FORMATS.OPUS, sc_client_id);
+            downloadedSong = await scdl.downloadFormat(song.url, scdl.FORMATS.OPUS, sc_client_id);
         } catch {
             downloadedSong = await scdl.downloadFormat(song.url, scdl.FORMATS.MP3, sc_client_id);
             streamType = "unknown";
