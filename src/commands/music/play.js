@@ -117,7 +117,16 @@ module.exports = class PlayCommand extends Command {
                 }
             };
         } else {
-            video = await scdl.getInfo(searchString, sc_client_id);
+            try {
+                video = await scdl.getInfo(searchString, sc_client_id);
+            } catch {
+                let embed = createEmbed({
+                    title: embedTitle,
+                    description: "Invalid song."
+                });
+
+                return message.embed(embed);
+            };
         };
 
         if (!voiceChannel || this.client.queue.get(message.guild.id) && this.client.queue.get(message.guild.id).voiceChannel !== voiceChannel) {
