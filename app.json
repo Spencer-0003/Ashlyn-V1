@@ -13,6 +13,11 @@
             "required": true
         },
 
+        "sc_client_id": {
+            "description": "Client ID for Soundcloud",
+            "required": true
+        },
+
         "mongo_url": {
             "description": "The URL to the mongo datbase.",
             "required": true
