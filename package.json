@@ -39,6 +39,7 @@
     "rule34js": "^2.2.0",
     "simple-youtube-api": "^5.2.1",
     "simpleyt": "^1.0.7",
+    "soundcloud-downloader": "^0.2.4",
     "string-progressbar": "^1.0.1",
     "superagent": "^6.1.0",
     "ytdl-core": "^4.4.4",

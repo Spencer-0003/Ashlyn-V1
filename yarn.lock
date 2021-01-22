@@ -23,7 +23,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/runtime@^7.10.5":
+"@babel/runtime@^7.10.3", "@babel/runtime@^7.10.5":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
@@ -220,6 +220,13 @@ axios@^0.19.0:
   integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
   dependencies:
     follow-redirects "1.5.10"
+
+axios@^0.21.0:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -605,7 +612,6 @@ discord-xp@^1.1.7:
 
 "discord.js-commando@github:discordjs/Commando":
   version "0.11.1"
-  uid "9c2e5405fdb9a1006e6eb7554e18d0861a4c857f"
   resolved "https://codeload.github.com/discordjs/Commando/tar.gz/9c2e5405fdb9a1006e6eb7554e18d0861a4c857f"
   dependencies:
     common-tags "^1.8.0"
@@ -927,6 +933,11 @@ follow-redirects@1.5.10:
   integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
   dependencies:
     debug "=3.1.0"
+
+follow-redirects@^1.10.0:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.1.tgz#5f69b813376cee4fd0474a3aba835df04ab763b7"
+  integrity sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
 
 forever-agent@~0.6.1:
   version "0.6.1"
@@ -1363,7 +1374,7 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-m3u8stream@^0.8.3:
+m3u8stream@^0.8.0, m3u8stream@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/m3u8stream/-/m3u8stream-0.8.3.tgz#c4624e92b4240eb356d040c4a5e155586cf58108"
   integrity sha512-0nAcdrF8YJKUkb6PzWdvGftTPyCVWgoiot1AkNVbPKTeIGsWs6DrOjifrJ0Zi8WQfQmD2SuVCjkYIOip12igng==
@@ -1997,6 +2008,22 @@ sliced@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/sliced/-/sliced-1.0.1.tgz#0b3a662b5d04c3177b1926bea82b03f837a2ef41"
   integrity sha1-CzpmK10Ewxd7GSa+qCsD+Dei70E=
+
+soundcloud-downloader@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/soundcloud-downloader/-/soundcloud-downloader-0.2.4.tgz#8cc8184e2ba6f09d46edd0b074068140455e3b24"
+  integrity sha512-ncXi9AC3Crs8azBBUw0u5n6RyJpuV3QhBPDkI8dik3e9r7l6L6mmmrdGgKITsOwEuj3rxoTdFvSAP4pv2VorRw==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
+    axios "^0.21.0"
+    dotenv "^8.2.0"
+    m3u8stream "^0.8.0"
+    soundcloud-key-fetch "^1.0.10"
+
+soundcloud-key-fetch@^1.0.10:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/soundcloud-key-fetch/-/soundcloud-key-fetch-1.0.11.tgz#36033dda88e2b0de3bed38e1b2a80e33bb9c6755"
+  integrity sha512-ofnXB3yeHGVKnFKEMBP/kIJzGu1SduQzJc+zmkPbKgelvYNsEU/aTGD0PlhmyZquaCkTGByF8CEPRrAnt7ki4g==
 
 sparse-bitfield@^3.0.3:
   version "3.0.3"
