@@ -9,7 +9,7 @@ module.exports = class MuteCommand extends Command {
             memberName: "mute",
             description: "Mute the chosen user",
             userPermissions: ["MUTE_MEMBERS"],
-            clientPermissions: ["MUTE_MEMBERS"],
+            clientPermissions: ["MUTE_MEMBERS", "MANAGE_ROLES"],
             guildOnly: true,
             args: [
                 {
