@@ -11,6 +11,12 @@ const youtube = new YouTube(google_api_key);
 
 const simpleYt = require("simpleyt");
 
+function spoofUserAgent() {
+    let date = new Date();
+    let version = ((date.getFullYear() - 2018) * 4 + Math.floor(date.getMonth() / 4) + 58) + ".0";
+    return `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:${version} Gecko/20100101 Firefox/${version}`;
+};
+
 async function play(queue, guild, song) {
     let serverQueue = queue.get(guild.id);
 
@@ -30,7 +36,10 @@ async function play(queue, guild, song) {
     let downloadedSong;
     let streamType = song.mode === "YouTube" ? "opus" : "ogg/opus";
     if (song.mode === "YouTube") {
-        downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0 });
+        downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0, requestOptions: { headers: {
+            "User-Agent": spoofUserAgent(),
+            "Accept-Language": "en-US,en;q=0.5"
+        } } });
     } else {
         try {
             downloadedSong = await scdl.downloadFormat(song.url, scdl.FORMATS.OPUS, sc_client_id);
