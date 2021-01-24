@@ -48,9 +48,10 @@ module.exports = async (client, message) => {
 
         if (hasLeveledUp) {
             let user = await Levels.fetch(message.author.id, message.guild.id);
-            return message.channel.send(`${message.author}, congratulations! You have leveled up to **${user.level}**. :tada:`).catch(err => {
-                console.log("Failed to send level up notification: " + err);
-            });
+
+            if (message.channel.permissionsFor(message.guild.me).has("SEND_MESSAGES")) {
+                return message.channel.send(`${message.author}, congratulations! You have leveled up to **${user.level}**. :tada:`);
+            };
         };
     } catch(err) {
         console.log(`Error appending XP: ${err}`);
