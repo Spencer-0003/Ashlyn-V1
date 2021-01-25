@@ -9,6 +9,7 @@ module.exports = class RankCommand extends Command {
     constructor(client) {
         super(client, {
             name: "rank",
+            alias: ["level"],
             group: "info",
             memberName: "rank",
             description: "Tells you the specified user's rank.",
