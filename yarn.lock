@@ -612,7 +612,8 @@ discord-xp@^1.1.7:
 
 "discord.js-commando@github:discordjs/Commando":
   version "0.11.1"
-  resolved "https://codeload.github.com/discordjs/Commando/tar.gz/9c2e5405fdb9a1006e6eb7554e18d0861a4c857f"
+  uid "2b0855ca5846d50d4c80467b52f17156ad560e3d"
+  resolved "https://codeload.github.com/discordjs/Commando/tar.gz/2b0855ca5846d50d4c80467b52f17156ad560e3d"
   dependencies:
     common-tags "^1.8.0"
     emoji-regex "^9.2.0"
