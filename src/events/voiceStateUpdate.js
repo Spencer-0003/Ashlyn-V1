@@ -1,5 +1,5 @@
 module.exports = (client, oldState, newState) => {
-    if (newState.channelID === null && oldState.channelID !== null) {
+    if (!newState.channelID && oldState.channelID) {
         let voiceChannel = oldState.guild.channels.cache.get(oldState.channelID);
         let botChannel = oldState.guild.me.voice.channel;
 

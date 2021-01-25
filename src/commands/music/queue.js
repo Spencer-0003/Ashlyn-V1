@@ -32,8 +32,10 @@ module.exports = class QueueCommand extends Command {
             title: embedTitle
         });
 
-        serverQueue.songs.forEach(song => {
-            embed.addField(song.title, `Requested by <@${song.requestedBy}>.`);
+        serverQueue.songs.forEach((song, index) => {
+            if (index !== 0) {
+                embed.addField(song.title, `Requested by <@${song.requestedBy}>.`);
+            };
         });
 
         return message.say(embed);
