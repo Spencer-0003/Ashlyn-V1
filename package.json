@@ -42,7 +42,7 @@
     "soundcloud-downloader": "^0.2.4",
     "string-progressbar": "^1.0.2",
     "superagent": "^6.1.0",
-    "ytdl-core": "^4.4.4",
+    "ytdl-core": "^4.4.5",
     "ytdl-core-discord": "^1.2.5"
   },
   "_moduleAliases": {
