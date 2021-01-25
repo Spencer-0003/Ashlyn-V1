@@ -28,6 +28,14 @@ module.exports = class QueueCommand extends Command {
             return message.embed(embed);
         };
 
-        return message.say(`__**Queue**__\n${serverQueue.songs.map(song => song.title).join("\n")}`);
+        let embed = createEmbed({
+            title: embedTitle
+        });
+
+        serverQueue.songs.forEarch(song => {
+            embed.addField(song.title, `Requested by ${song.requestedBy}.`);
+        });
+
+        return message.say(embed);
     };
 };

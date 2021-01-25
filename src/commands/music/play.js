@@ -173,6 +173,7 @@ module.exports = class PlayCommand extends Command {
                 title: video.title,
                 url: video.uri || video.url,
                 duration: video.length_seconds || video.durationSeconds,
+                requestedBy: message.author,
                 mode
             };
         } else {
@@ -180,6 +181,7 @@ module.exports = class PlayCommand extends Command {
                 title: video.title,
                 url: video.permalink_url,
                 duration: Math.ceil(video.duration / 1000),
+                requestedBy: message.author,
                 mode
             };
         };
