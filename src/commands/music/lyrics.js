@@ -40,11 +40,13 @@ module.exports = class PauseCommand extends Command {
                 return message.embed(embed);
             };
 
+            let details = response.body.json();
+
             let embed = createEmbed({
-                title: response.body.title,
-                description: response.body.lyrics,
-                thumbnail: response.body.thumbnail.genius,
-                author: response.body.author
+                title: details.title,
+                description: details.lyrics,
+                thumbnail: details.genius,
+                author: details.author
             });
 
             if (embed.description.length >= 2048) {
