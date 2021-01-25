@@ -33,7 +33,7 @@ module.exports = class SpankComamnd extends Command {
     };
 
     run(message, { user }) {
-        let translations = this.client.getServerLocale(message.guild).COMMANDS.NSFW_ROLEPLAY.BLOWJOB;
+        let translations = this.client.getServerLocale(message.guild).COMMANDS.NSFW_ROLEPLAY.SPANK;
 
         if (user == message.author) {
             let embed = createEmbed({

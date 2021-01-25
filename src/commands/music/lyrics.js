@@ -44,9 +44,9 @@ module.exports = class PauseCommand extends Command {
 
             let embed = createEmbed({
                 title: details.title,
-                description: details.lyrics,
-                thumbnail: details.genius,
-                author: details.author
+                // description: details.lyrics,
+                // thumbnail: details.genius,
+                // author: details.author
             });
 
             if (embed.description.length >= 2048) {
