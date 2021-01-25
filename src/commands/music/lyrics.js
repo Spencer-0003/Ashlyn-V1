@@ -1,7 +1,7 @@
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
-const superagent = require("superagent");
+const fetch = require("node-fetch");
 
 module.exports = class PauseCommand extends Command {
     constructor(client) {
@@ -13,7 +13,7 @@ module.exports = class PauseCommand extends Command {
         });
     };
 
-    run(message) {
+    async run(message) {
         let translations = this.client.getServerLocale(message.guild).COMMANDS.MUSIC;
         let embedTitle = `${message.client.user.username}: ${translations.TITLE}`;
 
@@ -30,31 +30,29 @@ module.exports = class PauseCommand extends Command {
         };
 
         let songTitle = serverQueue.song.title;
-        superagent.get(`https://some-random-api.ml/lyrics?title=${encodeURIComponent(songTitle)}`).end((err, response) => {
-            if (err) {
-                let embed = createEmbed({
-                    title: `${message.client.user.username}: Error`,
-                    description: "An unexpected error has occured."
-                });
 
-                return message.embed(embed);
-            };
+        let details = await fetch(`https://some-random-api.ml/lyrics?title=${encodeURIComponent(songTitle)}`).json();
 
-            let details = response.body.json();
-            console.log(details);
+        if (details.error) {
+            let embed = createEmbed({
+                title: embedTitle,
+                description: "Invalid."
+            });
 
-            // let embed = createEmbed({
-            //     title: details.title,
-            //     // description: details.lyrics,
-            //     // thumbnail: details.genius,
-            //     // author: details.author
-            // });
+            return message.embed(embed);
+        };
 
-            // if (embed.description.length >= 2048) {
-            //     embed.description = `${embed.description.substr(0, 2045)}...`;
-            // };
-
-            // return message.embed(embed);
+        let embed = createEmbed({
+            title: details.title,
+            description: details.lyrics,
+            thumbnail: details.genius,
+            author: details.author
         });
+
+        if (embed.description.length >= 2048) {
+            embed.description = `${embed.description.substr(0, 2045)}...`;
+        };
+
+        return message.embed(embed);
     };
 };
