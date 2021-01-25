@@ -20,14 +20,14 @@ function spoofUserAgent() {
 async function play(queue, guild, song) {
     let serverQueue = queue.get(guild.id);
 
-    if (!song) {
+    if (!song || !song.mode) {
         setTimeout(function() {
             if (!song && !queue.connection.dispatcher && guild.me.voice.channel) {
                 queue.channel.leave();
                 queue.delete(guild.id);
                 let embed = createEmbed({
                     title: "Started Playing!",
-                    description: "I left the channel because i was inactive for too long."
+                    description: "I left the channel because I was inactive for too long."
                 });
                 return serverQueue.textChannel.send(embed);
             }}, 60000);
