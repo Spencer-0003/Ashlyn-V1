@@ -32,6 +32,7 @@ module.exports = class PauseCommand extends Command {
         let songTitle = serverQueue.song.title;
 
         let details = await fetch(`https://some-random-api.ml/lyrics?title=${encodeURIComponent(songTitle)}`).json();
+        console.log(details);
 
         if (details.error) {
             let embed = createEmbed({
@@ -44,9 +45,9 @@ module.exports = class PauseCommand extends Command {
 
         let embed = createEmbed({
             title: details.title,
-            description: details.lyrics,
-            thumbnail: details.genius,
-            author: details.author
+            // description: details.lyrics,
+            // thumbnail: details.genius,
+            // author: details.author
         });
 
         if (embed.description.length >= 2048) {
