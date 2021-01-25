@@ -33,9 +33,7 @@ module.exports = class QueueCommand extends Command {
         });
 
         serverQueue.songs.forEarch(song => {
-            console.log(song.title);
-            console.log(`Requested by ${song.requestedBy}.`);
-            embed.addField(song.title, `Requested by ${song.requestedBy}.`);
+            embed.addField(song.title, `Requested by <@${song.requestedBy}>.`);
         });
 
         return message.say(embed);
