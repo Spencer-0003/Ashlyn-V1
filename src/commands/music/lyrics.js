@@ -40,20 +40,21 @@ module.exports = class PauseCommand extends Command {
                 return message.embed(embed);
             };
 
-            let details = response.body.json();
+            let details = response.body//.json();
+            console.log(details);
 
-            let embed = createEmbed({
-                title: details.title,
-                description: details.lyrics,
-                thumbnail: details.genius,
-                author: details.author
-            });
+            // let embed = createEmbed({
+            //     title: details.title,
+            //     description: details.lyrics,
+            //     thumbnail: details.genius,
+            //     author: details.author
+            // });
 
-            if (embed.description.length >= 2048) {
-                embed.description = `${embed.description.substr(0, 2045)}...`;
-            };
+            // if (embed.description.length >= 2048) {
+            //     embed.description = `${embed.description.substr(0, 2045)}...`;
+            // };
 
-            return message.embed(embed);
+            // return message.embed(embed);
         });
     };
 };
