@@ -32,7 +32,7 @@ module.exports = class QueueCommand extends Command {
             title: embedTitle
         });
 
-        serverQueue.songs.forEarch(song => {
+        serverQueue.songs.forEach(song => {
             embed.addField(song.title, `Requested by <@${song.requestedBy}>.`);
         });
 
