@@ -6,7 +6,11 @@
 // Load Env
 
 require("dotenv").config();
-const { token, bot_name } = process.env;
+const { token, bot_name, top_gg_token } = process.env;
+
+// Load Discord bot list modules
+
+const AutoPoster = require("topgg-autoposter");
 
 // Setup Custom Log
 
@@ -25,5 +29,9 @@ const manager = new ShardingManager("src/bot.js", {
     token,
     totalShards: "auto"
 });
+
+if (top_gg_token) {
+    AutoPoster(top_gg_token, manager);
+};
 
 manager.spawn();
