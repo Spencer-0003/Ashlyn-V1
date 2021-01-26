@@ -8,7 +8,7 @@ module.exports = (client, type, err, extra) => {
     });
 
     if (type == "Command Error") {
-        embed.addField("Command Name", extra.info.name);
+        embed.addField("Command Name", extra.name);
     };
 
     if (type == "Unhandled Rejection") {
