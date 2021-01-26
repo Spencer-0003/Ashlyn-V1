@@ -2053,10 +2053,10 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
-string-progressbar@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/string-progressbar/-/string-progressbar-1.0.2.tgz#a24959da2d0bb7d7ad851e50f88f7c1bc85c529c"
-  integrity sha512-q1iU/IG3sYvKudaGRm1HadqkG3ltBVlPcztuT1hp3Ek6bei/+YGA3GAUK7G1Qc622a9O4y0WCLrNAPfJwMJYpg==
+string-progressbar@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/string-progressbar/-/string-progressbar-1.0.3.tgz#cabd44de626f71d76908d10fcb5948f7fe769af7"
+  integrity sha512-dbHlrfEqNv4giJR3gHkpj94tOlVRvkeqQZR2efac9UWwRQbkCyQEDWqcXuXALdd1psH+fY6Mdr/YaV/Il+jqhg==
 
 string-width@^3.0.0:
   version "3.1.0"
