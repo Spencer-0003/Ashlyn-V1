@@ -2103,6 +2103,7 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
+<<<<<<< HEAD
 "statuses@>= 1.5.0 < 2":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
@@ -2112,6 +2113,12 @@ string-progressbar@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-progressbar/-/string-progressbar-1.0.2.tgz#a24959da2d0bb7d7ad851e50f88f7c1bc85c529c"
   integrity sha512-q1iU/IG3sYvKudaGRm1HadqkG3ltBVlPcztuT1hp3Ek6bei/+YGA3GAUK7G1Qc622a9O4y0WCLrNAPfJwMJYpg==
+=======
+string-progressbar@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/string-progressbar/-/string-progressbar-1.0.3.tgz#cabd44de626f71d76908d10fcb5948f7fe769af7"
+  integrity sha512-dbHlrfEqNv4giJR3gHkpj94tOlVRvkeqQZR2efac9UWwRQbkCyQEDWqcXuXALdd1psH+fY6Mdr/YaV/Il+jqhg==
+>>>>>>> d92922a0b4e23fbb3104cb7ca72d7d7555c18719
 
 string-width@^3.0.0:
   version "3.1.0"
