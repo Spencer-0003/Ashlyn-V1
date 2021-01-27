@@ -12,14 +12,16 @@ module.exports = class PingCommand extends Command {
     };
 
     run(message) {
-        let translations = this.client.getServerLocale(message.guild).COMMANDS.PING;
-        let embedTitle = `${message.client.user.username}: ${translations.TITLE}`;
+        if (message.channel.permissionsFor(message.guild.me).has("SEND_MESSAGES")) {
+            let translations = this.client.getServerLocale(message.guild).COMMANDS.PING;
+            let embedTitle = `${message.client.user.username}: ${translations.TITLE}`;
 
-        let embed = createEmbed({
-            title: embedTitle,
-            description: `${translations.PING} ${this.client.ws.ping}ms.`
-        });
+            let embed = createEmbed({
+                title: embedTitle,
+                description: `${translations.PING} ${this.client.ws.ping}ms.`
+            });
 
-        return message.say(embed);
+            return message.say(embed);
+        };
     };
 };
