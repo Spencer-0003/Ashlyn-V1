@@ -66,6 +66,7 @@ module.exports = class PlayCommand extends Command {
             group: "music",
             memberName: "play",
             description: "Plays the chosen song.",
+            guildOnly: true
         });
     };
 

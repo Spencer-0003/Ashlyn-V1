@@ -21,7 +21,8 @@ module.exports = class PlayingCommand extends Command {
             aliases: ["np"],
             group: "music",
             memberName: "playing",
-            description: "Tells you what song is playing."
+            description: "Tells you what song is playing.",
+            guildOnly: true
         });
     };
 

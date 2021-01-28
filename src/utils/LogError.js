@@ -8,7 +8,8 @@ module.exports = (client, type, err, extra) => {
     });
 
     if (type == "Command Error") {
-        embed.addField("Command Name", extra.name);
+        let name = extra.name;
+        embed.addField("Command Name", name.charAt(0).toUpperCase() + name.slice(1));
     };
 
     if (type == "Unhandled Rejection") {

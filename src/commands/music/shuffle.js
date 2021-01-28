@@ -9,6 +9,7 @@ module.exports = class ShuffleCommand extends Command {
             group: "music",
             memberName: "shuffle",
             description: "Sets looping for the current guild.",
+            guildOnly: true
         });
     };
 

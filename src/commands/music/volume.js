@@ -10,6 +10,7 @@ module.exports = class VolumeCommand extends Command {
             group: "music",
             memberName: "volume",
             description: "Changes the volume of the bot.",
+            guildOnly: true,
             args: [
                 {
                     key: "vol",

@@ -9,6 +9,7 @@ module.exports = class ResumeComamnd extends Command {
             group: "music",
             memberName: "resume",
             description: "Resumes the chosen song.",
+            guildOnly: true
         });
     };
 

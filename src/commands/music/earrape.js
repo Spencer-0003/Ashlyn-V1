@@ -11,7 +11,8 @@ module.exports = class EarRapeCommand extends Command {
             memberName: "earrape",
             description: "Changes the volume of the bot.",
             hidden: true,
-            ownerOnly: true
+            ownerOnly: true,
+            guildOnly: true
         });
     };
 

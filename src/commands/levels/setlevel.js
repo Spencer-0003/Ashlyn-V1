@@ -11,6 +11,7 @@ module.exports = class SetLevelCommand extends Command {
             memberName: "setlevel",
             description: `Sets the rank of a chosen user.`,
             userPermissions: ["ADMINISTRATOR"],
+            guildOnly: true,
             args: [
                 {
                     key: "user",

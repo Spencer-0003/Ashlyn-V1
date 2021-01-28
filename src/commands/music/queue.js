@@ -9,6 +9,7 @@ module.exports = class QueueCommand extends Command {
             group: "music",
             memberName: "queue",
             description: "Shows the queue list.",
+            guildOnly: true
         });
     };
 

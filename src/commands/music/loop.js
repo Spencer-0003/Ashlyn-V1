@@ -9,6 +9,7 @@ module.exports = class LoopCommand extends Command {
             group: "music",
             memberName: "loop",
             description: "Sets looping for the current guild.",
+            guildOnly: true
         });
     };
 

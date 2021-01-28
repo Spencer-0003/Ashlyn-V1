@@ -9,6 +9,7 @@ module.exports = class PauseCommand extends Command {
             group: "music",
             memberName: "pause",
             description: "Pauses the chosen song.",
+            guildOnly: true
         });
     };
 

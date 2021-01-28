@@ -10,6 +10,7 @@ module.exports = class LyricsCommand extends Command {
             group: "music",
             memberName: "lyrics",
             description: "Displays the lyrics of the currently playing song.",
+            guildOnly: true
         });
     };
 

@@ -9,6 +9,7 @@ module.exports = class StopCommand extends Command {
             group: "music",
             memberName: "stop",
             description: "Stops the current song from playing.",
+            guildOnly: true
         });
     };
 

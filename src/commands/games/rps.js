@@ -16,7 +16,7 @@ module.exports = class RockPaperScissorsCommand extends Command {
                     type: "string",
                     oneOf: ["rock", "paper", "scissors"],
                 },
-            ],
+            ]
         });
     };
 
