@@ -4,6 +4,7 @@ const createEmbed = require("@utils/CreateEmbed");
 
 module.exports = (client, member) => {
     if (member.bot) return;
+    let guildSchema = require("@schemas/guild");
 
     getCollection(mongo_db, "Guild Settings", async function(collection, _client) {
         let guildData = await collection.findOne({ GuildID: member.guild.id });
@@ -30,6 +31,12 @@ module.exports = (client, member) => {
 
     getCollection(mongo_db, "Guild Settings", async function(collection, _client) {
         let guildData = await collection.findOne({ GuildID: member.guild.id });
+
+        if (!guildData) {
+            guildSchema.GuildID = member.guild.id;
+            await collection.insertOne(guildSchema);
+            guildData = await collection.findOne({ GuildID: member.guild.id });
+        };
 
         let role = guildData.AutoRole;
 
