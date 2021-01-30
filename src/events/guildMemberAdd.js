@@ -9,7 +9,20 @@ module.exports = (client, member) => {
     getCollection(mongo_db, "Guild Settings", async function(collection, _client) {
         let guildData = await collection.findOne({ GuildID: member.guild.id });
 
-        if (guildData && guildData.NoAlts) {
+        if (!guildData) {
+            guildSchema.GuildID = member.guild.id;
+            await collection.insertOne(guildSchema);
+            guildData = await collection.findOne({ GuildID: member.guild.id });
+        };
+
+        let role = guildData.AutoRole;
+        let noAlts = guildData.NoAlts;
+
+        if (role) {
+            await member.roles.add(role);
+        };
+
+        if (noAlts) {
             if (member.user.createdAt < "259200000") {
                 let embed = createEmbed({
                     title: `${client.user.username}: Moderation`,
@@ -24,24 +37,6 @@ module.exports = (client, member) => {
                     });
                 };
             };
-        };
-
-        return _client.close();
-    });
-
-    getCollection(mongo_db, "Guild Settings", async function(collection, _client) {
-        let guildData = await collection.findOne({ GuildID: member.guild.id });
-
-        if (!guildData) {
-            guildSchema.GuildID = member.guild.id;
-            await collection.insertOne(guildSchema);
-            guildData = await collection.findOne({ GuildID: member.guild.id });
-        };
-
-        let role = guildData.AutoRole;
-
-        if (role) {
-            await member.roles.add(role);
         };
 
         return _client.close();
