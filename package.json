@@ -54,7 +54,7 @@
     "@schemas": "src/schemas"
   },
   "devDependencies": {
-    "eslint": "^7.18.0",
+    "eslint": "^7.19.0",
     "nodemon": "^2.0.7"
   }
 }
