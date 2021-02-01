@@ -31,7 +31,10 @@ module.exports = class SkipCommand extends Command {
         if (!canModifyQueue(message.member)) return;
 
         if (serverQueue.connection && serverQueue.connection.dispatcher) {
+            let oldLoop = serverQueue.loop;
+            serverQueue.loop = false;
             serverQueue.connection.dispatcher.end();
+            serverQueue.loop = oldLoop;
         };
 
         let embed = createEmbed({
