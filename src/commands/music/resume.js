@@ -27,6 +27,7 @@ module.exports = class ResumeComamnd extends Command {
 
             return message.embed(embed);
         };
+
         if (!canModifyQueue(message.member)) return;
 
         if (serverQueue.playing) {

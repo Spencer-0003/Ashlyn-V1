@@ -27,6 +27,7 @@ module.exports = class LoopCommand extends Command {
 
             return message.embed(embed);
         };
+
         if (!canModifyQueue(message.member)) return;
 
         serverQueue.loop = !serverQueue.loop;

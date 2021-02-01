@@ -27,6 +27,7 @@ module.exports = class EarRapeCommand extends Command {
 
             return message.embed(embed);
         };
+
         if (!canModifyQueue(message.member)) return;
 
         serverQueue.volume = 100;

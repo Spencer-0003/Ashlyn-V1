@@ -27,8 +27,8 @@ module.exports = class StopCommand extends Command {
 
             return message.embed(embed);
         };
-        if (!canModifyQueue(message.member)) return;
 
+        if (!canModifyQueue(message.member)) return;
 
         serverQueue.songs = [];
 

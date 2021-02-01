@@ -27,6 +27,7 @@ module.exports = class ShuffleCommand extends Command {
 
             return message.embed(embed);
         };
+
         if (!canModifyQueue(message.member)) return;
 
         let songs = serverQueue.songs;
