@@ -21,6 +21,8 @@ module.exports = (client, type, err, extra) => {
     };
 
     client.channels.fetch(error_log_channel).then(channel => {
-        channel.send(embed);
+        if (channel) {
+            channel.send(embed);
+        };
     });
 };
