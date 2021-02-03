@@ -33,7 +33,7 @@
     "module-alias": "^2.2.2",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
-    "mongodb": "^3.6.3",
+    "mongodb": "^3.6.4",
     "opusscript": "0.0.7",
     "pornhub.js": "^0.2.4",
     "rule34js": "^2.2.0",
