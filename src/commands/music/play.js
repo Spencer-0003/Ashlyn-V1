@@ -23,7 +23,10 @@ async function play(queue, guild, song) {
     if (!song || !song.mode) {
         setTimeout(function() {
             if (!song) {
-                queue.channel.leave();
+                if (queue.channel) {
+                    queue.channel.leave();
+                };
+
                 queue.delete(guild.id);
                 let embed = createEmbed({
                     title: "Started Playing!",
