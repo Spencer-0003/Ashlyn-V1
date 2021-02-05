@@ -1,7 +1,7 @@
 const Command = require("@structures/Command");
 const createEmbed = require("@utils/CreateEmbed");
 
-const { google_api_key, sc_client_id, youtube_cookie } = process.env;
+const { google_api_key, sc_client_id, youtube_cookie, youtube_identity } = process.env;
 
 // const ytdl = require("ytdl-core");
 const ytdl = require("ytdl-core-discord");
@@ -36,7 +36,7 @@ async function play(queue, guild, song) {
     let downloadedSong;
     let streamType = song.mode === "YouTube" ? "opus" : "ogg/opus";
     if (song.mode === "YouTube") {
-        downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0, requestOptions: { headers: { "User-Agent": spoofUserAgent(), "Accept-Language": "en-US,en;q=0.5", cookie: youtube_cookie } } });
+        downloadedSong = await ytdl(song.url, { quality: "highestaudio", filter: "audioonly", highWaterMark: 1 << 25, dlChunkSize: 0, requestOptions: { headers: { "User-Agent": spoofUserAgent(), "Accept-Language": "en-US,en;q=0.5", Cookie: youtube_cookie, "x-youtube-identity-token": youtube_identity } } });
     } else {
         try {
             downloadedSong = await scdl.downloadFormat(song.url, scdl.FORMATS.OPUS, sc_client_id);
