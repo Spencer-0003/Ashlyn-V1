@@ -36,7 +36,7 @@ module.exports = class ClearCommand extends Command {
             return message.embed(embed);
         };
 
-        message.channel.bulkDelete(amount).then(() => {
+        message.channel.bulkDelete(amount, true).then(() => {
             let embed = createEmbed({
                 title: embedTitle,
                 description: translations.CLEARED_MESSAGES.format((amount - 1).toString())
