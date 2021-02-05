@@ -31,6 +31,7 @@ async function play(queue, guild, song) {
                 });
                 return serverQueue.textChannel.send(embed);
             }}, 60000);
+        return;
     };
 
     let downloadedSong;
