@@ -22,7 +22,7 @@ async function play(queue, guild, song) {
 
     if (!song || !song.mode) {
         setTimeout(function() {
-            if (!song && !queue && !queue.connection && !queue.connection.dispatcher && guild.me.voice.channel) {
+            if (!song && !queue || !queue.connection || !queue.connection.dispatcher || guild.me.voice.channel) {
                 queue.channel.leave();
                 queue.delete(guild.id);
                 let embed = createEmbed({
