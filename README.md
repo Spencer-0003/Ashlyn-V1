@@ -1,3 +1,5 @@
+# THIS VERSION OF ASHLYN IS DEPRECATED. TO USE THE NEW ONE INVITE THE BOT AT THE LINK BELOW.
+
 <div align="center">
   <img width="150" height="150" alt="Ashlyn" src="https://i.imgur.com/FoezDWf.png">  
   <br>
